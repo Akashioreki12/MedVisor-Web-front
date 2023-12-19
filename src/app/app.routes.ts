@@ -7,4 +7,5 @@ export const routes: Routes = [
     { path: 'page-login', component: PageLoginComponent },
     { path: 'page-signup', component: PageSignupComponent },
     { path: 'page-result', component: PageResultComponent },
+
 ];
