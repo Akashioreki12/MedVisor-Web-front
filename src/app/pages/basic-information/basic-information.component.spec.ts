@@ -11,12 +11,10 @@ describe('BasicInformationComponent', () => {
       imports: [BasicInformationComponent]
     })
     .compileComponents();
-    
     fixture = TestBed.createComponent(BasicInformationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-
   it('should create', () => {
     expect(component).toBeTruthy();
   });
