@@ -1,28 +1,20 @@
-<div class="container">
-
-
-
-<mat-horizontal-stepper #stepper>
-    <mat-step label="1">
-
+<mat-horizontal-stepper>
+    <mat-step label="">
         <app-basic-information></app-basic-information>
+    </mat-step>
+    <mat-step label="">
+        
+<app-health-information></app-health-information>
 
     </mat-step>
-    <mat-step label="2">
-
-        <app-health-information></app-health-information>
-
-
-    </mat-step>
-    <mat-step label="3">
-
+    <mat-step label="">
         <app-additional-information></app-additional-information>
-
     </mat-step>
 </mat-horizontal-stepper>
-<div class="button-container">
-    <button class="btn1" (click)="goBack()">Back</button>
-    <button class="btn2" (click)="goForward()">Next</button>
-</div>
 
+<p-checkbox  [binary]="true" inputId="binary"></p-checkbox>
+
+<div class="buttons-container">
+    <button class="btn1">Back</button>
+    <button class="btn2">Next</button>
 </div>

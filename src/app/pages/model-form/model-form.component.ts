@@ -4,12 +4,17 @@ import { MatStepperModule, MatStepper } from '@angular/material/stepper';
 import { BasicInformationComponent } from '../basic-information/basic-information.component';
 import { AdditionalInformationComponent } from '../additional-information/additional-information.component';
 import { HealthInformationComponent } from '../health-information/health-information.component';
-
+import { CheckboxModule } from 'primeng/checkbox';
 
 @Component({
   selector: 'app-model-form',
   standalone: true,
-  imports: [RouterModule, MatStepperModule, BasicInformationComponent, AdditionalInformationComponent, HealthInformationComponent],
+  imports: [RouterModule,
+    MatStepperModule,
+    BasicInformationComponent,
+    AdditionalInformationComponent,
+    HealthInformationComponent,
+  CheckboxModule],
   templateUrl: './model-form.component.html',
   styleUrl: './model-form.component.css'
 })
