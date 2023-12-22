@@ -10,42 +10,6 @@
     color: #000;
     margin-bottom: 20px;
 }
-.form-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-input {
-    width: 338px;
-    height: 58px;
-    border-radius: 10px;
-    background-color: #E8EAEF;
-    padding-left: 10px;
-}
-
-.special-input {
-    width: 255px;
-}
-input:focus {
-    outline: 2px solid #1578DA;
-}
-
-label {
-    font-size: 20px;
-    font-weight: 400;
-    color: #000;
-    margin-bottom: 11px;
-}
-
-.red-highlight {
-    color: #D63928;
-}
-
-.textInput {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
 
 .health-container-title {
     font-size: 32px;
@@ -63,8 +27,17 @@ label {
     margin-bottom: 20px;
 }
 
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
-
+.textInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
 
 .radio-buttons-container {
     display: flex;
@@ -90,4 +63,26 @@ label {
     /* Adjust the height as needed */
     margin-right: 5px;
     /* Optional: Add some spacing between the radio button and text */
+}
+
+label {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 11px;
+}
+
+.red-highlight {
+    color: #D63928;
+}
+
+.choice-block {
+
+    border-radius: 10px;
+    background-color: #E8EAEF;
+    width: 250px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

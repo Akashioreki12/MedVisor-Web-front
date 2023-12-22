@@ -1,0 +1,27 @@
+<mat-horizontal-stepper #stepper>
+    <mat-step label="1">
+
+        <app-basic-information></app-basic-information>
+                
+    </mat-step>
+    <mat-step label="2">
+
+        <app-health-information></app-health-information>
+
+                
+    </mat-step>
+    <mat-step label="3">
+
+                <app-additional-information></app-additional-information>
+
+
+
+                
+    </mat-step>
+</mat-horizontal-stepper>
+
+
+<div class="button-container">
+    <button class="btn1" (click)="goBack()">Back</button>
+    <button class="btn2" (click)="goForward()">Next</button>
+</div>

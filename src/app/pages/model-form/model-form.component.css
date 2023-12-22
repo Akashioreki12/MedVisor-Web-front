@@ -1,0 +1,39 @@
+button {
+    font-size: 20;
+    font-weight: 400;
+    border-radius: 10px;
+    height: 67px;
+    width: 264px;
+    border: 1px solid #4874ED;
+}
+
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn1 {
+    color: #4874ED;
+}
+
+.btn2 {
+    background-color: #4874ED;
+    color: #fff;
+    margin-left: 50px;
+}
+
+.btn2:hover {
+   opacity: 0.9;
+}
+
+.btn2:active {
+    opacity: 0.8;
+}
+
+.btn1:hover {
+        border: 2px solid #4874ED;
+}
+
+
