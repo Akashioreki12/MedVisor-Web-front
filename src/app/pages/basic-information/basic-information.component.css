@@ -1,9 +1,26 @@
+.form-section-1-container {
+    padding-left: 20%;
+    padding-right: 20%;
+    width: 100%;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    margin-bottom: 41px;
+}
 .textInput {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 
+input {
+    height: 58px;
+    border-radius: 10px;
+    background-color: #E8EAEF;
+    padding-left: 15px;
+    margin-right: 50px;
+}
 label {
     font-size: 20px;
     font-weight: 400;
@@ -17,16 +34,6 @@ label {
     color: #000;
     margin-top: 20px;
 }
-
-
-input {
-    width: 555px;
-    height: 58px;
-    border-radius: 10px;
-    background-color: #E8EAEF;
-    padding-left: 15px;
-}
-
 input:focus {
     outline: 2px solid #1578DA;
 }
@@ -34,26 +41,10 @@ input:focus {
 .red-highlight {
     color: #D63928;
 }
-.form-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;  
-    margin-bottom: 41px;
-}
-
-.form-section-1-container {
-    padding-left: 20%;
-    padding-right: 20%;
-}
-
 .lastchoice {
     display: flex;
     flex-direction: row;
 }
-
-
-
-
 .radio-buttons-container {
     display: flex;
     flex-direction: row;
@@ -61,8 +52,6 @@ input:focus {
     align-items: center;
         width: 555px;
 }
-
-
 .radio-text {
     color: #000;
     font-size: 15px;
@@ -70,19 +59,11 @@ input:focus {
     margin-left: 12.7px;
     margin-right: 35px;
 }
-
-
 .radio-buttons-container input[type="radio"] {
     width: 16px;
-    /* Adjust the width as needed */
     height: 16px;
-    /* Adjust the height as needed */
     margin-right: 5px;
-    /* Optional: Add some spacing between the radio button and text */
 }
-
-
-
 .phoneblock {
     display: flex;
 
@@ -91,25 +72,21 @@ input:focus {
 
 .phoneRegister {
 
-        width: 455px;
-        border-top-left-radius: 0px;
-            border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
 
 }
 
 
 .country-code {
-    width: 100px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     padding-left: 15px;
 }
 
 .choice-block {
-
     border-radius: 10px;
     background-color: #E8EAEF;
-    width: 250px;
     height: 58px;
     display: flex;
     align-items: center;
@@ -125,39 +102,5 @@ button {
     height: 67px;
     width: 264px;
     border: 1px solid #4874ED;
-}
-
-
-.button-container {
-    display: flex;
-    flex-direction: row;
-}
-
-.btn1 {
-    color: #4874ED;
-    margin-left: 300px;
-}
-
-.btn2 {
-    background-color: #4874ED;
-    color:  #fff;
-    margin-left: 50px;
-}
-
-.btn2:hover {
-    opacity: 0.9;
-}
-.btn2:active {
-    opacity: 0.8;
-}
-
-.special-row {
-    background-color: red;
-    display: flex;
-    flex-direction: row;
-}
-
-.special1 {
-    background-color: green;
 }
 
