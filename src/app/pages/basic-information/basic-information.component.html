@@ -1,0 +1,65 @@
+<form class="form-section-1-container" (ngSubmit)="onNext()" [formGroup]="checkoutForm">
+    <p class="form-section-title">Basic Informations</p>
+
+    <div class="form-row">
+        <div class="textInput">
+            <label for="firstName">First name</label>
+            <input type="text" id="firstName" formControlName="firstName" placeholder="Mohammed Yassine">
+        </div>
+        <div class="textInput">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" formControlName="lastName" placeholder="Kial">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="textInput">
+            <label for="age">Age <span class="red-highlight">*</span></label>
+            <input type="text" id="age" formControlName="age" required autofocus>
+        </div>
+        <div class="textInput">
+            <label for="gender">Gender <span class="red-highlight">*</span></label>
+            <div class="radio-buttons-container">
+                <div class="left-radio">
+                    <input type="radio" id="male" formControlName="gender" value="male">
+                    <label class="radio-text" for="male">Male</label>
+                </div>
+                <div class="right-radio">
+                    <input type="radio" id="female" formControlName="gender" value="female">
+                    <label class="radio-text" for="female">Female</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="textInput">
+            <label for="countryCode">Country Code</label>
+            <div class="phoneblock">
+                <select class="country-code" id="countryCode" formControlName="countryCode">
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+212" selected>🇲🇦 +212</option>
+                    <option value="+33">🇫🇷 +33</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <option value="+91">🇮🇳 +91</option>
+                </select>
+                <input class="phoneRegister" type="text" id="phoneNumber" formControlName="phoneNumber" required
+                    placeholder="639453059">
+            </div>
+        </div>
+        <div class="textInput">
+            <label for="maritalStatus">Marital Status <span class="red-highlight">*</span></label>
+            <input type="text" id="maritalStatus" formControlName="maritalStatus" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="textInput">
+            <label for="email">Email</label>
+            <input type="text" id="email" formControlName="email" required placeholder="kialmohamedyassine@gmail.com">
+        </div>
+        <div class="textInput">
+            <label for="cin">CIN <span class="red-highlight">*</span></label>
+            <input type="text" id="cin" formControlName="cin" required placeholder="HH31038">
+        </div>
+    </div>
+</form>

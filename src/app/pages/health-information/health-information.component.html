@@ -1,0 +1,115 @@
+<form class="form-section-2-container" (ngSubmit)="onNext()" [formGroup]="checkoutForm">
+    <p class="form-section-title">Health Informations</p>
+
+    <div class="health-container">
+        <p class="health-container-title">Basic health</p>
+        <div class="form-row">
+            <div class="textInput">
+                <label for="weight">Weight <span class="red-highlight">*</span></label>
+                <div class="input-spinner">
+                    <input type="number" id="weight" formControlName="weight" required>
+                </div>
+            </div>
+
+            <div class="textInput">
+                <label for="height">Height <span class="red-highlight">*</span></label>
+                <div class="input-spinner">
+                    <input type="number" id="height" formControlName="height" required>
+                </div>
+            </div>
+
+            <div class="textInput">
+                <label for="bmi">BMI <span class="red-highlight">*</span></label>
+                <div class="input-spinner">
+                    <input type="number" id="bmi" formControlName="bmi" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="health-container">
+        <p class="health-container-title">Cholesterol & Glucose Levels</p>
+
+        <div class="form-row">
+            <div class="textInput">
+                <label for="totalCholesterol">Total Level (g/l)<span class="red-highlight">*</span></label>
+                <div class="input-spinner">
+                    <input class="special-input" type="number" id="totalCholesterol" formControlName="totalCholesterol"
+                        required>
+                </div>
+            </div>
+
+            <div class="textInput">
+                <label for="ldlCholesterol">LDL Level (g/l)<span class="red-highlight">*</span></label>
+                <div class="input-spinner">
+                    <input class="special-input" type="number" id="ldlCholesterol" formControlName="ldlCholesterol"
+                        required>
+                </div>
+            </div>
+
+            <div class="textInput">
+                <label for="hdlCholesterol">HDL Level (g/l)<span class="red-highlight">*</span></label>
+                <div class="input-spinner">
+                    <input class="special-input" type="number" id="hdlCholesterol" formControlName="hdlCholesterol"
+                        required>
+                </div>
+            </div>
+
+            <div class="textInput">
+                <label for="glucoseLevel">Glucose Level (g/l)<span class="red-highlight">*</span></label>
+                <div class="input-spinner">
+                    <input class="special-input" type="number" id="glucoseLevel" formControlName="glucoseLevel"
+                        required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="health-container">
+        <p class="health-container-title">Additional Health Information</p>
+
+        <div class="form-row">
+            <div class="textInput">
+                <label for="heartDisease">Heart disease <span class="red-highlight">*</span></label>
+                <div class="radio-buttons-container">
+                    <div class="left-radio">
+                        <input type="radio" id="heartDiseaseMale" formControlName="heartDisease" value="male">
+                        <label class="radio-text" for="heartDiseaseMale">Male</label>
+                    </div>
+                    <div class="right-radio">
+                        <input type="radio" id="heartDiseaseFemale" formControlName="heartDisease" value="female">
+                        <label class="radio-text" for="heartDiseaseFemale">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="textInput">
+                <label for="diabetes">Diabetes <span class="red-highlight">*</span></label>
+                <div class="radio-buttons-container">
+                    <div class="left-radio">
+                        <input type="radio" id="diabetesMale" formControlName="diabetes" value="male">
+                        <label class="radio-text" for="diabetesMale">Male</label>
+                    </div>
+                    <div class="right-radio">
+                        <input type="radio" id="diabetesFemale" formControlName="diabetes" value="female">
+                        <label class="radio-text" for="diabetesFemale">Female</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="textInput">
+                <label for="hypertension">Hypertension <span class="red-highlight">*</span></label>
+                <div class="radio-buttons-container">
+                    <div class="left-radio">
+                        <input type="radio" id="hypertensionMale" formControlName="hypertension" value="male">
+                        <label class="radio-text" for="hypertensionMale">Male</label>
+                    </div>
+                    <div class="right-radio">
+                        <input type="radio" id="hypertensionFemale" formControlName="hypertension" value="female">
+                        <label class="radio-text" for="hypertensionFemale">Female</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

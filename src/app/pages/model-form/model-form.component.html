@@ -1,0 +1,17 @@
+
+
+<mat-horizontal-stepper #stepper class="my-stepper-component">
+        <mat-step label="1">
+            <app-basic-information #basicInformationComponent></app-basic-information>
+        </mat-step>
+        <mat-step label="2">
+            <app-health-information #healthInformationComponent></app-health-information>
+        </mat-step>
+        <mat-step label="3">
+            <app-additional-information #additionalInformationComponent></app-additional-information>
+        </mat-step>
+    </mat-horizontal-stepper>
+<div class="buttons-container">
+    <button class="btn1" (click)="stepper.previous()">Back</button>
+    <button class="btn2" (click)="onNext()">Next</button>
+</div>

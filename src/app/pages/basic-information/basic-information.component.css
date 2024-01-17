@@ -1,0 +1,106 @@
+.form-section-1-container {
+    padding-left: 20%;
+    padding-right: 20%;
+    width: 100%;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    margin-bottom: 41px;
+}
+.textInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+input {
+    height: 58px;
+    border-radius: 10px;
+    background-color: #E8EAEF;
+    padding-left: 15px;
+    margin-right: 50px;
+}
+label {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 11px;
+}
+.form-section-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #000;
+    margin-top: 20px;
+}
+input:focus {
+    outline: 2px solid #1578DA;
+}
+
+.red-highlight {
+    color: #D63928;
+}
+.lastchoice {
+    display: flex;
+    flex-direction: row;
+}
+.radio-buttons-container {
+    display: flex;
+    flex-direction: row;
+    height: 58px;
+    align-items: center;
+        width: 555px;
+}
+.radio-text {
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 12.7px;
+    margin-right: 35px;
+}
+.radio-buttons-container input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+.phoneblock {
+    display: flex;
+
+}
+
+
+.phoneRegister {
+
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+}
+
+
+.country-code {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-left: 15px;
+}
+
+.choice-block {
+    border-radius: 10px;
+    background-color: #E8EAEF;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+button {
+    font-size: 20;
+    font-weight: 400;
+    border-radius: 10px;
+    height: 67px;
+    width: 264px;
+    border: 1px solid #4874ED;
+}
+

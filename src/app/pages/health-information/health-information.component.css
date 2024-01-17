@@ -1,0 +1,93 @@
+.form-section-2-container {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.form-section-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #000;
+    margin-bottom: 20px;
+}
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+input {
+    width: 338px;
+    height: 58px;
+    border-radius: 10px;
+    background-color: #E8EAEF;
+    padding-left: 10px;
+}
+
+.special-input {
+    width: 255px;
+}
+input:focus {
+    outline: 2px solid #1578DA;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 11px;
+}
+
+.red-highlight {
+    color: #D63928;
+}
+
+.textInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.health-container-title {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.health-container {
+    background-color: rgba(217, 217, 217, 0.10);
+    border-radius: 10px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 1254px;
+    margin-bottom: 20px;
+}
+
+
+
+
+.radio-buttons-container {
+    display: flex;
+    flex-direction: row;
+    height: 58px;
+    align-items: center;
+}
+
+
+.radio-text {
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 12.7px;
+    margin-right: 35px;
+}
+
+
+.radio-buttons-container input[type="radio"] {
+    width: 16px;
+    /* Adjust the width as needed */
+    height: 16px;
+    /* Adjust the height as needed */
+    margin-right: 5px;
+    /* Optional: Add some spacing between the radio button and text */
+}
