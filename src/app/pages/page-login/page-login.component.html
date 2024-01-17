@@ -16,7 +16,7 @@
                 </g>
             </svg>
         </span>
-        <input placeholder="Nom" 
+        <input placeholder="Nom" [(ngModel)]="utilisateursDto.name" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -31,7 +31,7 @@
                 </g>
             </svg>
         </span>
-        <input placeholder="Prénom"
+        <input placeholder="Prénom" [(ngModel)]="utilisateursDto.prenom" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -44,7 +44,7 @@
         </svg>
 
         </span>
-        <input placeholder="Numero"
+        <input placeholder="Numero" [(ngModel)]="utilisateursDto.numero" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -59,7 +59,7 @@
         </svg>
  
         </span>
-        <input placeholder="Adresse email"
+        <input placeholder="Adresse email / username" [(ngModel)]="utilisateursDto.username" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -75,7 +75,7 @@
             </svg>
 
         </span>
-        <input placeholder="Mot de passe"
+        <input placeholder="Mot de passe" [(ngModel)]="utilisateursDto.password" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -84,9 +84,10 @@
            
         
                 <button class="mt-3 text-white font-medium text-base w-full sm:w-[380px] h-10 py-2 rounded-lg bg-[#1578DA]"
-             type="submit">Creer un compte</button>
+             type="submit" (click)="sinscrire()">Creer un compte</button>
 <div class="mt-3 text-center text-black text-opacity-50 font-medium">
-    Vous avez déjà un compte? <a routerLink="/page-signup" class="text-[#1578DA] font-medium">Se connecter</a>
+
+    Vous avez déjà un compte? <a  class="text-[#1578DA] font-medium cursor-pointer" (click)="navigateToSignPage()">Se connecter</a>
 </div>
 
         </form>

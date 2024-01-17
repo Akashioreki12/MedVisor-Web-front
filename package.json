@@ -7,7 +7,15 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Medvisor": "node dist/medvisor/server/server.mjs"
+    "serve:ssr:Medvisor": "node dist/medvisor/server/server.mjs",
+
+"start:local": "npm run gs-api && ng serve --proxy-config=proxy.conf.js",
+    "gs-api": " npm run gs-api:create-dist && npm run gs-api:download && npm run gs-api:extract && npm run gs-api:swagger-gen",
+    "gs-api:create-dist": "mkdir tools\\swagger\\dist && mkdir tools\\swagger\\src",
+    "gs-api:download": "copy D:\\javaProgramsm\\MedVisorWeb-back\\target\\medicalimageprocessing-0.0.1-SNAPSHOT.jar .\\tools\\swagger\\dist && copy D:\\javaProgramsm\\MedVisorWeb-back\\target\\swagger.json .\\tools\\swagger\\src",
+    "gs-api:extract": "node .\\tools\\swagger\\src\\swagger.json 0.0.1-SNAPSHOT",
+"gs-api:swagger-gen": ".\\node_modules\\.bin\\ng-swagger-gen -i .\\tools\\swagger\\src\\swagger.json -o src\\gs-api\\src"
+
   },
   "private": true,
   "dependencies": {
@@ -24,6 +32,7 @@
     "express": "^4.18.2",
     "ng-circle-progress": "^1.7.1",
     "rxjs": "~7.8.0",
+    "swagger-ui-dist": "^5.10.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },
@@ -43,6 +52,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
+    "ng-swagger-gen": "~1.7.0-b",
     "typescript": "~5.2.2"
   }
 }

@@ -17,8 +17,8 @@
                         </svg>
 
                     </span>
-                    <input placeholder="Username ou email"
-                        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
+                    <input placeholder="Username ou email" type="username" [(ngModel)]="authenticationRequest.login"  [ngModelOptions]="{standalone: true}"
+                        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25" >
                 </div>
 
                 <div class="relative inline-flex items-center">
@@ -33,7 +33,7 @@
                         </svg>
 
                     </span>
-                    <input placeholder="Mot de passe"
+                    <input placeholder="Mot de passe" type="password" [(ngModel)]="authenticationRequest.password" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
                 </div>
 
@@ -43,11 +43,16 @@
 
                 <button
                     class="mt-3 text-white font-medium text-base w-full sm:w-[380px] h-10 py-2 rounded-lg bg-[#1578DA]"
-                    type="submit">se connecter</button>
-                <div class="mt-3 text-center text-black
-text-opacity-50
+                    type="submit" (click)="login()">se connecter</button>
 
-font-medium">vous n'avez pas de compte?<span class="text-[#1578DA] font-medium"> creer compte</span></div>
+                    <div class="mt-3 text-center text-black text-opacity-50 font-medium">
+                        Vous n'avez pas de compte?
+                        <a (click)="navigateToLoginPage()" class="text-[#1578DA] font-medium cursor-pointer">Créer un compte</a>
+                    </div>
+
+
+
+
             </form>
 
 

@@ -1,0 +1,169 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger Api documentation for medical image processing",
+    "version" : "0.0.1-SNAPSHOT",
+    "title" : "Swagger Api Documentation for medical image processing",
+    "contact" : {
+      "name" : "Annas Barouhou",
+      "url" : "/",
+      "email" : "barouhou.annas@gmail.com"
+    }
+  },
+  "basePath" : "http://localhost:8080",
+  "tags" : [ {
+    "name" : "medicalimageprocessingv1users"
+  } ],
+  "paths" : {
+    "/medicalimageprocessing/v1/users/all" : {
+      "get" : {
+        "tags" : [ "medicalimageprocessingv1users" ],
+        "summary" : "Send the list of users",
+        "description" : "This method allow to send the list of users in the BDD",
+        "operationId" : "findAll",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "List of users / void list",
+            "schema" : {
+              "$ref" : "#/definitions/UserDto"
+            }
+          }
+        }
+      }
+    },
+    "/medicalimageprocessing/v1/users/byusername/{userName}" : {
+      "get" : {
+        "tags" : [ "medicalimageprocessingv1users" ],
+        "summary" : "Find a user by username",
+        "description" : "This method allow to find a user by its username ",
+        "operationId" : "findByUsername",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "userName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User found in database",
+            "schema" : {
+              "$ref" : "#/definitions/UserDto"
+            }
+          },
+          "404" : {
+            "description" : "User with provided username not found"
+          }
+        }
+      }
+    },
+    "/medicalimageprocessing/v1/users/create" : {
+      "post" : {
+        "tags" : [ "medicalimageprocessingv1users" ],
+        "summary" : "Save a user (Create/Edit)",
+        "description" : "This method allow to create or edit a user ",
+        "operationId" : "save",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/UserDto"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User object Created/Edited",
+            "schema" : {
+              "$ref" : "#/definitions/UserDto"
+            }
+          },
+          "400" : {
+            "description" : "User object not valid"
+          }
+        }
+      }
+    },
+    "/medicalimageprocessing/v1/users/delete/{idUser}" : {
+      "delete" : {
+        "tags" : [ "medicalimageprocessingv1users" ],
+        "summary" : "Delete a user",
+        "description" : "This method allow to delete a user by its ID",
+        "operationId" : "delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idUser",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User deleted successfully",
+            "schema" : {
+              "$ref" : "#/definitions/UserDto"
+            }
+          }
+        }
+      }
+    },
+    "/medicalimageprocessing/v1/users/{idUser}" : {
+      "get" : {
+        "tags" : [ "medicalimageprocessingv1users" ],
+        "summary" : "Find a user by ID",
+        "description" : "This method allow to find a user by its ID",
+        "operationId" : "findById",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "idUser",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "User found in database",
+            "schema" : {
+              "$ref" : "#/definitions/UserDto"
+            }
+          },
+          "404" : {
+            "description" : "User with provided ID not found"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "UserDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "username" : {
+          "type" : "string"
+        },
+        "password" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "prenom" : {
+          "type" : "string"
+        },
+        "numero" : {
+          "type" : "integer",
+          "format" : "int64"
+        }
+      }
+    }
+  }
+}
