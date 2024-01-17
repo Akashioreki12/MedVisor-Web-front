@@ -38,7 +38,7 @@ login() {
     this.userService.login(this.authenticationRequest).subscribe(data => {
       this.userService.setConnectedUser(data);
       //this.router.navigate(['dashboard']);
-      window.location.href = '/page-result';
+      window.location.href = '/ai';
     }, error => {
       this.errorMessage = error.error.message;
     });;
@@ -49,7 +49,6 @@ login() {
   }
 
   loadInscrirePage() {
-    // You can use the router to navigate to the "inscrire" route
     window.location.href = '/page-login';
 }
 }
