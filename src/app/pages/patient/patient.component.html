@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bare">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <div class="navbar">
+        <div class="logo">
+            <img src="..\..\assets\images\logo.png" alt="logo"/>
+        </div>
+        <div class="right">
+            
+        <img class="active" src="..\..\assets\Svgs\profile.svg" alt="vector"/>
+      <img class="active" src="..\..\assets\Svgs\home.svg" alt="home"/>
+     
+    </div>
+    </div>
+    </div>
+<div>
+    
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <h2 style="font-size: 1.5em;">
+                Patients
+            </h2>
+          <form class="d-flex">
+            <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" style="background-color: rgba(21, 120, 218, 1); color: white;
+            font-size: 0.8em;">Add </button>
+          </form>
+        </div>
+      </nav>
+</div>
+
+<table id="personalInfoTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>First Name</th>
+            <th>CIN</th>
+            <th>Birthday</th>
+            <th>Number</th>
+            <th>Act</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <tr *ngFor="let person of people">
+            <td>{{ person.name }}</td>
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.cin }}</td>
+            <td>{{ person.birthday }}</td>
+            <td>{{ person.number }}</td>
+            <th> <img class="actp" src="..\..\assets\Vector (1).png" alt="vector"/>
+                <img class="actm" src="..\..\assets\Vector.png" alt="home"/></th>
+          </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

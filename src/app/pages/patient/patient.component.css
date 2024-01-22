@@ -1,0 +1,69 @@
+/* General styles */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.bare {
+  /* Adjust for overall layout and spacing */
+}
+
+.navbar {
+  /* Styles for the top navbar */
+  background-color: #fff;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  /* Styles for the logo */
+  height: 40px; 
+}
+
+.right img {
+  /* Styles for the right-side icons */
+  height: 25px; /* Adjust as needed */
+  margin-left: 15px;
+  cursor: pointer;
+  display: flex;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  /* Styles for the Patients heading and Add button */
+  color: #333;
+}
+
+#personalInfoTable {
+  /* Styles for the table */
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; 
+  
+  margin-left: 10px;
+  margin-right: 10px;
+  
+}
+#personalInfoTable tr{
+  border-radius: 50px;
+}
+#personalInfoTable th,
+#personalInfoTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#personalInfoTable th {
+  background-color: rgba(191, 217, 244, 1);
+  
+}
+
+/* Responsiveness */
+@media (max-width: 700px) {
+  /* Adjust styles for smaller screens */
+}
+
+
