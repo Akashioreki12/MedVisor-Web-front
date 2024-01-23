@@ -1,14 +1,3 @@
-/* General styles */
-body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.bare {
-  /* Adjust for overall layout and spacing */
-}
-
 .navbar {
   /* Styles for the top navbar */
   background-color: #fff;
