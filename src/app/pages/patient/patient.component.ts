@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PatientService } from '../../patient.service';
 
 @Component({
   selector: 'app-patient',
@@ -9,23 +11,50 @@ import { Component, NgModule } from '@angular/core';
   imports:[CommonModule]
 })
 export class PatientComponent {
-  public people: any[] = [];
+  people: any[] = [];
+  
 
-  constructor() {
-    // Example data
-    const person1 = {
-      name: 'John',
-      firstName: 'Doe',
-      cin: '123456789',
-      birthday: '1990-01-01',
-      number: '123-456-7890'
-    };
+  constructor(private router : Router, private patientService: PatientService) {}
+    
+  
+   
+  ngOnInit(): void {
+    this.loadPatients(); 
 
-    // Add the example person to the data array
-    this.addPerson(person1);
   }
 
-  addPerson(person: any) {
-    this.people.push(person);
+  loadPatients(): void {
+    this.patientService.getAllPatients().subscribe(
+      data => {
+        this.people = data;
+      },
+      error => {
+        console.log('Error fetching patients:', error);
+      }
+    );
+  }
+
+  editPatient(id: number): void {
+  
+    this.router.navigate(['/form1', id]);
+  }
+
+  deletePatient(id: number): void {
+    this.patientService.deletePatient(id).subscribe(
+      () => {
+       
+        this.loadPatients();
+      },
+      error => {
+        console.log('Error deleting patient:', error);
+      }
+    );
+  }
+
+  navigate(): void
+  {
+    this.router.navigateByUrl("page-result");
   }
 }
+
+
