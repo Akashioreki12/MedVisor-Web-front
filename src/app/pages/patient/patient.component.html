@@ -25,16 +25,20 @@
     
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <h2 style="font-size: 1.5em;">
-                Patients
-            </h2>
-          <form class="d-flex">
-            <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit" style="background-color: rgba(21, 120, 218, 1); color: white;
-            font-size: 0.8em;">Add </button>
-          </form>
+            <div class="left">
+                <h2>Patients</h2>
+            </div>
+            <div class="right">
+                <form class="d-flex">
+                    <input class="form-control me-4" type="search" placeholder="Search patient" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Add patient</button>
+                </form>
+            </div>
         </div>
-      </nav>
+    </nav>
+    
+    
+    
 </div>
 
 <table id="personalInfoTable">
@@ -55,8 +59,8 @@
             <td>{{ person.cin }}</td>
             <td>{{ person.birthday }}</td>
             <td>{{ person.number }}</td>
-            <th> <img class="actp" src="..\..\assets\Vector (1).png" alt="vector"/>
-                <img class="actm" src="..\..\assets\Vector.png" alt="home"/></th>
+            <td> <img class="actp" src="..\..\assets\Svgs\edit.svg" alt="vector"/>
+                <img class="actm" src="..\..\assets\Svgs\delete.svg" alt="home"/></td>
           </tr>
     </tbody>
 </table>

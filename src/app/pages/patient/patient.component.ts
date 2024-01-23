@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-patient',
+  standalone: true,
   templateUrl: './patient.component.html',
-  styleUrls: ['./patient.component.css']
+  styleUrls: ['./patient.component.css'],
+  imports:[CommonModule]
 })
 export class PatientComponent {
   public people: any[] = [];
