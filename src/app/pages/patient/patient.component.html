@@ -1,28 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="bare">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+<div class="bare">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <div class="navbar">
         <div class="logo">
             <img src="..\..\assets\images\logo.png" alt="logo"/>
         </div>
         <div class="right">
-            
-        <img class="active" src="..\..\assets\Svgs\profile.svg" (click)="navigate()" alt="vector"/>
-      <img class="active" src="..\..\assets\Svgs\home.svg" routerLink ="/page-result" alt="home"/>
-     
+            <img class="active" src="..\..\assets\Svgs\profile.svg" (click)="navigate()" alt="vector"/>
+            <img class="active" src="..\..\assets\Svgs\home.svg" routerLink ="/page-result" alt="home"/>
+        </div>
     </div>
-    </div>
-    </div>
+</div>
 <div>
-    
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div class="left">
@@ -36,11 +24,7 @@
             </div>
         </div>
     </nav>
-    
-    
-    
 </div>
-
 <table id="personalInfoTable">
     <thead>
         <tr>
@@ -54,19 +38,15 @@
     </thead>
     <tbody id="tableBody">
         <tr *ngFor="let person of people">
-          <td>{{ person.name }}</td>
-          <td>{{ person.firstName }}</td>
-          <td>{{ person.cin }}</td>
-          <td>{{ person.birthday }}</td>
-          <td>{{ person.number }}</td>
-          <td>
-            <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)" alt="edit" />
-            <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
-          </td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.cin }}</td>
+            <td>{{ person.birthday }}</td>
+            <td>{{ person.number }}</td>
+            <td>
+                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)" alt="edit" />
+                <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
+            </td>
         </tr>
-      </tbody>
+    </tbody>
 </table>
-
-
-</body>
-</html>
