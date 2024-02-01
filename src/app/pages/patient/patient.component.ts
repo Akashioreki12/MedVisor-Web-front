@@ -2,19 +2,21 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PatientService } from '../../patient.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-patient',
   standalone: true,
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css'],
-  imports:[CommonModule]
+  imports:[CommonModule],
+  providers:[HttpClient]
 })
-export class PatientComponent {
+export class PatientComponent implements OnInit{
   people: any[] = [];
   
 
-  constructor(private router : Router, private patientService: PatientService) {}
+  constructor(private router : Router, private patientService: PatientService, private http : HttpClient) {}
     
   
    

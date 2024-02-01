@@ -1,32 +1,46 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
-  private baseUrl = "http://localhost:8080/patients";
 
-  constructor(private http: HttpClient) { }
+  constructor( private http : HttpClient) { }
+
+  private baseUrl = 'http://localhost:8080/patients';
 
   getAllPatients(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get(`${this.baseUrl}/all`);
   }
 
   getPatientById(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/find/${id}`);
   }
 
   createPatient(patient: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, patient);
+    return this.http.post(`${this.baseUrl}/add`, patient);
   }
 
   updatePatient(id: number, patient: any): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${id}`, patient);
+    return this.http.put(`${this.baseUrl}/update/${id}`, patient);
   }
 
   deletePatient(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

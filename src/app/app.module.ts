@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { PatientService } from './patient.service';
+
+
 
 
 
@@ -9,8 +13,9 @@ import { Router, RouterModule } from '@angular/router';
   declarations: [],
   imports: [
     CommonModule, 
-    Router,
-    RouterModule
-  ]
+    RouterModule,
+    HttpClientModule
+  ],
+  providers:[ PatientService]
 })
 export class AppModule { }
