@@ -38,11 +38,11 @@
     </thead>
     <tbody id="tableBody">
         <tr *ngFor="let person of people">
-            <td>{{ person.name }}</td>
+            <td>{{ person.lastName }}</td>
             <td>{{ person.firstName }}</td>
             <td>{{ person.cin }}</td>
-            <td>{{ person.birthday }}</td>
-            <td>{{ person.number }}</td>
+            <td>{{ person.dateOfBirth }}</td>
+            <td>{{ person.phoneNumber }}</td>
             <td>
                 <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)" alt="edit" />
                 <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />

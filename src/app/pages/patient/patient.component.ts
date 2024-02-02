@@ -55,7 +55,7 @@ export class PatientComponent implements OnInit{
 
   navigate(): void
   {
-    this.router.navigateByUrl("page-result");
+    this.router.navigateByUrl("/page-result");
   }
 }
 
