@@ -6,6 +6,7 @@ import { BasicInformationComponent } from './pages/basic-information/basic-infor
 import { HealthInformationComponent } from './pages/health-information/health-information.component';
 import { AdditionalInformationComponent } from './pages/additional-information/additional-information.component';
 import { ModelFormComponent } from './pages/model-form/model-form.component';
+import { PatientComponent } from './pages/patient/patient.component';
 
 export const routes: Routes = [
     { path: 'page-login', component: PageLoginComponent },
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'form2', component: HealthInformationComponent },
     { path: 'form3', component: AdditionalInformationComponent },
     { path: 'ai', component: ModelFormComponent},
+    { path : 'patient', component : PatientComponent },
 
 
 ];

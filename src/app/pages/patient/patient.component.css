@@ -1,0 +1,175 @@
+.navbar {
+  background-color: #fff; 
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.logo img {
+  height: 30px;
+}
+
+.right {
+  display: flex;
+  height: 30px;
+  margin-right: 20px;
+  
+}
+.right img{
+  margin-left: 15px;
+  
+}
+.active{
+  margin-left: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(217, 217, 217, 0.822);
+}
+
+.active:hover{
+  background-color: rgba(217, 217, 217, 0.6);
+
+}
+
+.search-bar{
+  position: absolute;
+  display: flex;
+}
+
+.active-search{
+  position: absolute;
+  top: 50%;
+ margin-right: 15px;
+  transform: translateY(-50%);
+  fill: none;
+  color: rgba(101, 100, 100, 0.325);
+  stroke: #888;
+  width: 18px;
+  height: 18px;
+  pointer-events: none; 
+}
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px; 
+  align-items: center;
+  
+}
+
+
+.left h2 {
+  color: rgba(0, 0, 0, 0.606);
+  
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-right: 330px;
+  
+}
+
+.form-control {
+  border-radius: 7.008px;
+  border: 2px solid rgba(21, 120, 218, 0.50);
+  width: 280px;
+  height: 35px;
+  padding-left: 30px; 
+  border-collapse: collapse 20px;
+
+
+}
+
+
+
+
+
+.btn {
+  border-radius: 7.008px;
+  background: #1578DA;
+  width: 150px;
+  height: 35px;
+  color: #FFF;
+  
+  font-size: 15.787px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 10px; 
+}
+
+table{
+  border-radius: 10px;
+  
+}
+
+#personalInfoTable {
+  width: 95%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 20px; /* Adjust margin as needed */
+  margin-left: 30px;
+}
+
+#personalInfoTable th,
+#personalInfoTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+
+
+}
+
+#personalInfoTable th {
+ 
+  background: rgba(134, 185, 235, 0.50);
+  color: rgba(0, 0, 0, 0.606);
+
+font-size: 16.614px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+#personalInfoTable tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.actm,
+.actp {
+  width: 25px;
+  height: 25px;
+  display: inline;
+}
+
+.actm {
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(234, 17, 17, 0.192);
+}
+
+.actp {
+  margin-right: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(21, 119, 218, 0.175);
+}
+
+.actm:hover {
+  background-color: rgba(234, 17, 17, 0.5);
+}
+
+.actp:hover {
+  background-color: rgba(21, 120, 218, 0.5);
+}
+
+
+
+
+
+
+
+
+
