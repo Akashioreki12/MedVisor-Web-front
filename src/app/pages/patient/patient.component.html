@@ -18,9 +18,13 @@
             </div>
             <div class="right">
                 <form class="d-flex">
+                    <div class="search-bar">
+                    <img class="active-search" src="..\..\assets\Svgs\search.svg" alt="search" />
                     <input class="form-control me-4" [(ngModel)]="searchQuery" name="searchQuery" type="search" placeholder="Search patient" aria-label="Search"  />
+                
                     <button class="btn btn-outline-success" type="search" (click)="searchPatients()"> Search</button>
-                    <button class="btn btn-outline-success" type="submit">Add patient</button>
+                    <button class="btn btn-outline-success" type="submit" routerLink ="/form">Add patient</button>
+                </div>
                 </form>
             </div>
         </div>
@@ -45,7 +49,7 @@
             <td>{{ person.dateOfBirth }}</td>
             <td>{{ person.phoneNumber }}</td>
             <td>
-                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)" alt="edit" />
+                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)"  alt="edit" />
                 <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
             </td>
         </tr>

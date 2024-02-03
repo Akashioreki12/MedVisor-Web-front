@@ -32,6 +32,24 @@
   background-color: rgba(217, 217, 217, 0.6);
 
 }
+
+.search-bar{
+  position: absolute;
+  display: flex;
+}
+
+.active-search{
+  position: absolute;
+  top: 50%;
+ margin-right: 15px;
+  transform: translateY(-50%);
+  fill: none;
+  color: rgba(101, 100, 100, 0.325);
+  stroke: #888;
+  width: 18px;
+  height: 18px;
+  pointer-events: none; 
+}
 .container-fluid {
   display: flex;
   justify-content: space-between;
@@ -58,6 +76,7 @@
   width: 280px;
   height: 35px;
   padding-left: 30px; 
+  border-collapse: collapse 20px;
 
 
 }
@@ -119,8 +138,8 @@ line-height: normal;
 
 .actm,
 .actp {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   display: inline;
 }
 

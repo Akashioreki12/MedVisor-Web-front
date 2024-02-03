@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PatientService } from '../../patient.service';
 import { HttpClient } from '@angular/common/http';
 import { Patient } from './patient.model';
@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   templateUrl: './patient.component.html',
   styleUrls: ['./patient.component.css'],
-  imports:[CommonModule, FormsModule],
+  imports:[CommonModule, FormsModule, RouterModule],
   providers:[HttpClient]
 
 })
@@ -38,7 +38,7 @@ export class PatientComponent implements OnInit {
   }
 
   editPatient(id: number): void {
-    this.router.navigate(['/form1', id]);
+    this.router.navigateByUrl("/form2");
   }
 
   deletePatient(id: number): void {
