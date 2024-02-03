@@ -1,3 +1,4 @@
+/* Default styles for navbar */
 .navbar {
   background-color: #fff; 
   padding: 15px 20px;
@@ -6,42 +7,45 @@
   justify-content: space-between;
 }
 
-
+/* Logo styles */
 .logo img {
   height: 30px;
 }
 
+/* Right side elements */
 .right {
   display: flex;
   height: 30px;
   margin-right: 20px;
-  
 }
-.right img{
+
+.right img {
   margin-left: 15px;
-  
 }
-.active{
+
+/* Active state styles */
+.active {
   margin-left: 0;
   border-radius: 10px;
   cursor: pointer;
   background-color: rgba(217, 217, 217, 0.822);
 }
 
-.active:hover{
+.active:hover {
   background-color: rgba(217, 217, 217, 0.6);
-
 }
 
-.search-bar{
+/* Search bar styles */
+.search-bar {
   position: absolute;
   display: flex;
 }
 
-.active-search{
+/* Active search icon styles */
+.active-search {
   position: absolute;
   top: 50%;
- margin-right: 15px;
+  margin-right: 15px;
   transform: translateY(-50%);
   fill: none;
   color: rgba(101, 100, 100, 0.325);
@@ -50,26 +54,26 @@
   height: 18px;
   pointer-events: none; 
 }
+
+/* Container fluid styles */
 .container-fluid {
   display: flex;
   justify-content: space-between;
   padding: 15px; 
   align-items: center;
-  
 }
 
-
+/* Left side heading styles */
 .left h2 {
   color: rgba(0, 0, 0, 0.606);
-  
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin-right: 330px;
-  
 }
 
+/* Form control styles */
 .form-control {
   border-radius: 7.008px;
   border: 2px solid rgba(21, 120, 218, 0.50);
@@ -77,21 +81,15 @@
   height: 35px;
   padding-left: 30px; 
   border-collapse: collapse 20px;
-
-
 }
 
-
-
-
-
+/* Button styles */
 .btn {
   border-radius: 7.008px;
   background: #1578DA;
   width: 150px;
   height: 35px;
   color: #FFF;
-  
   font-size: 15.787px;
   font-style: normal;
   font-weight: 600;
@@ -99,47 +97,42 @@
   margin-left: 10px; 
 }
 
-table{
+/* Table styles */
+table {
   border-radius: 10px;
-  
-}
-
-#personalInfoTable {
   width: 95%;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  margin-top: 20px; /* Adjust margin as needed */
+  margin-top: 20px;
   margin-left: 30px;
 }
 
+/* Table cell styles */
 #personalInfoTable th,
 #personalInfoTable td {
   border: 1px solid #ddd;
   padding: 10px;
-  text-align: left;
-
-
+  text-align: center;
 }
 
+/* Table header styles */
 #personalInfoTable th {
- 
   background: rgba(134, 185, 235, 0.50);
   color: rgba(0, 0, 0, 0.606);
-
-font-size: 16.614px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+  font-size: 16.614px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
+/* Table row hover styles */
 #personalInfoTable tbody tr:hover {
   background-color: #f5f5f5;
 }
 
+/* Action icon styles */
 .actm,
 .actp {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   display: inline;
 }
 
@@ -165,11 +158,18 @@ line-height: normal;
   background-color: rgba(21, 120, 218, 0.5);
 }
 
-
-
-
-
-
-
-
-
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .container-fluid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .logo {
+    margin-bottom: 15px;
+  }
+  
+  .left h2 {
+    margin-right: 0;
+  }
+}
