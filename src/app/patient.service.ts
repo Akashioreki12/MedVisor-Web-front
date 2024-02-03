@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Patient } from './pages/patient/patient.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,10 @@ export class PatientService {
   deletePatient(id: number): Observable<any> {
     return this.http.delete(`${this.baseUrl}/delete/${id}`);
   }
+  searchPatients(searchTerm: string): Observable<Patient[]> {
+    return this.http.get<Patient[]>(`${this.baseUrl}/search/${searchTerm}`);
+  }
+  
 }
 
 

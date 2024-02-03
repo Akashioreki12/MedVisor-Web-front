@@ -7,6 +7,7 @@ import { PageSignupComponent } from "./pages/page-signup/page-signup.component";
 import { PageResultComponent } from "./pages/page-result/page-result.component";
 import { BasicInformationComponent } from './pages/basic-information/basic-information.component';
 import { PatientComponent } from './pages/patient/patient.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-root',
@@ -14,7 +15,7 @@ import { PatientComponent } from './pages/patient/patient.component';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [CommonModule, RouterOutlet, PageLoginComponent, PageSignupComponent, 
-      PageResultComponent , BasicInformationComponent,PatientComponent]
+      PageResultComponent , BasicInformationComponent, FormsModule]
 })
 export class AppComponent {
   title = 'Medvisor';

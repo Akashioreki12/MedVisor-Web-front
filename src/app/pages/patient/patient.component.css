@@ -48,7 +48,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 480px;
+  margin-right: 330px;
   
 }
 
@@ -86,10 +86,11 @@ table{
 }
 
 #personalInfoTable {
-  width: 100%;
-  border-collapse: collapse;
+  width: 95%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   margin-top: 20px; /* Adjust margin as needed */
-  
+  margin-left: 30px;
 }
 
 #personalInfoTable th,
@@ -97,6 +98,7 @@ table{
   border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
+
 
 }
 

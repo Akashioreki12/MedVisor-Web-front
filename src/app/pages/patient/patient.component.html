@@ -18,7 +18,8 @@
             </div>
             <div class="right">
                 <form class="d-flex">
-                    <input class="form-control me-4" type="search" placeholder="Search patient" aria-label="Search" />
+                    <input class="form-control me-4" [(ngModel)]="searchQuery" name="searchQuery" type="search" placeholder="Search patient" aria-label="Search"  />
+                    <button class="btn btn-outline-success" type="search" (click)="searchPatients()"> Search</button>
                     <button class="btn btn-outline-success" type="submit">Add patient</button>
                 </form>
             </div>
