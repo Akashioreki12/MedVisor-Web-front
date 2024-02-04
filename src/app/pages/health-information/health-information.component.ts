@@ -64,6 +64,21 @@ export class HealthInformationComponent {
   handleGlucoseLevel(value: any) {
    this.checkoutForm.value.glucoseLevel = value;
    
+  }
+  
+   handleHeartDisease(value: any) {
+   this.checkoutForm.value.heartDisease = value;
+   
+   }
+  
+   handleDiabetes(value: any) {
+   this.checkoutForm.value.diabetes = value;
+   
+   }
+  
+   handleHypertension(value: any) {
+   this.checkoutForm.value.hypertension = value;
+   
 }
 
 

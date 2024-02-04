@@ -42,5 +42,16 @@ export class AdditionalInformationComponent {
   handleWorkType(value: any) {
    this.checkoutForm.value.workType = value;
    
+  }
+  
+
+   handleHistoryOfTIAs(value: any) {
+   this.checkoutForm.value.historyOfTIAs = value;
+   
+   }
+  
+   handleHeredityOrGenetics(value: any) {
+   this.checkoutForm.value.heredityOrGenetics = value;
+   
 }
 }

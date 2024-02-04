@@ -8,6 +8,8 @@
         <app-text-input-field (valueChange)="handleFirstName($event)" [label]="'First Name'" [placeHolder]="'Enter your first name'"></app-text-input-field>
         <app-text-input-field (valueChange)="handleLastName($event)" [label]="'Last Name'" [placeHolder]="'Enter your last name'"></app-text-input-field>
 
+
+
     </div>
 
 
@@ -16,7 +18,7 @@
 
 
         <app-text-input-field (valueChange)="handleAge($event)" [label]="'Age'" [placeHolder]="'Enter your age'"></app-text-input-field>
-        <app-radio-button-choice label="Gender" option1="Male" option2="Female"></app-radio-button-choice>
+        <app-radio-button-choice label="Gender" option1="Male" option2="Female" (valueChange)="handleGender($event)"></app-radio-button-choice>
 
 
     </div>
@@ -27,8 +29,8 @@
 
         <app-phone-number-field (valueChange)="handleNumber($event)"></app-phone-number-field>
 
-
-        <app-text-input-field (valueChange)="handleMaritalStatus($event)" [label]="'Marital Status'" [placeHolder]="'Enter your marital status'"></app-text-input-field>
+            <app-choice-input-field label="Marital Status" (valueChange)="handleMaritalStatus($event)"
+                [options]="['Marrié', 'Célibataire']"></app-choice-input-field>
 
     </div>
 
@@ -38,6 +40,6 @@
         
         <app-text-input-field (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="'Enter your email'"></app-text-input-field>    
         <app-text-input-field (valueChange)="handleCIN($event)" [label]="'CIN'" [placeHolder]="'Enter your cin'"></app-text-input-field>
-        
+
     </div>
 </form>

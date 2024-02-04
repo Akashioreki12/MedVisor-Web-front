@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-radio-button-choice',
@@ -10,7 +10,15 @@ import { Component, Input } from '@angular/core';
 export class RadioButtonChoiceComponent {
   @Input() label: string="label";
   @Input() option1: string = "option1";
-  @Input() option2: string ="option2";
+  @Input() option2: string = "option2";
+  
+
+   @Output() valueChange: EventEmitter<any> = new EventEmitter();
+
+  onInputChange(event: any) {
+    const value = event.target.value;
+    this.valueChange.emit(value);
+}
 
 
 }
