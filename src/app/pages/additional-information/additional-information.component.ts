@@ -4,7 +4,6 @@ import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
 import { ChoiceInputFieldComponent } from '../choice-input-field/choice-input-field.component';
-
 @Component({
   selector: 'app-additional-information',
   standalone: true,
@@ -26,4 +25,22 @@ export class AdditionalInformationComponent {
     return this.checkoutForm.value;
   }
 
+
+
+  handleResidentialArea(value: any) {
+   this.checkoutForm.value.residentialArea = value;
+   
+  }
+  handleSmokingStatus(value: any) {
+   this.checkoutForm.value.smokingStatus = value;
+   
+  }
+  handleAlcoholStatus(value: any) {
+   this.checkoutForm.value.alcoholStatus = value;
+   
+  }
+  handleWorkType(value: any) {
+   this.checkoutForm.value.workType = value;
+   
+}
 }

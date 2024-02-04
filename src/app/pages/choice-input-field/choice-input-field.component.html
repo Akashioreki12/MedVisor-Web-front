@@ -1,7 +1,7 @@
 <div class="textInput">
     <label for="residentialArea">{{label}}<span class="red-highlight">*</span></label>
     <div class="choice-block">
-        <select class="country-code" id="residentialArea" formControlName="residentialArea">
+        <select class="country-code" id="residentialArea" formControlName="residentialArea" (change)="onInputChange($event)">
             <option value="Rural">Rural</option>
             <option value="Urban" selected>Urban</option>
         </select>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-choice-input-field',
@@ -10,6 +10,12 @@ import { Component, Input } from '@angular/core';
 export class ChoiceInputFieldComponent {
 
   @Input() label: string = "label";
-  
+
+   @Output() valueChange: EventEmitter<any> = new EventEmitter();
+
+  onInputChange(event: any) {
+    const value = event.target.value;
+    this.valueChange.emit(value);
+}
 
 }

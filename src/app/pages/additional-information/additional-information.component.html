@@ -3,7 +3,7 @@
 
     <div class="health-container">
 
-        
+
         <p class="health-container-title">Hereditary or Genetics</p>
 
         <div class="form-row">
@@ -28,10 +28,10 @@
 
 
 
-            <app-choice-input-field label="Residential Area"></app-choice-input-field>
-            <app-choice-input-field label="Smoking Status"></app-choice-input-field>
-            <app-choice-input-field label="Alcohol Status"></app-choice-input-field>
-            <app-choice-input-field label="Work type"></app-choice-input-field>
+            <app-choice-input-field label="Residential Area" (valueChange)="handleResidentialArea($event)"></app-choice-input-field>
+            <app-choice-input-field label="Smoking Status" (valueChange)="handleSmokingStatus($event)"></app-choice-input-field>
+            <app-choice-input-field label="Alcohol Status" (valueChange)="handleAlcoholStatus($event)"></app-choice-input-field>
+            <app-choice-input-field label="Work type" (valueChange)="handleWorkType($event)"></app-choice-input-field>
 
         
         
