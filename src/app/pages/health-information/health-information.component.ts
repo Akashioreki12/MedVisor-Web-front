@@ -33,4 +33,38 @@ export class HealthInformationComponent {
   }
 
 
+    handleWeight(value: any) {
+   this.checkoutForm.value.weight = value;
+   
+    }
+    handleHeight(value: any) {
+   this.checkoutForm.value.height = value;
+   
+    }
+    handleBMI(value: any) {
+   this.checkoutForm.value.bmi = value;
+   
+    }
+  
+  handleTotalCholesterol(value: any) {
+   this.checkoutForm.value.totalCholesterol = value;
+   
+}
+
+  handleLDLCholesterol(value: any) {
+   this.checkoutForm.value.ldlCholesterol = value;
+   
+}
+
+  handleHDLCholesterol(value: any) {
+   this.checkoutForm.value.hdlCholesterol = value;
+   
+}
+
+  handleGlucoseLevel(value: any) {
+   this.checkoutForm.value.glucoseLevel = value;
+   
+}
+
+
 }

@@ -1,6 +1,6 @@
 <div class="textInput">
     <label for="weight">{{label}} <span class="red-highlight">*</span></label>
     <div class="input-spinner">
-        <input type="number" id="weight" formControlName="weight" required>
+        <input type="number" id="weight" formControlName="weight" required (input)="onInputChange($event)">
     </div>
 </div>

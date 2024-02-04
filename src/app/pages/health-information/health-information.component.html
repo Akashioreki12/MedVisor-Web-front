@@ -6,9 +6,9 @@
         <div class="form-row">
 
 
-            <app-number-input-field label="Weight"></app-number-input-field>
-            <app-number-input-field label="Height"></app-number-input-field>
-            <app-number-input-field label="BMI"></app-number-input-field>
+            <app-number-input-field label="Weight" (valueChange)="handleWeight($event)"></app-number-input-field>
+            <app-number-input-field label="Height" (valueChange)="handleHeight($event)"></app-number-input-field>
+            <app-number-input-field label="BMI" (valueChange)="handleBMI($event)"></app-number-input-field>
 
 
         </div>
@@ -24,10 +24,10 @@
 
 
 
-            <app-number-input-field label="Total Level (g/l)"></app-number-input-field>
-            <app-number-input-field label="LDL Level (g/l)"></app-number-input-field>
-            <app-number-input-field label="HDL Level (g/l)"></app-number-input-field>
-            <app-number-input-field label="Glucose Level (g/l)"></app-number-input-field>
+            <app-number-input-field label="Total Level (g/l)" (valueChange)="handleTotalCholesterol($event)"></app-number-input-field>
+            <app-number-input-field label="LDL Level (g/l)" (valueChange)="handleLDLCholesterol($event)"></app-number-input-field>
+            <app-number-input-field label="HDL Level (g/l)" (valueChange)="handleHDLCholesterol($event)"></app-number-input-field>
+            <app-number-input-field label="Glucose Level (g/l)" (valueChange)="handleGlucoseLevel($event)"></app-number-input-field>
 
 
         </div>
@@ -39,7 +39,7 @@
         <p class="health-container-title">Additional Health Information</p>
         <div class="form-row">
 
-            
+
             <app-radio-button-choice label="Heart disease" option1="Yes" option2="No"></app-radio-button-choice>
             <app-radio-button-choice label="Diabetes" option1="Yes" option2="No"></app-radio-button-choice>
             <app-radio-button-choice label="Hypertension" option1="Yes" option2="No"></app-radio-button-choice>
