@@ -55,16 +55,9 @@ export class ModelFormComponent {
 
 
 
-  logFormData(): void {
-
+logFormData(): void {
     console.log('Basic Information:', this.formData.basicInformation);
     console.log('Health Information:',  this.formData.healthInformation);
     console.log('Additional Information:', this.formData.additionalInformation);
   }
-
-
-  
-
-
-
 }

@@ -2,88 +2,41 @@
     <p class="form-section-title">Additional Information</p>
 
     <div class="health-container">
+
+        
         <p class="health-container-title">Hereditary or Genetics</p>
 
         <div class="form-row">
-            <div class="textInput">
-                <label for="historyOfTIAs">History of TIAs <span class="red-highlight">*</span></label>
-                <div class="radio-buttons-container">
-                    <div class="left-radio">
-                        <input type="radio" id="historyOfTIAsYes" formControlName="historyOfTIAs" value="yes">
-                        <label class="radio-text" for="historyOfTIAsYes">Yes</label>
-                    </div>
-                    <div class="right-radio">
-                        <input type="radio" id="historyOfTIAsNo" formControlName="historyOfTIAs" value="no">
-                        <label class="radio-text" for="historyOfTIAsNo">No</label>
-                    </div>
-                </div>
-            </div>
 
-            <div class="textInput">
-                <label for="heredityOrGenetics">Heredity or Genetics <span class="red-highlight">*</span></label>
-                <div class="radio-buttons-container">
-                    <div class="left-radio">
-                        <input type="radio" id="heredityOrGeneticsYes" formControlName="heredityOrGenetics" value="yes">
-                        <label class="radio-text" for="heredityOrGeneticsYes">Yes</label>
-                    </div>
-                    <div class="right-radio">
-                        <input type="radio" id="heredityOrGeneticsNo" formControlName="heredityOrGenetics" value="no">
-                        <label class="radio-text" for="heredityOrGeneticsNo">No</label>
-                    </div>
-                </div>
-            </div>
+
+
+        <app-radio-button-choice label="History of TIAs" option1="Yes" option2="No"></app-radio-button-choice>
+        <app-radio-button-choice label="Heredity or Genetics" option1="Yes" option2="No"></app-radio-button-choice>
+
+
+
+
         </div>
     </div>
 
     <div class="health-container">
+
+
         <p class="health-container-title">More</p>
 
         <div class="form-row">
-            <div class="textInput">
-                <label for="residentialArea">Residential Area <span class="red-highlight">*</span></label>
-                <div class="choice-block">
-                    <select class="country-code" id="residentialArea" formControlName="residentialArea">
-                        <option value="Rural">Rural</option>
-                        <option value="Urban" selected>Urban</option>
-                    </select>
-                </div>
-            </div>
 
-            <div class="textInput">
-                <label for="smokingStatus">Smoking Status<span class="red-highlight">*</span></label>
-                <div class="choice-block">
-                    <select class="country-code" id="smokingStatus" formControlName="smokingStatus">
-                        <option value="Never">Never</option>
-                        <option value="Formerly smoked" selected>Formerly smoked</option>
-                        <option value="Smokes">Smokes</option>
-                        <option value="Unknown">Unknown</option>
-                    </select>
-                </div>
-            </div>
 
-            <div class="textInput">
-                <label for="alcoholStatus">Alcohol Status<span class="red-highlight">*</span></label>
-                <div class="choice-block">
-                    <select class="country-code" id="alcoholStatus" formControlName="alcoholStatus">
-                        <option value="Yes">Yes</option>
-                        <option value="No" selected>No</option>
-                    </select>
-                </div>
-            </div>
 
-            <div class="textInput">
-                <label for="workType">Work type<span class="red-highlight">*</span></label>
-                <div class="choice-block">
-                    <select class="country-code" id="workType" formControlName="workType">
-                        <option value="Secteur privé">Secteur privé</option>
-                        <option value="Secteur public" selected>Secteur public</option>
-                        <option value="Au foyer">Au foyer</option>
-                        <option value="Indéterminé">Indéterminé</option>
-                        <option value="Sans travail">Sans travail</option>
-                        <option value="Activité indépendante">Activité indépendante</option>
-                    </select>
-                </div>
-            </div>
+            <app-choice-input-field label="Residential Area"></app-choice-input-field>
+            <app-choice-input-field label="Smoking Status"></app-choice-input-field>
+            <app-choice-input-field label="Alcohol Status"></app-choice-input-field>
+            <app-choice-input-field label="Work type"></app-choice-input-field>
+
+        
+        
+        
+        
         </div>
     </div>
 </form>

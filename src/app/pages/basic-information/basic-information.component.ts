@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
-
-
+import { TextInputFieldComponent } from '../text-input-field/text-input-field.component';
+import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
+import { PhoneNumberFieldComponent } from '../phone-number-field/phone-number-field.component';
 @Component({
   selector: 'app-basic-information',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule],
+  imports: [RouterModule, ReactiveFormsModule, TextInputFieldComponent, RadioButtonChoiceComponent, PhoneNumberFieldComponent],
   templateUrl: './basic-information.component.html',
   styleUrl: './basic-information.component.css'
 })
@@ -28,4 +29,38 @@ export class BasicInformationComponent {
   onNext() {
     return this.checkoutForm.value;
   }
+
+
+ handleFirstName(value: any) {
+   this.checkoutForm.value.firstName = value;
+   
+ }
+  
+  handleLastName(value: any) {
+   this.checkoutForm.value.lastName = value;
+   
+  }
+    handleEmail(value: any) {
+   this.checkoutForm.value.email = value;
+   
+    }
+    handleCIN(value: any) {
+   this.checkoutForm.value.cin = value;
+   
+    }
+  
+  handleAge(value: any) {
+   this.checkoutForm.value.age = value;
+   
+  }
+  
+    handleMaritalStatus(value: any) {
+   this.checkoutForm.value.maritalStatus = value;
+   
+}
+   handleNumber(value: any) {
+   this.checkoutForm.value.phoneNumber = value;
+   
+}
+
 }
