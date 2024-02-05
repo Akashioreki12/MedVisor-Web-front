@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { RouterOutlet } from '@angular/router';
 import { PageLoginComponent } from "./pages/page-login/page-login.component";
 import { PageSignupComponent } from "./pages/page-signup/page-signup.component";
@@ -13,6 +14,7 @@ import { AuthenticationService } from '../gs-api/src/services/authentication.ser
 import { Medicalimageprocessingv1usersService } from '../gs-api/src/services/medicalimageprocessingv-1users.service';
 
 import { BasicInformationComponent } from './pages/basic-information/basic-information.component';
+import { PatientComponent } from './pages/patient/patient.component';
 
 @Component({
     selector: 'app-root',
@@ -20,7 +22,9 @@ import { BasicInformationComponent } from './pages/basic-information/basic-infor
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     providers: [UserService,AuthenticationService,UtilisateurApiService,ApplicationGuardService,Medicalimageprocessingv1usersService,],
-    imports: [CommonModule, RouterOutlet, PageLoginComponent, PageSignupComponent, PageResultComponent , HttpClientModule,FormsModule,BasicInformationComponent]
+    imports: [CommonModule,CommonModule, RouterOutlet, PageLoginComponent, PageSignupComponent, 
+      PageResultComponent , BasicInformationComponent, FormsModule, RouterOutlet, PageLoginComponent, PageSignupComponent, PageResultComponent , HttpClientModule,FormsModule,BasicInformationComponent]
+   
 })
 export class AppComponent {
   title = 'Medvisor';
