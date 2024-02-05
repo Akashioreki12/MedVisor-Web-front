@@ -1,6 +1,5 @@
 .form-section-2-container {
-    padding-left: 20%;
-    padding-right: 20%;
+    
 }
 
 .form-section-title {
@@ -23,7 +22,6 @@
     padding-bottom: 25px;
     padding-left: 20px;
     padding-right: 20px;
-    width: 1254px;
     margin-bottom: 20px;
 }
 
@@ -33,56 +31,8 @@
     justify-content: space-between;
 }
 
-.textInput {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.radio-buttons-container {
-    display: flex;
-    flex-direction: row;
-    height: 58px;
-    align-items: center;
-}
-
-
-.radio-text {
-    color: #000;
-    font-size: 15px;
-    font-weight: 400;
-    margin-left: 12.7px;
-    margin-right: 35px;
-}
-
-
-.radio-buttons-container input[type="radio"] {
-    width: 16px;
-    /* Adjust the width as needed */
-    height: 16px;
-    /* Adjust the height as needed */
-    margin-right: 5px;
-    /* Optional: Add some spacing between the radio button and text */
-}
-
-label {
-    font-size: 20px;
-    font-weight: 400;
-    color: #000;
-    margin-bottom: 11px;
-}
-
-.red-highlight {
-    color: #D63928;
-}
-
-.choice-block {
-
-    border-radius: 10px;
-    background-color: #E8EAEF;
-    width: 250px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.form-row-special {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
 }

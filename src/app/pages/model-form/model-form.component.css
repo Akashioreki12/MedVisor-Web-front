@@ -9,9 +9,9 @@ button {
 .buttons-container {
     display: flex;
     flex-direction: row;
-    position: fixed;
     bottom: 5%;
-    left: 700px;
+    justify-content: center;
+    height: 10vh;
 }
 .btn1 {
     color: #4874ED;
@@ -30,6 +30,15 @@ button {
 .btn1:hover {
         border: 2px solid #4874ED;
 }
+
+
+
+
+
+
+
+
+
 :host {
     ::ng-deep .mat-horizontal-stepper-header-container {
         height: 100px;
@@ -71,3 +80,7 @@ button {
         }
 }
 
+
+.my-stepper-component {
+    height: 90vh;
+}
