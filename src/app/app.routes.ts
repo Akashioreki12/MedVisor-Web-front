@@ -8,6 +8,7 @@ import { AdditionalInformationComponent } from './pages/additional-information/a
 import { ModelFormComponent } from './pages/model-form/model-form.component';
 import { TextInputFieldComponent } from './pages/text-input-field/text-input-field.component';
 import { RadioButtonChoiceComponent } from './pages/radio-button-choice/radio-button-choice.component';
+import { PatientComponent } from './pages/patient/patient.component';
 export const routes: Routes = [
     { path: 'page-login', component: PageLoginComponent },
     { path: 'page-signup', component: PageSignupComponent },
@@ -18,6 +19,6 @@ export const routes: Routes = [
     { path: 'ai', component: ModelFormComponent },
     { path: 'input', component: TextInputFieldComponent },
     {path: 'radio', component:RadioButtonChoiceComponent},
-
+    { path :'patient', component : PatientComponent}
 
 ];
