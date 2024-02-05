@@ -64,16 +64,15 @@ export class ModelFormComponent {
     this.formDataService.submitForm(this.formData).subscribe(
       (response) => {
         console.log('Form submitted successfully:', response);
-        this.router.navigate(['/page-result']);
+        const resultPrediction = response.result;
+        console.log(resultPrediction);
+        this.router.navigate(['/page-result'], { queryParams: { result: resultPrediction } });
       },
       (error) => {
         console.error('Error submitting form:', error);
       }
     );
   }
-
-
-
 logFormData(): void {
     console.log('Basic Information:', this.formData.basicInformation);
     console.log('Health Information:',  this.formData.healthInformation);

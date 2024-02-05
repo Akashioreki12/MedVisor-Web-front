@@ -29,7 +29,7 @@
                 High Risk
             </div>
             <div class="flex flex-col lg:flex-row gap-4 mb-4 lg:mb-[9%] ml-4 lg:ml-[13%]">
-                <button
+                <button (click)="refaire()"
                     class="mt-3 lg:mt-0 text-white font-medium text-base lg:text-lg w-full lg:w-[180px] h-10 py-2 rounded-lg bg-[#1578DA]"
                     type="submit">
                     Refaire !
@@ -44,7 +44,7 @@
     
         <div class="flex-1">
             <div class="w-full lg:w-[70%] mx-11 lg:mx-[4%]">
-                <app-progress-bar class=""></app-progress-bar>
+                <app-progress-bar class="" [progressValue]=resultPrediction></app-progress-bar>
             </div>
         </div>
     </div>
