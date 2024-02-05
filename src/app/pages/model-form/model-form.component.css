@@ -9,9 +9,9 @@ button {
 .buttons-container {
     display: flex;
     flex-direction: row;
-    bottom: 5%;
     justify-content: center;
-    height: 10vh;
+    width: 100%;
+    
 }
 .btn1 {
     color: #4874ED;
