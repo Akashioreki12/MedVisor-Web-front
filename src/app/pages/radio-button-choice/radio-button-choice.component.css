@@ -1,0 +1,35 @@
+.radio-buttons-container {
+    display: flex;
+    flex-direction: row;
+    height: 58px;
+    align-items: center;
+    width: 555px;
+}
+
+.radio-text {
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: 12.7px;
+    margin-right: 35px;
+}
+
+.radio-buttons-container input[type="radio"] {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+.red-highlight {
+    color: #D63928;
+}
+label {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 11px;
+}
+.textInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}

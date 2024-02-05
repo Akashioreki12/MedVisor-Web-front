@@ -44,27 +44,38 @@ export class ModelFormComponent {
         break;
     }
 
-    if (activeStepIndex === this.stepper._steps.length - 1) {
+   if (activeStepIndex === this.stepper._steps.length - 1) {
+      
+      this.formData = {
+        ...this.formData.basicInformation,
+        ...this.formData.healthInformation,
+        ...this.formData.additionalInformation
+      };
       this.logFormData();
-      this.router.navigate(['/page-result']);
+      console.log(this.formData);
+      this.submitFormData();
     } else {
       // Move to the next step
       this.stepper.next();
     }
+ }
+  
+  submitFormData(): void {
+    this.formDataService.submitForm(this.formData).subscribe(
+      (response) => {
+        console.log('Form submitted successfully:', response);
+        const resultPrediction = response.result;
+        console.log(resultPrediction);
+        this.router.navigate(['/page-result'], { queryParams: { result: resultPrediction } });
+      },
+      (error) => {
+        console.error('Error submitting form:', error);
+      }
+    );
   }
-
-
-
-  logFormData(): void {
-
+logFormData(): void {
     console.log('Basic Information:', this.formData.basicInformation);
     console.log('Health Information:',  this.formData.healthInformation);
     console.log('Additional Information:', this.formData.additionalInformation);
   }
-
-
-  
-
-
-
 }

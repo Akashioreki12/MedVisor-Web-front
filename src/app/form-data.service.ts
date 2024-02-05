@@ -1,35 +1,22 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormDataService {
 
-  private formData: any = { };
-
-  constructor() { }
-
-  setBasicInformation(data: any): void {
-    this.formData.basicInformation = data;
+  private springUrl = 'http://172.20.10.2:8080/medicalimageprocessing/v1/surveys/create';
+  constructor(private http: HttpClient) {}
+  submitForm(form: any): Observable<any> {
+    const url = `${this.springUrl}`;
+    return this.http.post(url,form)
   }
 
-  getBasicInformation(): any {
-    return this.formData.basicInformation;
-  }
 
-  setHealthInformation(data: any): void {
-    this.formData.healthInformation = data;
-  }
 
-  getHealthInformation(): any {
-    return this.formData.healthInformation;
-  }
 
-  setAdditionalInformation(data: any): void {
-    this.formData.additionalInformation = data;
-  }
 
-  getAdditionalInformation(): any {
-    return this.formData.additionalInformation;
-  }
+  
 }
