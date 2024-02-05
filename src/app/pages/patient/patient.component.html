@@ -1,0 +1,57 @@
+<div class="bare">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="navbar">
+        <div class="logo">
+            <img src="..\..\assets\images\logo.png" alt="logo"/>
+        </div>
+        <div class="right">
+            <img class="active" src="..\..\assets\Svgs\profile.svg" (click)="navigate()" alt="vector"/>
+            <img class="active" src="..\..\assets\Svgs\home.svg" routerLink ="/page-result" alt="home"/>
+        </div>
+    </div>
+</div>
+<div>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="left">
+                <h2>Patients</h2>
+            </div>
+            <div class="right">
+                <form class="d-flex">
+                    <div class="search-bar">
+                    <img class="active-search" src="..\..\assets\Svgs\search.svg" alt="search" />
+                    <input class="form-control me-4" [(ngModel)]="searchQuery" name="searchQuery" type="search" placeholder="Search patient" aria-label="Search"  />
+                
+                    <button class="btn btn-outline-success" type="search" (click)="searchPatients()"> Search</button>
+                    <button class="btn btn-outline-success" type="submit" routerLink ="/form">Add patient</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+<table id="personalInfoTable">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>First Name</th>
+            <th>CIN</th>
+            <th>Birthday</th>
+            <th>Number</th>
+            <th>Act</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <tr *ngFor="let person of people">
+            <td>{{ person.lastName }}</td>
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.cin }}</td>
+            <td>{{ person.dateOfBirth }}</td>
+            <td>{{ person.phoneNumber }}</td>
+            <td>
+                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)"  alt="edit" />
+                <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
+            </td>
+        </tr>
+    </tbody>
+</table>
