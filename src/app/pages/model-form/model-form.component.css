@@ -11,6 +11,7 @@ button {
     flex-direction: row;
     bottom: 5%;
     justify-content: center;
+    height: 10vh;
 }
 .btn1 {
     color: #4874ED;
