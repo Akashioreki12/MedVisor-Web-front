@@ -6,16 +6,19 @@ import { BasicInformationComponent } from './pages/basic-information/basic-infor
 import { HealthInformationComponent } from './pages/health-information/health-information.component';
 import { AdditionalInformationComponent } from './pages/additional-information/additional-information.component';
 import { ModelFormComponent } from './pages/model-form/model-form.component';
-import { ApplicationGuardService } from './services/guard/application-guard.service';
-
+import { TextInputFieldComponent } from './pages/text-input-field/text-input-field.component';
+import { RadioButtonChoiceComponent } from './pages/radio-button-choice/radio-button-choice.component';
 export const routes: Routes = [
+    
     { path: 'page-login', component: PageLoginComponent },
     { path: 'page-signup', component: PageSignupComponent },
-    { path: 'page-result', component: PageResultComponent , /*canActivate: [ApplicationGuardService]*/ },
-    { path: 'form', component: BasicInformationComponent , },
-    { path: 'form2', component: HealthInformationComponent,    },
-    { path: 'form3', component: AdditionalInformationComponent,  },
-    { path: 'ai', component: ModelFormComponent ,},
+    { path: 'page-result', component: PageResultComponent },
+    { path: 'form', component: BasicInformationComponent },
+    { path: 'form2', component: HealthInformationComponent },
+    { path: 'form3', component: AdditionalInformationComponent },
+    { path: 'ai', component: ModelFormComponent },
+    { path: 'input', component: TextInputFieldComponent },
+    {path: 'radio', component:RadioButtonChoiceComponent},
 
 
 ];

@@ -1,0 +1,26 @@
+.textInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+label {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 11px;
+}
+
+.red-highlight {
+    color: #D63928;
+}
+
+.choice-block {
+
+    border-radius: 10px;
+    background-color: #E8EAEF;
+    width: 250px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

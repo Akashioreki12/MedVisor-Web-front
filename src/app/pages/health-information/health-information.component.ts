@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { FormDataService} from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
-
+import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
+import { NumberInputFieldComponent } from '../number-input-field/number-input-field.component';
 @Component({
   selector: 'app-health-information',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RadioButtonChoiceComponent,NumberInputFieldComponent],
   templateUrl: './health-information.component.html',
   styleUrl: './health-information.component.css'
 })
@@ -30,6 +31,55 @@ export class HealthInformationComponent {
   onNext(): void {
     return this.checkoutForm.value;
   }
+
+
+    handleWeight(value: any) {
+   this.checkoutForm.value.weight = value;
+   
+    }
+    handleHeight(value: any) {
+   this.checkoutForm.value.height = value;
+   
+    }
+    handleBMI(value: any) {
+   this.checkoutForm.value.bmi = value;
+   
+    }
+  
+  handleTotalCholesterol(value: any) {
+   this.checkoutForm.value.totalCholesterol = value;
+   
+}
+
+  handleLDLCholesterol(value: any) {
+   this.checkoutForm.value.ldlCholesterol = value;
+   
+}
+
+  handleHDLCholesterol(value: any) {
+   this.checkoutForm.value.hdlCholesterol = value;
+   
+}
+
+  handleGlucoseLevel(value: any) {
+   this.checkoutForm.value.glucoseLevel = value;
+   
+  }
+  
+   handleHeartDisease(value: any) {
+   this.checkoutForm.value.heartDisease = value;
+   
+   }
+  
+   handleDiabetes(value: any) {
+   this.checkoutForm.value.diabetes = value;
+   
+   }
+  
+   handleHypertension(value: any) {
+   this.checkoutForm.value.hypertension = value;
+   
+}
 
 
 }
