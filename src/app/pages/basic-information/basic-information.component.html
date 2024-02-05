@@ -18,7 +18,7 @@
 
 
         <app-text-input-field (valueChange)="handleAge($event)" [label]="'Age'" [placeHolder]="'Enter your age'"></app-text-input-field>
-        <app-radio-button-choice label="Gender" option1="Male" option2="Female" (valueChange)="handleGender($event)"></app-radio-button-choice>
+        <app-radio-button-choice label="Gender" option1="Male" option2="Female" defaultValue="Female" (valueChange)="handleGender($event)"></app-radio-button-choice>
 
 
     </div>
@@ -30,7 +30,7 @@
         <app-phone-number-field (valueChange)="handleNumber($event)"></app-phone-number-field>
 
             <app-choice-input-field label="Marital Status" (valueChange)="handleMaritalStatus($event)"
-                [options]="['Marrié', 'Célibataire']"></app-choice-input-field>
+                [options]="['Marrié', 'Célibataire']" defaultValue="Marrié"></app-choice-input-field>
 
     </div>
 

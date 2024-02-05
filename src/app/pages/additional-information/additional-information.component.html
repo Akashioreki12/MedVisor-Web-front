@@ -10,8 +10,8 @@
 
 
 
-        <app-radio-button-choice label="History of TIAs" option1="Yes" option2="No" (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
-        <app-radio-button-choice label="Heredity or Genetics" option1="Yes" option2="No" (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
+        <app-radio-button-choice label="History of TIAs" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
+        <app-radio-button-choice label="Heredity or Genetics" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
 
 
 
@@ -28,10 +28,10 @@
 
 
 
-            <app-choice-input-field label="Residential Area" (valueChange)="handleResidentialArea($event)" [options]="['Rural', 'Urban']"></app-choice-input-field>
-            <app-choice-input-field label="Smoking Status" (valueChange)="handleSmokingStatus($event)" [options]="['Fumeur', 'Ex-Fumeur','Jamais fumé']"></app-choice-input-field>
-            <app-choice-input-field label="Alcohol Status" (valueChange)="handleAlcoholStatus($event)" [options]="['True', 'False']"></app-choice-input-field>
-            <app-choice-input-field label="Work type" (valueChange)="handleWorkType($event)" [options]="['Secteur privé', 'Secteur public','Au foyer','indéterminé','Sans travail','Activité indépendante']"></app-choice-input-field>
+            <app-choice-input-field label="Residential Area" (valueChange)="handleResidentialArea($event)" [options]="['Rural', 'Urban']" defaultValue="Rural"></app-choice-input-field>
+            <app-choice-input-field label="Smoking Status" (valueChange)="handleSmokingStatus($event)" [options]="['Fumeur', 'Ex-Fumeur','Jamais fumé']" defaultValue="Fumeur"></app-choice-input-field>
+            <app-choice-input-field label="Alcohol Status" (valueChange)="handleAlcoholStatus($event)" [options]="['True', 'False']" defaultValue="True"></app-choice-input-field>
+            <app-choice-input-field label="Work type" (valueChange)="handleWorkType($event)" [options]="['Secteur privé', 'Secteur public','Au foyer','indéterminé','Sans travail','Activité indépendante']" defaultValue="Secteur privé"></app-choice-input-field>
 
         
         

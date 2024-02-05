@@ -16,15 +16,15 @@ import { ChoiceInputFieldComponent } from '../choice-input-field/choice-input-fi
 export class BasicInformationComponent {
   basicInformation: any = {};
   checkoutForm: FormGroup = this.formBuilder.group({
-    firstName: ['', [Validators.required]],
-    lastName: ['', [Validators.required]],
+    firstName: ['Mohammed Yassine', [Validators.required]],
+    lastName: ['KIAL', [Validators.required]],
     age: ['', [Validators.required]],
     gender: ['', [Validators.required]],
     countryCode: ['+212', [Validators.required]],
-    phoneNumber: ['', [Validators.required]],
+    phoneNumber: ['639453059', [Validators.required]],
     maritalStatus: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.email]],
-    cin: ['', [Validators.required]],
+    email: ['yassine@gmail.com', [Validators.required, Validators.email]],
+    cin: ['HH31038', [Validators.required]],
   }); 
   constructor(private formDataService: FormDataService, private formBuilder: FormBuilder) { }
   onNext() {

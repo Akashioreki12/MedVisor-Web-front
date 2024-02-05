@@ -13,7 +13,13 @@ export class ChoiceInputFieldComponent {
   @Input() label: string = "label";
     @Input() options: string[] = ["Rural", "Urban"];
 
-   @Output() valueChange: EventEmitter<any> = new EventEmitter();
+    @Input() defaultValue: string = "";
+  @Output() valueChange: EventEmitter<any> = new EventEmitter();
+  
+   ngOnInit() {
+    // Set the default value when the component is initialized
+    this.valueChange.emit(this.defaultValue);
+  }
 
   onInputChange(event: any) {
     const value = event.target.value;

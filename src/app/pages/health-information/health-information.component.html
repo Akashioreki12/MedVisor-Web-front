@@ -40,9 +40,9 @@
         <div class="form-row">
 
 
-            <app-radio-button-choice label="Heart disease" option1="Yes" option2="No" (valueChange)="handleHeartDisease($event)"></app-radio-button-choice>
-            <app-radio-button-choice label="Diabetes" option1="Yes" option2="No" (valueChange)="handleDiabetes($event)"></app-radio-button-choice>
-            <app-radio-button-choice label="Hypertension" option1="Yes" option2="No" (valueChange)="handleHypertension($event)"></app-radio-button-choice>
+            <app-radio-button-choice label="Heart disease" option1="Yes" option2="No" defaultValue="No" (valueChange)="handleHeartDisease($event)"></app-radio-button-choice>
+            <app-radio-button-choice label="Diabetes" option1="Yes" option2="No" defaultValue="No" (valueChange)="handleDiabetes($event)"></app-radio-button-choice>
+            <app-radio-button-choice label="Hypertension" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHypertension($event)"></app-radio-button-choice>
 
 
 

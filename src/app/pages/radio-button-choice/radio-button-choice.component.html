@@ -2,11 +2,11 @@
     <label for="gender">{{label}}<span class="red-highlight">*</span></label>
     <div class="radio-buttons-container">
         <div class="left-radio">
-            <input type="radio" [name]="label"  id="male"  [value]="option1" (change)="onInputChange($event)">
+            <input type="radio" [name]="label"  id="male"  [value]="option1" (change)="onInputChange($event)" [checked]="defaultValue === option1">
             <label class="radio-text" for="male">{{option1}}</label>
         </div>
         <div class="right-radio">
-            <input type="radio" [name]="label" id="female"  [value]="option2" (change)="onInputChange($event)" >
+            <input type="radio" [name]="label" id="female"  [value]="option2" (change)="onInputChange($event)" [checked]="defaultValue === option2">
             <label class="radio-text" for="female">{{option2}}</label>
         </div>
     </div>
