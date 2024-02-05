@@ -24,9 +24,6 @@ export class AdditionalInformationComponent {
  onNext(): void {
     return this.checkoutForm.value;
   }
-
-
-
   handleResidentialArea(value: any) {
    this.checkoutForm.value.residentialArea = value;
    
