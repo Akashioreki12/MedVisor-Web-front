@@ -103,7 +103,11 @@ table {
   width: 95%;
   margin-top: 20px;
   margin-left: 30px;
+  border-collapse: collapse; /* This ensures that table borders merge nicely */
+    border-radius: 10px; /* Adjust the value as needed */
+    overflow: hidden;
 }
+
 
 /* Table cell styles */
 #personalInfoTable th,
