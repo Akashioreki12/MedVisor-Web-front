@@ -3,7 +3,6 @@
     flex-direction: column;
     margin-top: 20px;
 }
-
 input {
     height: 58px;
     border-radius: 10px;
@@ -11,7 +10,6 @@ input {
     padding-left: 15px;
     margin-right: 50px;
 }
-
 label {
     font-size: 20px;
     font-weight: 400;
