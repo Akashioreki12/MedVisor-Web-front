@@ -1,0 +1,194 @@
+/* Style pour le rectangle */
+.left {
+    width: 2cm; /* Largeur du rectangle en centimètres */
+    height: 14cm; /* Hauteur du rectangle en centimètres */
+    background-color: #1578da; /* Couleur de fond du rectangle */
+    border: 2px solid #1578da; /* Bordure du rectangle */
+    position: absolute; /* Position absolue pour positionner le rectangle par rapport à la page */
+    left: 0; /* Position à gauche de la page */
+   margin-bottom: 30px;
+    margin-left: 1cm;
+    border-radius: 20px 20px 20px 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ .firstleft{
+  width: 45px;
+  height: 40px; 
+  margin-bottom: 120px;
+ }
+.secondleft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+.thirdleft{
+  margin-top: 120px;
+}
+  
+  .right{
+    display: flex;
+  flex-direction: column;
+  }
+.firstline{
+  display: flex;
+  flex-direction: row;
+
+}
+.searchline{
+  display: flex;
+  flex-direction: row;
+  margin-left: 120px;
+}
+.besidesearch{
+  display: flex;
+  flex-direction: row;
+  margin-left: 150px;
+}
+.second{
+  width:  50px;
+  height: 50px; 
+  margin-left: 40px;
+}
+.third{
+  width:  27px;
+  height: 27px; 
+  margin-top: 12px;
+}
+.search-bar {
+  width: 600px;
+  height: 30px; /* Adjust the height as needed */
+  background-color: #ffffff; /* Background color for the search bar */
+  margin-left: 50px;
+  margin-top: 17px;
+  border-radius: 10px 10px 10px 10px;
+  box-sizing: border-box; 
+  border: 1px solid #ccc;
+
+  color: #928989;
+
+font-family: Poppins;
+font-size: 0.9375rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.searchsign{
+  width: 17px;
+  height: 17px; 
+  margin-top: 23px;
+  margin-right: 5cm;
+}
+.rien{
+  margin-left: -30px ;
+}
+  .first{
+    margin-top: 20px;
+    width: 20px;
+    height: 20px;
+  }
+  .rectangle1 {
+    width: 28cm; /* Largeur du rectangle en centimètres */
+    height: 180px; /* Hauteur du rectangle en centimètres */
+    background-color: #1578da; /* Couleur de fond du rectangle */
+    border: 2px solid #1578da; /* Bordure du rectangle */
+    bottom: 50px;
+    margin-top: 5px;
+    margin-left: 3.5cm;
+    border-radius: 20px 20px 20px 20px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .gauche{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2cm;
+  }
+  .phrase{
+    width: 400px;
+    height: 23px;
+    margin-left: 140px;
+    margin-top: 10px;
+  }
+ .msg{
+   
+    margin-right: 300px;
+    margin-bottom: 80px;
+    color: #ffffff;
+    
+    }
+  
+
+
+ 
+  .doc{
+    width: 8cm;
+    height: 220px;
+    margin-left: 250px;
+    margin-top: 6px;
+  }
+
+  .maladies{
+    display: flex;
+    flex-direction: row;
+    margin-left: 200px;
+    margin-top: 10px;
+  }
+  .mal{
+    width: 7cm;
+    height: 4cm;
+    border-radius: 2.5rem;
+    background: #FFF;
+    box-shadow: 9px -4px 28.4px 0px rgba(0, 0, 0, 0.25);
+    margin-right: 70px;
+     /* Adjust the margin value to move the mal divs to the left */
+  }
+
+.scan{
+  position: relative;
+      width: 200px; /* Adjust the width as needed */
+      height: 100px; /* Adjust the height as needed */
+      margin-left: 450px;
+}
+.cercle{
+  position: absolute;
+      width: 90px; /* Diameter of the circle */
+      height: 90px; /* Diameter of the circle */
+      background-color: #FFF; /* Circle color */
+      border-radius: 50%; /* Make it a circle */
+      left: 0; /* Position it at the left of the container */
+      margin-top: 14px;
+      margin-left: 20%;
+      z-index: 1;
+    }
+.rec{
+  width: 300px;
+height: 50px;
+border-radius: 2.5rem;
+background: linear-gradient(92deg, rgba(6, 186, 160, 0.89) 18.33%, rgba(70, 119, 238, 0.89) 118.63%);
+margin-right: 100px;
+position: absolute;
+      left: 50px; /* Position it to the right of the circle */
+      margin-top:30px ;
+    }
+  .rec .text{
+    color: #FFF;
+    margin-left: 90px;
+    font-family: Poppins;
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: normal;
+  }
+  .logo{
+    width: 70px;
+    height: 70px;
+    margin-left: 12px;
+    margin-top: 5px;
+  }
