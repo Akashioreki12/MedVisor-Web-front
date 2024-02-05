@@ -1,6 +1,5 @@
 .phoneblock {
     display: flex;
-
 }
 
 
@@ -29,6 +28,7 @@ input {
     background-color: #E8EAEF;
     padding-left: 15px;
     margin-right: 50px;
+    width: 100%;
 }
 
 input:focus {

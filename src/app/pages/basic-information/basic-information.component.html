@@ -29,15 +29,13 @@
 
         <app-phone-number-field (valueChange)="handleNumber($event)"></app-phone-number-field>
 
-            <app-choice-input-field label="Marital Status" (valueChange)="handleMaritalStatus($event)"
+        <app-choice-input-field label="Marital Status" (valueChange)="handleMaritalStatus($event)"
                 [options]="['Marrié', 'Célibataire']" defaultValue="Marrié"></app-choice-input-field>
 
     </div>
 
     <div class="form-row">
 
-
-        
         <app-text-input-field (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="'Enter your email'"></app-text-input-field>    
         <app-text-input-field (valueChange)="handleCIN($event)" [label]="'CIN'" [placeHolder]="'Enter your cin'"></app-text-input-field>
 
