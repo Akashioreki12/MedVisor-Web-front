@@ -19,7 +19,7 @@ export class PatientComponent implements OnInit {
   people: Patient[] = [];
   searchQuery: string = ""; 
   searchResults: Patient[] = []; 
-
+  selectedPerson: Patient | null = null;
   constructor(private router: Router, private patientService: PatientService, private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -71,5 +71,8 @@ export class PatientComponent implements OnInit {
       this.loadPatients();
     }
   }
-  
+  selectPerson(person: Patient): void {
+    this.selectedPerson = person;
+    this.router.navigateByUrl("/form2");
+  }
 }

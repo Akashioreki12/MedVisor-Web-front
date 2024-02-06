@@ -157,6 +157,34 @@ table {
 .actp:hover {
   background-color: rgba(21, 120, 218, 0.5);
 }
+.selectButton {
+  border-radius: 7.008px;
+  background: #1578DA;
+  width: 150px;
+  height: 35px;
+  color: #FFF;
+  font-size: 15.787px;
+  font-style: normal;
+  font-weight: 600;
+
+  margin-top: 20px;
+  text-align: center;
+
+  /* Center the button content horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select {
+  /* Center the container horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh; /* Ensure the container takes the full height of the viewport */
+}
+
 
 /* Media query for responsiveness */
 @media (max-width: 768px) {
