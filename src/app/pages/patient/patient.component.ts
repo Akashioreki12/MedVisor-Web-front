@@ -73,6 +73,7 @@ export class PatientComponent implements OnInit {
   }
   selectPerson(person: Patient): void {
     this.selectedPerson = person;
-    this.router.navigateByUrl("/form2");
+    console.log(this.selectedPerson);
+    this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(this.selectedPerson) } });
   }
 }

@@ -7,6 +7,8 @@ import { HealthInformationComponent } from '../health-information/health-informa
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
 import { FormDataService} from '../../form-data.service';
+import { ActivatedRoute } from '@angular/router';
+
 @Component({
   selector: 'app-model-form',
   standalone: true,
@@ -25,9 +27,26 @@ export class ModelFormComponent {
   @ViewChild('basicInformationComponent') basicInformationComponent!: BasicInformationComponent;
   @ViewChild('healthInformationComponent') healthInformationComponent!: HealthInformationComponent;
   @ViewChild('additionalInformationComponent') additionalInformationComponent!: AdditionalInformationComponent;
-    formData: any = {};
+  formData: any = {};
+  
+  selectedPerson: any = {
+      firstName: 'Enter your first name',
+      lastName: 'Enter your last name',
+      age: 'Enter your age',
+      phoneNumber: 'enter your phone number',
+      cin: 'Enter your cin'
+    };
 
-  constructor(private router: Router, private formDataService: FormDataService) {}
+  constructor(private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
+
+
+ ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      const selectedPersonString = params['selectedPerson'];
+      this.selectedPerson = JSON.parse(selectedPersonString);
+      console.log(this.selectedPerson);
+    });
+  }
 
  onNext(): void {
     const activeStepIndex = this.stepper.selectedIndex;

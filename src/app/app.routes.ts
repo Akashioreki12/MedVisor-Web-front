@@ -13,9 +13,6 @@ export const routes: Routes = [
     { path: 'page-login', component: PageLoginComponent },
     { path: 'page-signup', component: PageSignupComponent },
     { path: 'page-result', component: PageResultComponent },
-    { path: 'form', component: BasicInformationComponent },
-    { path: 'form2', component: HealthInformationComponent },
-    { path: 'form3', component: AdditionalInformationComponent },
     { path: 'ai', component: ModelFormComponent},
     { path : 'patient', component : PatientComponent },
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
@@ -14,9 +14,21 @@ import { ChoiceInputFieldComponent } from '../choice-input-field/choice-input-fi
   styleUrl: './basic-information.component.css'
 })
 export class BasicInformationComponent {
+
+
+  @Input() firstName: string = "Enter your first name";
+  @Input() lastName: string = "Enter your last name";
+  @Input() cin: string = " enter your cin";
+  @Input() age: string = "enter your age";
+  @Input() phoneNumber: string = " enter your phone number";
+
+
+  
+
+
   basicInformation: any = {};
   checkoutForm: FormGroup = this.formBuilder.group({
-    firstName: ['Mohammed Yassine', [Validators.required]],
+    firstName: ['Mohammed Yassine7', [Validators.required]],
     lastName: ['KIAL', [Validators.required]],
     age: ['', [Validators.required]],
     gender: ['', [Validators.required]],
@@ -27,6 +39,28 @@ export class BasicInformationComponent {
     cin: ['HH31038', [Validators.required]],
   }); 
   constructor(private formDataService: FormDataService, private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.checkoutForm.setValue({
+
+      firstName: this.firstName,
+    lastName: this.lastName,
+    age: this.age,
+    gender: '', // Set default values for other controls if needed
+    countryCode: '+212',
+    phoneNumber: this.phoneNumber,
+    maritalStatus: '', // Set default values for other controls if needed
+    email: 'yassine@gmail.com',
+    cin: this.cin,
+
+
+      
+    })
+    
+
+
+
+  }
   onNext() {
     return this.checkoutForm.value;
   }

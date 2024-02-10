@@ -6,7 +6,7 @@
         </div>
         <div class="right">
             <img class="active" src="..\..\assets\Svgs\profile.svg" (click)="navigate()" alt="vector"/>
-            <img class="active" src="..\..\assets\Svgs\home.svg" routerLink ="/page-result" alt="home"/>
+            <img class="active" src="..\..\assets\Svgs\home.svg" routerLink ="/page-signup" alt="home"/>
         </div>
     </div>
 </div>
@@ -23,7 +23,7 @@
                     <input class="form-control me-4" [(ngModel)]="searchQuery" name="searchQuery" type="search" placeholder="Search patient" aria-label="Search"  />
                 
                     <button class="btn btn-outline-success" type="search" (click)="searchPatients()"> Search</button>
-                    <button class="btn btn-outline-success" type="submit" routerLink ="/form">Add patient</button>
+                    <button class="btn btn-outline-success" type="submit" routerLink ="/ai">Add patient</button>
                 </div>
                 </form>
             </div>
