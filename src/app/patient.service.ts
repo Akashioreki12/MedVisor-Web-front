@@ -10,7 +10,7 @@ export class PatientService {
 
   constructor( private http : HttpClient) { }
 
-  private baseUrl = 'http://localhost:8080/patients';
+  private baseUrl = 'http://localhost:8080/survey';
 
   getAllPatients(): Observable<any> {
     return this.http.get(`${this.baseUrl}/all`);
@@ -41,7 +41,7 @@ export class PatientService {
 
 
   getSurveyData(personId: number): Observable<any> {
-    return this.http.get<any>(`http://localhost:8080/survey/clinicalData/${personId}`);
+    return this.http.get<any>(`${this.baseUrl}/find/${personId}`);
   }
   
 }

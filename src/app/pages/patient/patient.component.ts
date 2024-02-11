@@ -21,6 +21,10 @@ export class PatientComponent implements OnInit {
   searchResults: Patient[] = []; 
   selectedPerson: Patient | null = null;
   searchDate: string = "";
+  selectedSurvey:any;
+   // Assuming you have a list of surveys
+    currentPage: number = 1;
+    pageSize: number = 10; 
   constructor(private router: Router, private patientService: PatientService, private http: HttpClient) {}
 
   ngOnInit(): void {
@@ -53,7 +57,7 @@ export class PatientComponent implements OnInit {
 
 
   editPerson(id : number): void{
-    this.router.navigateByUrl("/form2");
+    this.router.navigateByUrl("/ai");
   }
 
   navigate(): void {
@@ -65,9 +69,10 @@ export class PatientComponent implements OnInit {
     const isFunctionIcon = target.classList.contains('actp') || target.classList.contains('actm') || target.tagName === 'BUTTON';
 
     if (!isFunctionIcon) {
-        // If the clicked element is not a function icon, select the person and navigate
+      //   If the clicked element is not a function icon, select the person and navigate
         this.selectedPerson = person;
-        this.router.navigateByUrl("/form2");
+        this.loadSurvey(person.id);
+       // this.router.navigateByUrl("/form2");
     }
 }
 
@@ -101,9 +106,54 @@ export class PatientComponent implements OnInit {
       this.loadPatients();
     }
   }
-  selectPerson(person: Patient): void {
-    this.selectedPerson = person;
-    console.log(this.selectedPerson);
-    this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(this.selectedPerson) } });
+
+  displayClinicalInfo(person: any): void {
+    this.patientService.getSurveyData(person.id).subscribe(
+        (data: any) => {
+            person.clinicalInfo = data; // Assign clinicalInfo to the person object
+        },
+        error => {
+            console.log('Error fetching clinical info:', error);
+        }
+    );
+}
+
+
+
+loadSurvey(patientId: number): void {
+  this.patientService.getSurveyData(patientId).subscribe(
+    data => {
+      this.selectedSurvey = data;
+    },
+    error => {
+      console.log('Error fetching survey:', error);
+    }
+  );
+}
+
+get totalPages(): number {
+  return Math.ceil(this.people.length / this.pageSize);
+}
+
+// Function to get the current page of survey data
+get currentSurveys(): any {
+  const startIndex = (this.currentPage - 1) * this.pageSize;
+  const endIndex = startIndex + this.pageSize;
+  return this.people.slice(startIndex, endIndex);
+}
+
+// Function to navigate to the previous page
+previousPage(): void {
+  if (this.currentPage > 1) {
+      this.currentPage--;
   }
+}
+
+// Function to navigate to the next page
+nextPage(): void {
+  if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+  }
+}
+ 
 }
