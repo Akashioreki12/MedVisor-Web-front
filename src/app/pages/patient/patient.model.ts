@@ -8,5 +8,6 @@ export interface Patient {
     address: string;
     phoneNumber: string;
     cin: string;
+    clinicalInfo: any;
   }
   

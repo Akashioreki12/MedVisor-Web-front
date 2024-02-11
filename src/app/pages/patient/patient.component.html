@@ -21,8 +21,9 @@
                     <div class="search-bar">
                     <img class="active-search" src="..\..\assets\Svgs\search.svg" alt="search" />
                     <input class="form-control me-4" [(ngModel)]="searchQuery" name="searchQuery" type="search" placeholder="Search patient" aria-label="Search"  />
-                
+                    <input class="form-control me-4" [(ngModel)]="searchDate" name="searchDate" type="date" placeholder="Search by date" aria-label="Search by date" />
                     <button class="btn btn-outline-success" type="search" (click)="searchPatients()"> Search</button>
+                    
                     <button class="btn btn-outline-success" type="submit" routerLink ="/form">Add patient</button>
                 </div>
                 </form>
@@ -42,17 +43,39 @@
         </tr>
     </thead>
     <tbody id="tableBody">
-        <tr *ngFor="let person of people" (click)="selectPerson(person)" >
+        <tr *ngFor="let person of people" (click)="selectPerson(person, $event)" >
             <td>{{ person.lastName }}</td>
             <td>{{ person.firstName }}</td>
             <td>{{ person.cin }}</td>
             <td>{{ person.dateOfBirth }}</td>
             <td>{{ person.phoneNumber }}</td>
             <td>
-                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)"  alt="edit" />
+                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPerson(person.id)"  alt="edit" />
+
                 <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
+                <button class="btn btn-outline-success" type="submit" (click)="displayClinicalInfo(person)"> details </button>
             </td>
         </tr>
+
+        <tr *ngIf="selectedPerson">
+            <td colspan="6"> 
+                <h2>{{ selectedPerson.firstName }} {{ selectedPerson.lastName }}</h2>
+                <p>CIN: {{ selectedPerson.cin }}</p>
+                <p>Age: {{ selectedPerson.age }}</p>
+                
+                <div *ngIf="selectedPerson.clinicalInfo">
+                    <h3>Clinical Information</h3>
+                    <ul>
+                        <li *ngFor="let item of selectedPerson.clinicalInfo | keyvalue">
+                            <strong>{{ item.key }}</strong>: {{ item.value }}
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+
+        
     </tbody>
 </table>
 
+  

@@ -34,6 +34,15 @@ export class PatientService {
   searchPatients(searchTerm: string): Observable<Patient[]> {
     return this.http.get<Patient[]>(`${this.baseUrl}/search/${searchTerm}`);
   }
+
+  searchPatientsByDate(date: string): Observable<Patient[]> {
+    return this.http.get<Patient[]>(`${this.baseUrl}/searchByDate/${date}`);
+  }
+
+
+  getSurveyData(personId: number): Observable<any> {
+    return this.http.get<any>(`http://localhost:8080/survey/clinicalData/${personId}`);
+  }
   
 }
 

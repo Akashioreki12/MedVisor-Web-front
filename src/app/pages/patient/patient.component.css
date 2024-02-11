@@ -70,7 +70,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 330px;
+  margin-right: 20px;
 }
 
 /* Form control styles */
@@ -103,6 +103,7 @@ table {
   width: 95%;
   margin-top: 20px;
   margin-left: 30px;
+  border-collapse:collapse ;
 }
 
 /* Table cell styles */
