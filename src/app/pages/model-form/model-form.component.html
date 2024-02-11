@@ -1,6 +1,10 @@
 <mat-horizontal-stepper #stepper class="my-stepper-component">
         <mat-step label="1">
-            <app-basic-information #basicInformationComponent></app-basic-information>
+            <app-basic-information #basicInformationComponent [firstName]="selectedPerson.firstName"
+      [lastName]="selectedPerson.lastName"
+      [age]="selectedPerson.age"
+      [phoneNumber]="selectedPerson.phoneNumber"
+      [cin]="selectedPerson.cin"></app-basic-information>
         </mat-step>
         <mat-step label="2">
             <app-health-information #healthInformationComponent></app-health-information>

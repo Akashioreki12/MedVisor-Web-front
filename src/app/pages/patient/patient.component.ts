@@ -101,17 +101,9 @@ export class PatientComponent implements OnInit {
       this.loadPatients();
     }
   }
-
-
-  displayClinicalInfo(person: any): void {
-    this.patientService.getSurveyData(person.id).subscribe(
-        (data: any) => {
-            person.clinicalInfo = data; // Assign clinicalInfo to the person object
-        },
-        error => {
-            console.log('Error fetching clinical info:', error);
-        }
-    );
-}
-  
+  selectPerson(person: Patient): void {
+    this.selectedPerson = person;
+    console.log(this.selectedPerson);
+    this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(this.selectedPerson) } });
+  }
 }
