@@ -40,3 +40,16 @@ input:focus {
     flex-direction: column;
     margin-top: 20px;
 }
+
+.country-code:focus {
+        outline: 2px solid #1578DA;
+
+}
+
+.invalid-field {
+    outline: 2px solid red;
+}
+
+li {
+    color: red;
+}

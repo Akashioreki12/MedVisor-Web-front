@@ -1,5 +1,10 @@
-<div class="textInput">
+<div  class="textInput">
     <label for="firstName">{{label}}</label>
-    <input type="text" id="firstName" formControlName="firstName" [placeholder]="placeHolder"
-        (input)="onInputChange($event)">
+    <div *ngIf="errorList.length > 0" class="error-messages">
+        <ul>
+            <li *ngFor="let error of errorList">{{ error }}</li>
+        </ul>
+    </div>
+    <input [ngClass]="ngClassInput" type="text" id="firstName" formControlName="firstName" [placeholder]="placeHolder"
+        (input)="onInputChange($event)" (click)="onInputClick()">
 </div>

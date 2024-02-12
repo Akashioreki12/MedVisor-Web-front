@@ -23,3 +23,7 @@ input:focus {
 .invalid-field {
     outline: 2px solid red;
 }
+
+li {
+    color: red;
+}

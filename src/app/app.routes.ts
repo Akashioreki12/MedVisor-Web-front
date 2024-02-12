@@ -13,7 +13,8 @@ export const routes: Routes = [
     { path: 'page-login', component: PageLoginComponent },
     { path: 'page-signup', component: PageSignupComponent },
     { path: 'page-result', component: PageResultComponent },
-    { path: 'ai', component: ModelFormComponent},
+    { path: 'ai', component: ModelFormComponent },
+    { path: 'form2', component: HealthInformationComponent},
     { path : 'patient', component : PatientComponent },
 
 
