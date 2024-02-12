@@ -23,36 +23,44 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ModelFormComponent { 
   @ViewChild('stepper') stepper!: MatStepper;
-
   @ViewChild('basicInformationComponent') basicInformationComponent!: BasicInformationComponent;
   @ViewChild('healthInformationComponent') healthInformationComponent!: HealthInformationComponent;
   @ViewChild('additionalInformationComponent') additionalInformationComponent!: AdditionalInformationComponent;
   formData: any = {};
   
   selectedPerson: any = {
-      firstName: 'Enter your first name',
-      lastName: 'Enter your last name',
-      age: 'Enter your age',
-      phoneNumber: 'enter your phone number',
-      cin: 'Enter your cin'
+      firstName: '',
+      lastName: '',
+      age: '',
+      phoneNumber: '',
+      cin: ''
     };
 
   constructor(private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
 
 
- ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      const selectedPersonString = params['selectedPerson'];
+ngOnInit(): void {
+  this.route.queryParams.subscribe((params) => {
+    const selectedPersonString = params['selectedPerson'];
+
+    if (selectedPersonString !== undefined) {
       this.selectedPerson = JSON.parse(selectedPersonString);
       console.log(this.selectedPerson);
-    });
-  }
+    } else {
+      // Handle the case when 'selectedPerson' parameter is not present
+      console.log('No selectedPerson parameter found.');
+    }
+  });
+}
+
 
  onNext(): void {
-    const activeStepIndex = this.stepper.selectedIndex;
+   const activeStepIndex = this.stepper.selectedIndex;
+   let isValid = false;
 
     switch (activeStepIndex) {
       case 0:
+        isValid = this.basicInformationComponent.checkoutForm.valid;
         this.formData.basicInformation = this.basicInformationComponent.onNext();
         break;
       case 1:
@@ -63,8 +71,8 @@ export class ModelFormComponent {
         break;
     }
 
-   if (activeStepIndex === this.stepper._steps.length - 1) {
-      
+   if (isValid) {
+    if (activeStepIndex === this.stepper._steps.length - 1) {
       this.formData = {
         ...this.formData.basicInformation,
         ...this.formData.healthInformation,
@@ -74,9 +82,10 @@ export class ModelFormComponent {
       console.log(this.formData);
       this.submitFormData();
     } else {
-      // Move to the next step
+      // Move to the next step only if the form is valid
       this.stepper.next();
     }
+  }
  }
   
   submitFormData(): void {

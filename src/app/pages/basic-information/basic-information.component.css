@@ -14,3 +14,9 @@
     color: #000;
     margin-top: 20px;
 }
+
+.invalid-input {
+    border: 2px solid red;
+    /* Change this to your desired styling for invalid inputs */
+    background-color: #ffdddd;
+}

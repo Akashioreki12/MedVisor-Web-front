@@ -5,7 +5,7 @@
 
 
 
-        <app-text-input-field (valueChange)="handleFirstName($event)" [label]="'First Name'" [placeHolder]="firstName"></app-text-input-field>
+        <app-text-input-field [ngClass]="{ 'invalid-input': checkoutForm.get('firstName')?.invalid }" (valueChange)="handleFirstName($event)" [label]="'First Name'" [placeHolder]="firstName"></app-text-input-field>
         <app-text-input-field (valueChange)="handleLastName($event)" [label]="'Last Name'" [placeHolder]="lastName"></app-text-input-field>
 
 
@@ -27,7 +27,7 @@
 
 
 
-        <app-phone-number-field (valueChange)="handleNumber($event)" [placeHolder]="phoneNumber"></app-phone-number-field>
+        <app-phone-number-field (valueChange)="handleNumber($event)" (selectChange)="handleCountryCode($event)" [placeHolder]="phoneNumber"></app-phone-number-field>
 
         <app-choice-input-field label="Marital Status" (valueChange)="handleMaritalStatus($event)"
                 [options]="['Marrié', 'Célibataire']" defaultValue="Marrié"></app-choice-input-field>
@@ -36,7 +36,7 @@
 
     <div class="form-row">
 
-        <app-text-input-field (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="'Enter your email'"></app-text-input-field>    
+        <app-text-input-field (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="''"></app-text-input-field>    
         <app-text-input-field (valueChange)="handleCIN($event)" [label]="'CIN'" [placeHolder]="cin"></app-text-input-field>
 
     </div>

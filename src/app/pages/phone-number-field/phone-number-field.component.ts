@@ -9,11 +9,17 @@ import { Component, Output, EventEmitter,Input } from '@angular/core';
 })
 export class PhoneNumberFieldComponent {
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
+  @Output() selectChange: EventEmitter<any> = new EventEmitter();
   
   @Input() placeHolder: string = "";
   onInputChange(event: any) {
     const value = event.target.value;
     this.valueChange.emit(value);
+  }
+  
+  onSelectChange(event: any) {
+    const value = event.target.value;
+    this.selectChange.emit(value);
 }
 
 }

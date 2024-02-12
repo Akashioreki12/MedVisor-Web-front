@@ -16,11 +16,11 @@ import { ChoiceInputFieldComponent } from '../choice-input-field/choice-input-fi
 export class BasicInformationComponent {
 
 
-  @Input() firstName: string = "Enter your first name";
-  @Input() lastName: string = "Enter your last name";
-  @Input() cin: string = " enter your cin";
-  @Input() age: string = "enter your age";
-  @Input() phoneNumber: string = " enter your phone number";
+  @Input() firstName: string = "";
+  @Input() lastName: string = "";
+  @Input() cin: string = "";
+  @Input() age: string = "";
+  @Input() phoneNumber: string = "";
 
 
   
@@ -28,79 +28,133 @@ export class BasicInformationComponent {
 
   basicInformation: any = {};
   checkoutForm: FormGroup = this.formBuilder.group({
-    firstName: ['Mohammed Yassine7', [Validators.required]],
-    lastName: ['KIAL', [Validators.required]],
-    age: ['', [Validators.required]],
+    firstName: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(50),Validators.pattern(/^[a-zA-Z\s]*$/)]],
+    lastName: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(50),Validators.pattern(/^[a-zA-Z\s]*$/)]],
+    age: ['', [Validators.required,Validators.pattern(/^\d+$/)]],
     gender: ['', [Validators.required]],
-    countryCode: ['+212', [Validators.required]],
-    phoneNumber: ['639453059', [Validators.required]],
+    countryCode: ['', []],
+    phoneNumber: ['', [Validators.required]],
     maritalStatus: ['', [Validators.required]],
-    email: ['yassine@gmail.com', [Validators.required, Validators.email]],
-    cin: ['HH31038', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    cin: ['', [Validators.required]],
   }); 
   constructor(private formDataService: FormDataService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.checkoutForm.setValue({
-
+    this.checkoutForm.patchValue({
       firstName: this.firstName,
     lastName: this.lastName,
     age: this.age,
-    gender: '', // Set default values for other controls if needed
-    countryCode: '+212',
+    gender: '', 
+    countryCode: '',
     phoneNumber: this.phoneNumber,
-    maritalStatus: '', // Set default values for other controls if needed
-    email: 'yassine@gmail.com',
+    maritalStatus: '', 
+    email: '',
     cin: this.cin,
-
-
-      
     })
-    
-
-
-
   }
   onNext() {
-    return this.checkoutForm.value;
+    if (this.checkoutForm.valid) {
+      console.log('Form is valid', this.checkoutForm.value);
+      return this.checkoutForm.value;
+
+    }
+    else {
+      if (this.checkoutForm.get('firstName')?.invalid) {
+      console.log('First Name is not valid.');
+    }
+
+    if (this.checkoutForm.get('lastName')?.invalid) {
+      console.log('Last Name is not valid.');
+    }
+
+    if (this.checkoutForm.get('age')?.invalid) {
+      console.log('Age is not valid.');
+    }
+
+    if (this.checkoutForm.get('gender')?.invalid) {
+      console.log('Gender is not valid.');
+    }
+
+    if (this.checkoutForm.get('countryCode')?.invalid) {
+      console.log('Country Code is not valid.');
+    }
+
+    if (this.checkoutForm.get('phoneNumber')?.invalid) {
+      console.log('Phone Number is not valid.');
+    }
+
+    if (this.checkoutForm.get('maritalStatus')?.invalid) {
+      console.log('Marital Status is not valid.');
+    }
+
+    if (this.checkoutForm.get('email')?.invalid) {
+      console.log('Email is not valid.');
+    }
+
+    if (this.checkoutForm.get('cin')?.invalid) {
+      console.log('CIN is not valid.');
+    }
+      
+
+    }
+
+    console.log(this.checkoutForm.value);
+
   }
 
 
- handleFirstName(value: any) {
-   this.checkoutForm.value.firstName = value;
-   
- }
+handleFirstName(value: any) {
+  this.checkoutForm.patchValue({
+    firstName: value
+  });
+}
   
-  handleLastName(value: any) {
-   this.checkoutForm.value.lastName = value;
-   
-  }
+ handleLastName(value: any) {
+  this.checkoutForm.patchValue({
+    lastName: value
+  });
+}
     handleEmail(value: any) {
-   this.checkoutForm.value.email = value;
-   
-    }
-    handleCIN(value: any) {
-   this.checkoutForm.value.cin = value;
-   
-    }
+  this.checkoutForm.patchValue({
+    email: value
+  });
+}
+
+handleCIN(value: any) {
+  this.checkoutForm.patchValue({
+    cin: value
+  });
+}
+
+handleAge(value: any) {
+  this.checkoutForm.patchValue({
+    age: value
+  });
+}
+
+handleMaritalStatus(value: any) {
+  this.checkoutForm.patchValue({
+    maritalStatus: value
+  });
+}
+
+handleNumber(value: any) {
+  this.checkoutForm.patchValue({
+    phoneNumber: value
+  });
+}
   
-  handleAge(value: any) {
-   this.checkoutForm.value.age = value;
-   
+  handleCountryCode(value: any) {
+    this.checkoutForm.patchValue({
+      countryCode: value
+    })
   }
-  
-    handleMaritalStatus(value: any) {
-   this.checkoutForm.value.maritalStatus = value;
-   
+handleGender(value: any) {
+  this.checkoutForm.patchValue({
+    gender: value
+  });
 }
-   handleNumber(value: any) {
-   this.checkoutForm.value.phoneNumber = value;
-   
-   }
-  
-   handleGender(value: any) {
-   this.checkoutForm.value.gender = value;
-   
-}
+
 
 }

@@ -10,6 +10,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class TextInputFieldComponent {
   @Input() label: string="label";
   @Input() placeHolder: string = "placeHolder";
+  @Input() ngClass: any;
   
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
 
