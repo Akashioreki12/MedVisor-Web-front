@@ -70,7 +70,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 330px;
+  margin-right: 20px;
 }
 
 /* Form control styles */
@@ -103,6 +103,7 @@ table {
   width: 95%;
   margin-top: 20px;
   margin-left: 30px;
+  border-collapse:collapse ;
 }
 
 /* Table cell styles */
@@ -186,6 +187,40 @@ table {
 }
 
 
+
+/* Survey Data Container */
+.survey-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* Three columns with equal width */
+  gap: 20px; /* Gap between columns */
+  
+  height: 20px ;
+  margin-left: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Individual Survey Data Item */
+.survey-item {
+  background-color: #f0f0f0; /* Background color for each item */
+  padding: 15px; /* Padding around each item */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Header for Survey Data */
+.survey-header {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Content for Survey Data */
+.survey-content {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
 /* Media query for responsiveness */
 @media (max-width: 768px) {
   .container-fluid {
@@ -205,4 +240,26 @@ table {
 
 tr {
   cursor: pointer;
+}
+
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pagination-button {
+  background-color: #1578DA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-button:hover {
+  background-color: #125eab;
 }
