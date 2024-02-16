@@ -21,6 +21,7 @@ export class TextInputFieldComponent {
   onInputChange(event: any) {
     const value = event.target.value;
     this.valueChange.emit(value);
+    console.log(value);
   }
   
   onInputClick() {
