@@ -64,10 +64,14 @@ ngOnInit(): void {
         this.formData.basicInformation = this.basicInformationComponent.onNext();
         break;
       case 1:
+        isValid = this.basicInformationComponent.checkoutForm.valid;
         this.formData.healthInformation = this.healthInformationComponent.onNext();
         break;
       case 2:
+        isValid = this.basicInformationComponent.checkoutForm.valid;
         this.formData.additionalInformation = this.additionalInformationComponent.onNext();
+        console.log("fuck");
+        console.log(this.formData.additionalInformation);
         break;
     }
 
@@ -78,11 +82,9 @@ ngOnInit(): void {
         ...this.formData.healthInformation,
         ...this.formData.additionalInformation
       };
-      this.logFormData();
       console.log(this.formData);
       this.submitFormData();
     } else {
-      // Move to the next step only if the form is valid
       this.stepper.next();
     }
   }
@@ -101,9 +103,5 @@ ngOnInit(): void {
       }
     );
   }
-logFormData(): void {
-    console.log('Basic Information:', this.formData.basicInformation);
-    console.log('Health Information:',  this.formData.healthInformation);
-    console.log('Additional Information:', this.formData.additionalInformation);
-  }
+
 }

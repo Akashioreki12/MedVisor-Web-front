@@ -21,34 +21,47 @@ export class AdditionalInformationComponent {
     workType: ['', [Validators.required]],
   });
   constructor(private formDataService: FormDataService, private formBuilder: FormBuilder) { }
- onNext(): void {
-    return this.checkoutForm.value;
+  onNext(): void {
+   
+    if (this.checkoutForm.valid) {
+      console.log('Form is valid', this.checkoutForm.value);
+      return this.checkoutForm.value;
+
+    }
   }
   handleResidentialArea(value: any) {
-   this.checkoutForm.value.residentialArea = value;
+     this.checkoutForm.patchValue({
+    residentialArea: value
+  });
    
   }
   handleSmokingStatus(value: any) {
-   this.checkoutForm.value.smokingStatus = value;
+     this.checkoutForm.patchValue({
+    smokingStatus: value
+  });
    
   }
   handleAlcoholStatus(value: any) {
-   this.checkoutForm.value.alcoholStatus = value;
-   
+    this.checkoutForm.patchValue({
+    alcoholStatus: value
+  });
   }
   handleWorkType(value: any) {
-   this.checkoutForm.value.workType = value;
-   
+    this.checkoutForm.patchValue({
+    workType: value
+  });
   }
   
 
    handleHistoryOfTIAs(value: any) {
-   this.checkoutForm.value.historyOfTIAs = value;
-   
+    this.checkoutForm.patchValue({
+    historyOfTIAs: value
+  });
    }
   
    handleHeredityOrGenetics(value: any) {
-   this.checkoutForm.value.heredityOrGenetics = value;
-   
+    this.checkoutForm.patchValue({
+    heredityOrGenetics: value
+  });
 }
 }
