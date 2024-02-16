@@ -86,6 +86,7 @@ export class BasicInformationComponent {
     else {
       if (this.checkoutForm.get('firstName')?.invalid) {
         console.log('First Name is not valid.');
+        console.log(this.checkoutForm.value.firstName);
         
         if (this.checkoutForm.get('firstName')?.hasError('required')) {
         this.firstNameErrors.push('First name is required');
@@ -188,8 +189,7 @@ export class BasicInformationComponent {
       
 
     }
-    console.log(this.phoneNumberErrors);
-    console.log(this.checkoutForm.value);
+   
 
   }
 
@@ -275,7 +275,6 @@ handleGender(value: any) {
   onPhoneNumberInputClicked() {
     this.phoneNumberInputClicked = true;
     this.phoneNumberErrors = [];
-    console.log(1);
   }
 
 

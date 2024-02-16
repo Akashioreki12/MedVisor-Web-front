@@ -1,10 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { MatTooltip } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-text-input-field',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,MatTooltipModule, MatIconModule],
   templateUrl: './text-input-field.component.html',
   styleUrl: './text-input-field.component.css'
 })

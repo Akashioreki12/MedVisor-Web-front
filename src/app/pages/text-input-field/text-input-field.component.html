@@ -1,10 +1,13 @@
 <div  class="textInput">
-    <label for="firstName">{{label}}</label>
+    <div class="inputHeader">
+        <label for="firstName">{{label}}</label>
+        <mat-icon class="custom-icon-color" matTooltip="Enter your first name">help</mat-icon>
+    </div>
     <div *ngIf="errorList.length > 0" class="error-messages">
         <ul>
             <li *ngFor="let error of errorList">{{ error }}</li>
         </ul>
     </div>
     <input [ngClass]="ngClassInput" type="text" id="firstName" formControlName="firstName" [placeholder]="placeHolder"
-        (input)="onInputChange($event)" (click)="onInputClick()">
+         (click)="onInputClick()">
 </div>

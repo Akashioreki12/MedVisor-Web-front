@@ -14,21 +14,12 @@
     </div>
 
     <div class="health-container">
-
-
-
         <p class="health-container-title">Cholesterol & Glucose Levels</p>
-
         <div class="form-row">
-
-
-
             <app-number-input-field (inputClicked)="onTotalCholesterolInputClicked()" [errorList]="totalCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('totalCholesterol')?.invalid && !totalCholesterolInputClicked}"  label="Total Level (g/l)" (valueChange)="handleTotalCholesterol($event)"></app-number-input-field>
             <app-number-input-field (inputClicked)="onLdlCholesterolInputClicked()" [errorList]="ldlCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('ldlCholesterol')?.invalid && !ldlCholesterolInputClicked}" label="LDL Level (g/l)" (valueChange)="handleLDLCholesterol($event)"></app-number-input-field>
             <app-number-input-field (inputClicked)="onHdlCholesterolInputClicked()" [errorList]="hdlCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('hdlCholesterol')?.invalid && !hdlCholesterolInputClicked}" label="HDL Level (g/l)" (valueChange)="handleHDLCholesterol($event)"></app-number-input-field>
             <app-number-input-field (inputClicked)="onGlucoseLevelInputClicked()" [errorList]="glucoseLevelErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('glucoseLevel')?.invalid && !glucoseLevelInputClicked}" label="Glucose Level (g/l)" (valueChange)="handleGlucoseLevel($event)"></app-number-input-field>
-
-
         </div>
     </div>
 

@@ -21,19 +21,13 @@
 
     <div class="form-row">
 
-
-
         <app-phone-number-field (inputClicked)="onPhoneNumberInputClicked()" [errorList]="phoneNumberErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('phoneNumber')?.invalid && !phoneNumberInputClicked}" (valueChange)="handleNumber($event)" (selectChange)="handleCountryCode($event)" [placeHolder]="phoneNumber"></app-phone-number-field>
-
         <app-choice-input-field label="Marital Status" (valueChange)="handleMaritalStatus($event)"
                 [options]="['Marrié', 'Célibataire']" defaultValue="Marrié"></app-choice-input-field>
 
     </div>
-
     <div class="form-row">
-
         <app-text-input-field (inputClicked)="onEmailInputClicked()" [errorList]="emailErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('email')?.invalid && !emailInputClicked}" (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="''"></app-text-input-field>    
         <app-text-input-field (inputClicked)="onCINInputClicked()" [errorList]="cinErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('cin')?.invalid && !cinInputClicked}" (valueChange)="handleCIN($event)" [label]="'CIN'" [placeHolder]="cin"></app-text-input-field>
-
     </div>
 </form>
