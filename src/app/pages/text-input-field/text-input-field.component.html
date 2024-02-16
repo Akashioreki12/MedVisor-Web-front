@@ -9,5 +9,5 @@
         </ul>
     </div>
     <input [ngClass]="ngClassInput" type="text" id="firstName" formControlName="firstName" [placeholder]="placeHolder"
-         (click)="onInputClick()" (valueChange)="onInputChange($event)">
+         (click)="onInputClick()" (input)="onInputChange($event)">
 </div>

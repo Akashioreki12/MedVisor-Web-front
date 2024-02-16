@@ -34,3 +34,14 @@ input:focus {
 li {
     color: red;
 }
+
+.inputHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.custom-icon-color {
+    color: #1578DA;
+    /* Replace with your desired color code */
+}

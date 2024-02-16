@@ -1,9 +1,12 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatIconModule } from '@angular/material/icon';
+
 @Component({
   selector: 'app-number-input-field',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule, MatTooltipModule],
   templateUrl: './number-input-field.component.html',
   styleUrl: './number-input-field.component.css'
 })
