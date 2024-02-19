@@ -1,5 +1,5 @@
 <div class="textInput">
-    <label for="countryCode">Phone Number</label>
+    <label for="countryCode">{{label}}</label>
     <div *ngIf="errorList.length > 0" class="error-messages">
         <ul>
             <li *ngFor="let error of errorList">{{ error }}</li>

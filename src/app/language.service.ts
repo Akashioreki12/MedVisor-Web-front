@@ -16,13 +16,15 @@ export class LanguageService {
   }
 
   private fetchLanguageData(): void {
-    this.http.get('./assets/languages/languages.json').pipe(
+    this.http.get('./assets/languages/form2.json').pipe(
       tap(data => this.languageData = data),
       catchError(error => {
         console.error('Error fetching language data:', error);
         return throwError('Error fetching language data');
       })
     ).subscribe();
+  ;
+
   }
 
   getCurrentLanguage(): string {

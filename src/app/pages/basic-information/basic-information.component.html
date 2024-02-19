@@ -1,12 +1,21 @@
+<mat-form-field class="textInput">
+    <mat-label for="residentialArea">Language<span class="red-highlight">*</span></mat-label>
+    <mat-select id="residentialArea" (selectionChange)="toggleLanguage($event.value)" [(value)]="selectedLanguage">
+        <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
 <form class="form-section-1-container" (ngSubmit)="onNext()" [formGroup]="checkoutForm">
-    <p class="form-section-title">Basic Informations</p>
+    <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="form-section-title">{{getContent('form_1_title')}}</p>
 
-    <div class="form-row">
+    <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="form-row">
 
 
 
-        <app-text-input-field  toolTip="First name ex: John" (inputClicked)="onFirstNameInputClicked()" [errorList]="firstNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !firstNameInputClicked}" (valueChange)="handleFirstName($event)" [label]="'First Name'" [placeHolder]="firstName"></app-text-input-field>
-        <app-text-input-field  toolTip="Last name ex: Doe" (inputClicked)="onLastNameInputClicked()" [errorList]="lastNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('lastName')?.invalid && !lastNameInputClicked}" (valueChange)="handleLastName($event)" [label]="'Last Name'" [placeHolder]="lastName"></app-text-input-field>
+        <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'"  toolTip="First name ex: John" (inputClicked)="onFirstNameInputClicked()" [errorList]="firstNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !firstNameInputClicked}" (valueChange)="handleFirstName($event)" label="{{getContent('firstName')}}" [placeHolder]="firstName"></app-text-input-field>
+        <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'"  toolTip="Last name ex: Doe" (inputClicked)="onLastNameInputClicked()" [errorList]="lastNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('lastName')?.invalid && !lastNameInputClicked}" (valueChange)="handleLastName($event)" label="{{getContent('lastName')}}" [placeHolder]="lastName"></app-text-input-field>
 
 
 
@@ -14,20 +23,20 @@
 
 
 
-    <div class="form-row">
-        <app-text-input-field toolTip="Age ex: 25" (inputClicked)="onAgeInputClicked()" [errorList]="ageErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !ageInputClicked}" (valueChange)="handleAge($event)" [label]="'Age'" [placeHolder]="age"></app-text-input-field>
-        <app-radio-button-choice  label="Gender" option1="Male" option2="Female" defaultValue="Female" (valueChange)="handleGender($event)"></app-radio-button-choice>
+    <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="form-row">
+        <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="Age ex: 25" (inputClicked)="onAgeInputClicked()" [errorList]="ageErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !ageInputClicked}" (valueChange)="handleAge($event)" label="{{getContent('age')}}" [placeHolder]="age"></app-text-input-field>
+        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'"  label="{{getContent('gender')}}" option1="Male" option2="Female" defaultValue="Female" (valueChange)="handleGender($event)"></app-radio-button-choice>
     </div>
 
-    <div class="form-row">
+    <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="form-row">
 
-        <app-phone-number-field (inputClicked)="onPhoneNumberInputClicked()" [errorList]="phoneNumberErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('phoneNumber')?.invalid && !phoneNumberInputClicked}" (valueChange)="handleNumber($event)" (selectChange)="handleCountryCode($event)" [placeHolder]="phoneNumber"></app-phone-number-field>
-        <app-choice-input-field label="Marital Status" (valueChange)="handleMaritalStatus($event)"
+        <app-phone-number-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('phoneNumber')}}" (inputClicked)="onPhoneNumberInputClicked()" [errorList]="phoneNumberErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('phoneNumber')?.invalid && !phoneNumberInputClicked}" (valueChange)="handleNumber($event)" (selectChange)="handleCountryCode($event)" [placeHolder]="phoneNumber"></app-phone-number-field>
+        <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="Marital Status" (valueChange)="handleMaritalStatus($event)"
                 [options]="['Marrié', 'Célibataire']" defaultValue="Marrié"></app-choice-input-field>
 
     </div>
-    <div class="form-row">
-        <app-text-input-field toolTip="Email ex:john.doe@contact.me" (inputClicked)="onEmailInputClicked()" [errorList]="emailErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('email')?.invalid && !emailInputClicked}" (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="''"></app-text-input-field>    
-        <app-text-input-field toolTip="Unique Moroccan citizen identifier on the national identity card ex: HH58475" (inputClicked)="onCINInputClicked()" [errorList]="cinErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('cin')?.invalid && !cinInputClicked}" (valueChange)="handleCIN($event)" [label]="'CIN'" [placeHolder]="cin"></app-text-input-field>
+    <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="form-row">
+        <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="Email ex:john.doe@contact.me" (inputClicked)="onEmailInputClicked()" [errorList]="emailErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('email')?.invalid && !emailInputClicked}" (valueChange)="handleEmail($event)" label="{{getContent('email')}}" [placeHolder]="''"></app-text-input-field>    
+        <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="Unique Moroccan citizen identifier on the national identity card ex: HH58475" (inputClicked)="onCINInputClicked()" [errorList]="cinErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('cin')?.invalid && !cinInputClicked}" (valueChange)="handleCIN($event)" label="{{getContent('cin')}}" [placeHolder]="cin"></app-text-input-field>
     </div>
 </form>

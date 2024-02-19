@@ -4,10 +4,16 @@ import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
 import { ChoiceInputFieldComponent } from '../choice-input-field/choice-input-field.component';
+import { LanguageService } from '../../language.service';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-additional-information',
   standalone: true,
-  imports: [RouterModule, ReactiveFormsModule, RadioButtonChoiceComponent, ChoiceInputFieldComponent],
+  imports: [CommonModule,MatFormFieldModule,MatSelectModule,MatInputModule,RouterModule, ReactiveFormsModule, RadioButtonChoiceComponent, ChoiceInputFieldComponent],
   templateUrl: './additional-information.component.html',
   styleUrl: './additional-information.component.css'
 })
@@ -19,8 +25,35 @@ export class AdditionalInformationComponent {
     smokingStatus: ['', [Validators.required]],
     alcoholStatus: ['', [Validators.required]],
     workType: ['', [Validators.required]],
-  });
-  constructor(private formDataService: FormDataService, private formBuilder: FormBuilder) { }
+   });
+  
+   options: string[] = ["ar", "fr", "en"];
+
+  selectedLanguage: string = "en";
+  
+  
+  constructor(private languageService: LanguageService, private formDataService: FormDataService, private formBuilder: FormBuilder) { }
+  
+   getCurrentLanguage(): string {
+    return this.languageService.getCurrentLanguage();
+  }
+
+  toggleLanguage(language:string): void {
+    this.languageService.toggleLanguage(language);
+    console.log(language);
+  }
+
+  getContent(key: string): string {
+    return this.languageService.getContent(key);
+  }
+
+  ngOnInit() {
+        this.toggleLanguage(this.selectedLanguage);
+
+  }
+
+
+
   onNext(): void {
    
     if (this.checkoutForm.valid) {

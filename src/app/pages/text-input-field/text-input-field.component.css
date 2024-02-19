@@ -9,6 +9,7 @@ input {
     border-radius: 10px;
     background-color: #E8EAEF;
     padding-left: 15px;
+    padding-right: 15px;
 }
 label {
     font-size: 20px;

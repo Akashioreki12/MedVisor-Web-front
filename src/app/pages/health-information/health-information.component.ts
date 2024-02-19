@@ -68,7 +68,8 @@ export class HealthInformationComponent {
     hypertension: ['', [Validators.required]],
   });
 
-  constructor(private languageService:LanguageService,private formBuilder: FormBuilder,private formDataService: FormDataService) { }
+  constructor(private languageService: LanguageService, private formBuilder: FormBuilder, private formDataService: FormDataService) {
+   }
   
   getCurrentLanguage(): string {
     return this.languageService.getCurrentLanguage();

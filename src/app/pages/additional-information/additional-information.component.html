@@ -1,5 +1,14 @@
+<mat-form-field class="textInput">
+    <mat-label for="residentialArea">Language<span class="red-highlight">*</span></mat-label>
+    <mat-select id="residentialArea" (selectionChange)="toggleLanguage($event.value)" [(value)]="selectedLanguage">
+        <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
 <form class="form-section-2-container" (ngSubmit)="onNext()" [formGroup]="checkoutForm">
-    <p class="form-section-title">Additional Information</p>
+    <p class="form-section-title">Additional Informations</p>
 
     <div class="health-container">
 
@@ -10,6 +19,7 @@
 
 
 
+            
         <app-radio-button-choice label="History of TIAs" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
         <app-radio-button-choice label="Heredity or Genetics" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
 

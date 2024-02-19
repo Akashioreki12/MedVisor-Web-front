@@ -1,6 +1,6 @@
 {
     "en":{
-        "form_1_title":"Health Informations",
+        "form_2_title":"Health Informations",
         "section_1_title":"Basic health",
         "weight":"Weight",
         "height":"Height",
@@ -22,13 +22,44 @@
         "hdlToolTip":"Level of high-density lipoproteins in the blood in g/L ex : 0.50 mg/dL",
         "glucoseToolTip":"Average blood glucose level of the patient in g/L ex: 0.120 mg/dL",
         "yes":"Yes",
-        "no":"No"
+        "no":"No",
+
+
+
+        "form_1_title":"Basic Informations",
+        "firstName":"Fist Name",
+        "lastName":"Last Name",
+        "age":"Age",
+        "gender":"Gender",
+        "phoneNumber":"Phone Number",
+        "maritalSattus":"Total Level (g/L)",
+        "email":"Email",
+        "cin":"CIN",
+        "firstNameToolTip":"Fist name ex: John",
+        "lastNameToolTip":"Last name ex: Doe",
+        "ageToolTip":"Age ex: 25",
+        "genderToolTip":"Gender ex: Male",
+        "phoneNumberToolTip":"",
+        "maritalStatusToolTip":"",
+        "emailToolTip":"Email ex: john.doe@contact.me",
+        "cinToolTip":"Unique Moroccan Citizen identifier ex: HH12546"
+
+
+
+
+
+
+
+
+
+
+
 
 
 
     },
     "fr":{
-        "form_1_title":"Informations de santé",
+        "form_2_title":"Informations de santé",
         "section_1_title":"Santé de base",
         "weight":"Poids",
         "height":"Taille",
@@ -50,11 +81,31 @@
         "hdlToolTip": "Niveau de lipoprotéines de haute densité dans le sang en g/L ex : 0.50 mg/dL",
         "glucoseToolTip": "Niveau moyen de glucose dans le sang du patient en g/L ex : 0.120 mg/dL",
         "yes":"Oui",
-        "no":"Non"
+        "no":"Non",
+
+
+
+         "form_1_title": "Informations de base",
+  "firstName": "Prénom",
+  "lastName": "Nom de famille",
+  "age": "Âge",
+  "gender": "Sexe",
+  "phoneNumber": "Numéro de téléphone",
+  "maritalSattus": "Statut marital",
+  "email": "Email",
+  "cin": "CIN (Carte d'Identité Nationale)",
+  "firstNameToolTip": "Prénom, par exemple : John",
+  "lastNameToolTip": "Nom de famille, par exemple : Doe",
+  "ageToolTip": "Âge, par exemple : 25",
+  "genderToolTip": "Genre, par exemple : Homme",
+  "phoneNumberToolTip": "",
+  "maritalStatusToolTip": "Statut marital",
+  "emailToolTip": "Email, par exemple : john.doe@contact.me",
+  "cinToolTip": "Identifiant unique du citoyen marocain, par exemple : HH12546"
 
     },
     "ar": {
-"form_1_title": "معلومات الصحة",
+"form_2_title": "معلومات الصحة",
 "section_1_title": "الصحة الأساسية",
 "weight": "الوزن",
 "height": "الطول",
@@ -76,6 +127,30 @@
 "hdlToolTip": "مستوى الليبوبروتينات ذات الكثافة العالية في الدم بوحدة جرام/لتر مثال: 0.50 ملجم/ديسيلتر",
 "glucoseToolTip": "مستوى الجلوكوز في الدم للمريض بوحدة جرام/لتر مثال: 0.120 ملجم/ديسيلتر",
 "yes": "نعم",
-"no": "لا"
+"no": "لا",
+
+
+
+"form_1_title": "معلومات أساسية",
+  "firstName": "الاسم الأول",
+  "lastName": "اسم العائلة",
+  "age": "العمر",
+  "gender": "الجنس",
+  "phoneNumber": "رقم الهاتف",
+  "maritalSattus": "الحالة الاجتماعية",
+  "email": "البريد الإلكتروني",
+  "cin": "رقم الهوية الوطنية",
+  "firstNameToolTip": "الاسم الأول، مثال: جون",
+  "lastNameToolTip": "اسم العائلة، مثال: دو",
+  "ageToolTip": "العمر، مثال: 25",
+  "genderToolTip": "الجنس، مثال: ذكر",
+  "phoneNumberToolTip": "",
+  "maritalStatusToolTip": "الحالة الاجتماعية",
+  "emailToolTip": "البريد الإلكتروني، مثال: john.doe@contact.me",
+  "cinToolTip": "الرقم الوطني للهوية المغربي، مثال: HH12546"
+
+
+
+
 }
 }

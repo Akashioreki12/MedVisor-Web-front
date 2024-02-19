@@ -15,7 +15,9 @@ export const routes: Routes = [
     { path: 'page-result', component: PageResultComponent },
     { path: 'ai', component: ModelFormComponent },
     { path: 'form2', component: HealthInformationComponent},
-    { path : 'patient', component : PatientComponent },
+    { path: 'patient', component: PatientComponent },
+    {path:'form3', component:AdditionalInformationComponent},
+    { path: '**', redirectTo: 'page-login' },
 
 
 ];
