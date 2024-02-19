@@ -4,14 +4,26 @@ import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule,FormsModule, FormGroup, Validators} from '@angular/forms';
 import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
 import { NumberInputFieldComponent } from '../number-input-field/number-input-field.component';
+import { LanguageService } from '../../language.service';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CommonModule } from '@angular/common';
+
+
 @Component({
   selector: 'app-health-information',
   standalone: true,
-  imports: [MatRadioModule,FormsModule,ReactiveFormsModule, RadioButtonChoiceComponent,NumberInputFieldComponent],
+  imports: [CommonModule,MatInputModule,MatSelectModule,MatFormFieldModule,MatRadioModule,FormsModule,ReactiveFormsModule, RadioButtonChoiceComponent,NumberInputFieldComponent],
   templateUrl: './health-information.component.html',
   styleUrl: './health-information.component.css'
 })
 export class HealthInformationComponent {
+
+  options: string[] = ["ar", "fr", "en"];
+
+  selectedLanguage: string = "en";
+  
 
   weightInputClicked: boolean = false;
   heightInputClicked: boolean = false;
@@ -56,8 +68,27 @@ export class HealthInformationComponent {
     hypertension: ['', [Validators.required]],
   });
 
-  constructor(private formBuilder: FormBuilder,private formDataService: FormDataService) { }
+  constructor(private languageService:LanguageService,private formBuilder: FormBuilder,private formDataService: FormDataService) { }
   
+  getCurrentLanguage(): string {
+    return this.languageService.getCurrentLanguage();
+  }
+
+  toggleLanguage(language:string): void {
+    this.languageService.toggleLanguage(language);
+    console.log(language);
+  }
+
+  getContent(key: string): string {
+    return this.languageService.getContent(key);
+  }
+
+  ngOnInit() {
+    this.toggleLanguage(this.selectedLanguage);
+  }
+
+
+
 
   onNext(): void {
     this.clearErrors();

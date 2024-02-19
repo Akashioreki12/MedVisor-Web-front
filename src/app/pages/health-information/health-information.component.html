@@ -1,50 +1,51 @@
+<mat-form-field class="textInput">
+    <mat-label for="residentialArea">Language<span class="red-highlight">*</span></mat-label>
+    <mat-select id="residentialArea" (selectionChange)="toggleLanguage($event.value)" [(value)]="selectedLanguage">
+        <mat-option *ngFor="let option of options" [value]="option">
+            {{ option }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+
 <form class="form-section-2-container" (ngSubmit)="onNext()" [formGroup]="checkoutForm">
-    <p class="form-section-title">Health Informations</p>
+    <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="form-section-title">{{getContent('form_1_title') }}</p>
 
     <div class="health-container">
-        <p class="health-container-title">Basic health</p>
+        <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container-title">{{getContent('section_1_title') }}</p>
         <div class="form-row">
 
 
-            <app-number-input-field toolTip="Height in (m) ex: 1.75m" (inputClicked)="onWeightInputClicked()" [errorList]="weightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('weight')?.invalid && !weightInputClicked}" label="Weight" (valueChange)="handleWeight($event)" [value]="weightValeur"></app-number-input-field>
-            <app-number-input-field toolTip="Weight in (kg) ex: 80kg" (inputClicked)="onHeightInputClicked()" [errorList]="heightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('height')?.invalid && !heightInputClicked}" label="Height" (valueChange)="handleHeight($event)"  [value]="heightValeur"></app-number-input-field>
-            <app-number-input-field toolTip="BMI (Body Mass Index) is a measure of body fat based on weight and height (kg/m²)." (inputClicked)="onBmiInputClicked()" [errorList]="bmiErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('bmi')?.invalid && !bmiInputClicked}" label="BMI" (valueChange)="handleBMI($event)" [value]="bmiValeur"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('weightToolTip') }}" (inputClicked)="onWeightInputClicked()" [errorList]="weightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('weight')?.invalid && !weightInputClicked}" label="{{getContent('weight') }}" (valueChange)="handleWeight($event)" [value]="weightValeur"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('heightToolTip') }}" (inputClicked)="onHeightInputClicked()" [errorList]="heightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('height')?.invalid && !heightInputClicked}" label="{{getContent('height') }}" (valueChange)="handleHeight($event)"  [value]="heightValeur"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('bmiToolTip') }}" (inputClicked)="onBmiInputClicked()" [errorList]="bmiErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('bmi')?.invalid && !bmiInputClicked}" label="{{getContent('bmi') }}" (valueChange)="handleBMI($event)" [value]="bmiValeur"></app-number-input-field>
 
         </div>
     </div>
 
     <div class="health-container">
-        <p class="health-container-title">Cholesterol & Glucose Levels</p>
+        <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container-title">{{getContent('section_2_title') }}</p>
         <div class="form-row">
-            <app-number-input-field toolTip="Total blood cholesterol level in g/L ex : 0.002g/L" (inputClicked)="onTotalCholesterolInputClicked()" [errorList]="totalCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('totalCholesterol')?.invalid && !totalCholesterolInputClicked}"  label="Total Level (g/l)" (valueChange)="handleTotalCholesterol($event)"></app-number-input-field>
-            <app-number-input-field toolTip="Level of low density lipoproteins in blood in g/L ex : 0.001 g/L" (inputClicked)="onLdlCholesterolInputClicked()" [errorList]="ldlCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('ldlCholesterol')?.invalid && !ldlCholesterolInputClicked}" label="LDL Level (g/l)" (valueChange)="handleLDLCholesterol($event)"></app-number-input-field>
-            <app-number-input-field toolTip="Level of high-density lipoproteins in the blood in g/L ex : 0.50 mg/dL" (inputClicked)="onHdlCholesterolInputClicked()" [errorList]="hdlCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('hdlCholesterol')?.invalid && !hdlCholesterolInputClicked}" label="HDL Level (g/l)" (valueChange)="handleHDLCholesterol($event)"></app-number-input-field>
-            <app-number-input-field toolTip="Average blood glucose level of the patient in g/L ex: 0.120 mg/dL" (inputClicked)="onGlucoseLevelInputClicked()" [errorList]="glucoseLevelErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('glucoseLevel')?.invalid && !glucoseLevelInputClicked}" label="Glucose Level (g/l)" (valueChange)="handleGlucoseLevel($event)"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('totalToolTip') }}" (inputClicked)="onTotalCholesterolInputClicked()" [errorList]="totalCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('totalCholesterol')?.invalid && !totalCholesterolInputClicked}"  label="{{getContent('total') }}" (valueChange)="handleTotalCholesterol($event)"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('ldlToolTip') }}" (inputClicked)="onLdlCholesterolInputClicked()" [errorList]="ldlCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('ldlCholesterol')?.invalid && !ldlCholesterolInputClicked}" label="{{getContent('ldl') }}" (valueChange)="handleLDLCholesterol($event)"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('hdlToolTip') }}" (inputClicked)="onHdlCholesterolInputClicked()" [errorList]="hdlCholesterolErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('hdlCholesterol')?.invalid && !hdlCholesterolInputClicked}" label="{{getContent('hdl') }}" (valueChange)="handleHDLCholesterol($event)"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('glucoseToolTip') }}" (inputClicked)="onGlucoseLevelInputClicked()" [errorList]="glucoseLevelErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('glucoseLevel')?.invalid && !glucoseLevelInputClicked}" label="{{getContent('glucose') }}" (valueChange)="handleGlucoseLevel($event)"></app-number-input-field>
         </div>
     </div>
 
     <div class="health-container">
 
 
-        <p class="health-container-title">Additional Health Information</p>
+        <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container-title">{{getContent('section_3_title')}}</p>
         <div class="form-row">
 
 
-            <app-radio-button-choice label="Heart disease" option1="Yes" option2="No" defaultValue="No" (valueChange)="handleHeartDisease($event)"></app-radio-button-choice>
-            <app-radio-button-choice label="Diabetes" option1="Yes" option2="No" defaultValue="No" (valueChange)="handleDiabetes($event)"></app-radio-button-choice>
-            <app-radio-button-choice label="Hypertension" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHypertension($event)"></app-radio-button-choice>
+            <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('heartDisease')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" defaultValue="{{getContent('no')}}" (valueChange)="handleHeartDisease($event)"></app-radio-button-choice>
+            <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('diabetes')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" defaultValue="{{getContent('no')}}" (valueChange)="handleDiabetes($event)"></app-radio-button-choice>
+            <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('hypertension')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" defaultValue="{{getContent('no')}}" (valueChange)="handleHypertension($event)"></app-radio-button-choice>
 
 
 
         </div>
     </div>
 </form>
-
-
-<!--
-
-<mat-radio-group aria-label="Select an option">
-    <mat-radio-button color="primary" value="1">Option 1</mat-radio-button>
-    <mat-radio-button color="primary" value="2">Option 2</mat-radio-button>
-</mat-radio-group>
--->

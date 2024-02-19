@@ -1,20 +1,7 @@
 <div class="textInput">
     <label for="gender">{{label}}<span class="red-highlight">*</span></label>
-    <div class="radio-buttons-container">
-        <div class="left-radio">
-            <input type="radio" [name]="label"  id="male"  [value]="option1" (change)="onInputChange($event)" [checked]="defaultValue === option1">
-            <label class="radio-text" for="male">{{option1}}</label>
-        </div>
-        <div class="right-radio">
-            <input type="radio" [name]="label" id="female"  [value]="option2" (change)="onInputChange($event)" [checked]="defaultValue === option2">
-            <label class="radio-text" for="female">{{option2}}</label>
-        </div>
-    </div>
-</div>
-<!--<div class="textInput">
-    <label for="gender">{{label}}<span class="red-highlight">*</span></label>
-    <mat-radio-group aria-label="{{label}}" [(ngModel)]="defaultValue" (change)="onInputChange($event)">
+    <mat-radio-group aria-label="label" [(ngModel)]="defaultValue" (change)="onUpdate()">
         <mat-radio-button color="primary" value="{{option1}}">{{option1}}</mat-radio-button>
         <mat-radio-button color="primary" value="{{option2}}">{{option2}}</mat-radio-button>
     </mat-radio-group>
-</div>-->
+</div>

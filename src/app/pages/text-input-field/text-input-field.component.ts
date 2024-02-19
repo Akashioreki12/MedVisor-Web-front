@@ -16,17 +16,13 @@ export class TextInputFieldComponent {
   @Input() ngClassInput: any;
   @Input() errorList: string[] = [];
   @Input() toolTip: string = "";
-  
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() inputClicked: EventEmitter<void> = new EventEmitter(); 
   onInputChange(event: any) {
     const value = event.target.value;
     this.valueChange.emit(value);
-    console.log(value);
   }
-  
   onInputClick() {
-    // Emit the event when the input is clicked
     this.inputClicked.emit();
   }
 

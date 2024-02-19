@@ -17,6 +17,7 @@ input {
     border-radius: 10px;
     background-color: #E8EAEF;
     padding-left: 10px;
+    padding-right: 10px
 }
 
 input:focus {

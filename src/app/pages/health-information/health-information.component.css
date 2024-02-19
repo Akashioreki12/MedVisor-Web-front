@@ -26,6 +26,18 @@
     
 }
 
+.languageButton {
+    background-color: blue;
+}
+
+.languageButton:hover {
+    opacity: 0.9;
+}
+
+.languageButton:active{
+    opacity: 0.8;
+}
+
 
 .form-row {
     display: flex;
