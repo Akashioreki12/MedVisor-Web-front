@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { FormDataService} from '../../form-data.service';
+import { MatRadioModule } from '@angular/material/radio';
+import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule,FormsModule, FormGroup, Validators} from '@angular/forms';
 import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
 import { NumberInputFieldComponent } from '../number-input-field/number-input-field.component';
 @Component({
   selector: 'app-health-information',
   standalone: true,
-  imports: [FormsModule,ReactiveFormsModule, RadioButtonChoiceComponent,NumberInputFieldComponent],
+  imports: [MatRadioModule,FormsModule,ReactiveFormsModule, RadioButtonChoiceComponent,NumberInputFieldComponent],
   templateUrl: './health-information.component.html',
   styleUrl: './health-information.component.css'
 })
@@ -201,6 +202,7 @@ this.checkoutForm.patchValue({
 });
       this.heightValeur = 0;
       this.weightValeur = 0;
+      
     }
   
   handleTotalCholesterol(value: any) {

@@ -5,8 +5,8 @@
 
 
 
-        <app-text-input-field (inputClicked)="onFirstNameInputClicked()" [errorList]="firstNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !firstNameInputClicked}" (valueChange)="handleFirstName($event)" [label]="'First Name'" [placeHolder]="firstName"></app-text-input-field>
-        <app-text-input-field (inputClicked)="onLastNameInputClicked()" [errorList]="lastNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('lastName')?.invalid && !lastNameInputClicked}" (valueChange)="handleLastName($event)" [label]="'Last Name'" [placeHolder]="lastName"></app-text-input-field>
+        <app-text-input-field  toolTip="First name ex: John" (inputClicked)="onFirstNameInputClicked()" [errorList]="firstNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !firstNameInputClicked}" (valueChange)="handleFirstName($event)" [label]="'First Name'" [placeHolder]="firstName"></app-text-input-field>
+        <app-text-input-field  toolTip="Last name ex: Doe" (inputClicked)="onLastNameInputClicked()" [errorList]="lastNameErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('lastName')?.invalid && !lastNameInputClicked}" (valueChange)="handleLastName($event)" [label]="'Last Name'" [placeHolder]="lastName"></app-text-input-field>
 
 
 
@@ -15,8 +15,8 @@
 
 
     <div class="form-row">
-        <app-text-input-field (inputClicked)="onAgeInputClicked()" [errorList]="ageErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !ageInputClicked}" (valueChange)="handleAge($event)" [label]="'Age'" [placeHolder]="age"></app-text-input-field>
-        <app-radio-button-choice label="Gender" option1="Male" option2="Female" defaultValue="Female" (valueChange)="handleGender($event)"></app-radio-button-choice>
+        <app-text-input-field toolTip="Age ex: 25" (inputClicked)="onAgeInputClicked()" [errorList]="ageErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !ageInputClicked}" (valueChange)="handleAge($event)" [label]="'Age'" [placeHolder]="age"></app-text-input-field>
+        <app-radio-button-choice  label="Gender" option1="Male" option2="Female" defaultValue="Female" (valueChange)="handleGender($event)"></app-radio-button-choice>
     </div>
 
     <div class="form-row">
@@ -27,7 +27,7 @@
 
     </div>
     <div class="form-row">
-        <app-text-input-field (inputClicked)="onEmailInputClicked()" [errorList]="emailErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('email')?.invalid && !emailInputClicked}" (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="''"></app-text-input-field>    
-        <app-text-input-field (inputClicked)="onCINInputClicked()" [errorList]="cinErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('cin')?.invalid && !cinInputClicked}" (valueChange)="handleCIN($event)" [label]="'CIN'" [placeHolder]="cin"></app-text-input-field>
+        <app-text-input-field toolTip="Email ex:john.doe@contact.me" (inputClicked)="onEmailInputClicked()" [errorList]="emailErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('email')?.invalid && !emailInputClicked}" (valueChange)="handleEmail($event)" [label]="'Email'" [placeHolder]="''"></app-text-input-field>    
+        <app-text-input-field toolTip="Unique Moroccan citizen identifier on the national identity card ex: HH58475" (inputClicked)="onCINInputClicked()" [errorList]="cinErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('cin')?.invalid && !cinInputClicked}" (valueChange)="handleCIN($event)" [label]="'CIN'" [placeHolder]="cin"></app-text-input-field>
     </div>
 </form>

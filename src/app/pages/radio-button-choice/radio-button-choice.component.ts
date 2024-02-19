@@ -1,9 +1,9 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-
+import { MatRadioModule } from '@angular/material/radio';
 @Component({
   selector: 'app-radio-button-choice',
   standalone: true,
-  imports: [],
+  imports: [MatRadioModule],
   templateUrl: './radio-button-choice.component.html',
   styleUrl: './radio-button-choice.component.css'
 })
@@ -24,7 +24,10 @@ export class RadioButtonChoiceComponent {
   onInputChange(event: any) {
     const value = event.target.value;
     this.valueChange.emit(value);
-}
+  }
+  
+
+
 
 
 }

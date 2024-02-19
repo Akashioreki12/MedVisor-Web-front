@@ -15,6 +15,7 @@ export class TextInputFieldComponent {
   @Input() placeHolder: string = "placeHolder";
   @Input() ngClassInput: any;
   @Input() errorList: string[] = [];
+  @Input() toolTip: string = "";
   
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   @Output() inputClicked: EventEmitter<void> = new EventEmitter(); 

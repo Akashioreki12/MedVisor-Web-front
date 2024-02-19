@@ -20,6 +20,8 @@ export class NumberInputFieldComponent {
   @Input() ngClassInput: any;
   @Input() errorList: string[] = [];
 
+  @Input() toolTip: string = "";
+
   @Output() inputClicked: EventEmitter<void> = new EventEmitter(); 
 
 
