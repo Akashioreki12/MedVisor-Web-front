@@ -1,3 +1,26 @@
+.languages-list {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    justify-content: end;
+    margin-right: 50px;
+    
+}
+
+li {
+    font-size: 11px;
+    cursor: pointer;
+}
+.language {
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+.language:hover{
+    color: #4874ED;
+}
+
+
 button {
     font-size: 20;
     font-weight: 400;

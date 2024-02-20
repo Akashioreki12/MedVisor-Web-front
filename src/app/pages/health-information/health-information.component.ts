@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule,FormsModule, FormGroup, Validators} from '@angular/forms';
-import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
-import { NumberInputFieldComponent } from '../number-input-field/number-input-field.component';
+import { RadioButtonChoiceComponent } from '../../../assets/components/radio-button-choice/radio-button-choice.component';
+import { NumberInputFieldComponent } from '../../../assets/components/number-input-field/number-input-field.component';
 import { LanguageService } from '../../language.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -22,7 +22,7 @@ export class HealthInformationComponent {
 
   options: string[] = ["ar", "fr", "en"];
 
-  selectedLanguage: string = "en";
+  selectedLanguage: string = this.getContent('language');
   
 
   weightInputClicked: boolean = false;
@@ -77,7 +77,6 @@ export class HealthInformationComponent {
 
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
-    console.log(language);
   }
 
   getContent(key: string): string {
@@ -85,6 +84,10 @@ export class HealthInformationComponent {
   }
 
   ngOnInit() {
+     this.languageService.getCurrentLanguageSubject().subscribe(language => {
+      this.selectedLanguage = language;
+      // Update other properties or perform language-related logic here
+    });
     this.toggleLanguage(this.selectedLanguage);
   }
 

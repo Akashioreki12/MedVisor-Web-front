@@ -8,11 +8,14 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
 import { FormDataService} from '../../form-data.service';
 import { ActivatedRoute } from '@angular/router';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { LanguageService } from '../../language.service';
 @Component({
   selector: 'app-model-form',
   standalone: true,
-  imports: [RouterModule,
+  imports: [MatSelectModule,MatFormFieldModule,MatInputModule,RouterModule,
     MatStepperModule,
     BasicInformationComponent,
     AdditionalInformationComponent,
@@ -34,12 +37,22 @@ export class ModelFormComponent {
       age: '',
       phoneNumber: '',
       cin: ''
-    };
+  };
+  
+  options1: string[] = ["ar", "fr", "en"];
 
-  constructor(private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
+  selectedLanguage: string = "en";
+
+  constructor(private languageService:LanguageService,private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
+  
+
+getContent(key: string): string {
+    return this.languageService.getContent(key);
+  }
+  
 
 
-ngOnInit(): void {
+  ngOnInit(): void {
   this.route.queryParams.subscribe((params) => {
     const selectedPersonString = params['selectedPerson'];
 
@@ -51,7 +64,25 @@ ngOnInit(): void {
       console.log('No selectedPerson parameter found.');
     }
   });
-}
+  }
+  
+  toggleLanguage(language: string): void {
+    this.additionalInformationComponent.toggleLanguage(language);
+    this.basicInformationComponent.onLanguageToggle(language);
+    
+  }
+
+  activateArabic(): void {
+    this.toggleLanguage('ar');
+    console.log(this.getContent('back'));
+  }
+  activateFrench(): void {
+    this.toggleLanguage('fr');
+  }
+  activateEnglish(): void {
+    this.toggleLanguage('en');
+  }
+
 
 
  onNext(): void {

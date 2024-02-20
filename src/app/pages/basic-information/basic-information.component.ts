@@ -2,10 +2,10 @@ import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
-import { TextInputFieldComponent } from '../text-input-field/text-input-field.component';
-import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
-import { PhoneNumberFieldComponent } from '../phone-number-field/phone-number-field.component';
-import { ChoiceInputFieldComponent } from '../choice-input-field/choice-input-field.component';
+import { TextInputFieldComponent } from '../../../assets/components/text-input-field/text-input-field.component';
+import { RadioButtonChoiceComponent } from '../../../assets/components/radio-button-choice/radio-button-choice.component';
+import { PhoneNumberFieldComponent } from '../../../assets/components/phone-number-field/phone-number-field.component';
+import { ChoiceInputFieldComponent } from '../../../assets/components/choice-input-field/choice-input-field.component';
 import { LanguageService } from '../../language.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -31,6 +31,9 @@ export class BasicInformationComponent {
    options: string[] = ["ar", "fr", "en"];
 
   selectedLanguage: string = "en";
+
+
+  maritalStatusOptions:string [] = [];
 
 
 
@@ -77,16 +80,27 @@ export class BasicInformationComponent {
 
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
-    console.log(language);
+    this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
   }
 
   getContent(key: string): string {
     return this.languageService.getContent(key);
   }
+onLanguageToggle(language: string): void {
+  // Implement logic for language toggle in BasicInformationComponent
+  this.selectedLanguage = language;
+      this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
 
+}
 
   ngOnInit(): void {
+    this.languageService.getCurrentLanguageSubject().subscribe(language => {
+      this.selectedLanguage = language;
+      // Update other properties or perform language-related logic here
+    });
     this.toggleLanguage(this.selectedLanguage);
+    this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
+
     this.checkoutForm.patchValue({
       firstName: this.firstName,
     lastName: this.lastName,

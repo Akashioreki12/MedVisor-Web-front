@@ -1,6 +1,13 @@
-<mat-horizontal-stepper #stepper class="my-stepper-component">
+<ul class="languages-list">
+    <li (click)="activateEnglish()"><span class="language">EN</span>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+    <li (click)="activateFrench()"><span class="language">FR</span>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+    <li (click)="activateArabic()"><span class="language">AR</span></li>
+</ul>
+
+
+<mat-horizontal-stepper  #stepper class="my-stepper-component">
         <mat-step label="1">
-            <app-basic-information #basicInformationComponent [firstName]="selectedPerson.firstName"
+            <app-basic-information  #basicInformationComponent [firstName]="selectedPerson.firstName"
       [lastName]="selectedPerson.lastName"
       [age]="selectedPerson.age"
       [phoneNumber]="selectedPerson.phoneNumber"
@@ -9,13 +16,13 @@
         <mat-step label="2">
             <app-health-information #healthInformationComponent></app-health-information>
         </mat-step>
-        <mat-step label="3">
+        <mat-step  label="3">
             <app-additional-information #additionalInformationComponent></app-additional-information>
         </mat-step>
 </mat-horizontal-stepper>
 
 
 <div class="buttons-container">
-    <button class="btn1" (click)="stepper.previous()">Back</button>
-    <button class="btn2" (click)="onNext()">Next</button>
+    <button class="btn1" (click)="stepper.previous()">{{getContent('back')}}</button>
+    <button class="btn2" (click)="onNext()">{{getContent('next')}}</button>
 </div>

@@ -1,30 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpBackend, HttpClient } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError,tap } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
 
-  private currentLanguage: string = 'fr';
+  private currentLanguage: string = 'en';
   private languageData: any;
+  private languageSubject = new BehaviorSubject<string>(this.currentLanguage);
 
   constructor(private http: HttpClient) {
     this.fetchLanguageData();
   }
 
   private fetchLanguageData(): void {
-    this.http.get('./assets/languages/form2.json').pipe(
-      tap(data => this.languageData = data),
-      catchError(error => {
+    this.http.get('./assets/languages/form.json').subscribe(
+      data => {
+        this.languageData = data;
+        this.languageSubject.next(this.currentLanguage);
+      },
+      error => {
         console.error('Error fetching language data:', error);
-        return throwError('Error fetching language data');
-      })
-    ).subscribe();
-  ;
+      }
+    );
+  }
 
+  getCurrentLanguageSubject(): BehaviorSubject<string> {
+    return this.languageSubject;
   }
 
   getCurrentLanguage(): string {
@@ -33,7 +37,8 @@ export class LanguageService {
 
  toggleLanguage(language: string): void {
     if (this.languageData && this.languageData[language]) {
-        this.currentLanguage = language;
+      this.currentLanguage = language;
+      this.languageSubject.next(this.currentLanguage);
     }
 }
 

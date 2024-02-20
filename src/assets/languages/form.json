@@ -1,5 +1,8 @@
 {
     "en":{
+        "language":"en",
+
+
         "form_2_title":"Health Informations",
         "section_1_title":"Basic health",
         "weight":"Weight",
@@ -27,14 +30,18 @@
 
 
         "form_1_title":"Basic Informations",
-        "firstName":"Fist Name",
+        "firstName":"First Name",
         "lastName":"Last Name",
         "age":"Age",
         "gender":"Gender",
         "phoneNumber":"Phone Number",
-        "maritalSattus":"Total Level (g/L)",
+        "maritalStatus":"Marital Status",
+        "married":"Married",
+        "single":"Single",
         "email":"Email",
         "cin":"CIN",
+        "female":"Female",
+        "male":"Male",
         "firstNameToolTip":"Fist name ex: John",
         "lastNameToolTip":"Last name ex: Doe",
         "ageToolTip":"Age ex: 25",
@@ -42,10 +49,40 @@
         "phoneNumberToolTip":"",
         "maritalStatusToolTip":"",
         "emailToolTip":"Email ex: john.doe@contact.me",
-        "cinToolTip":"Unique Moroccan Citizen identifier ex: HH12546"
+        "cinToolTip":"Unique Moroccan Citizen identifier ex: HH12546",
 
 
 
+
+        "form_3_title":"Additional Informations",
+        "section_4_title":"Hereditary or Genetics",
+        "historyTIA":"History of TIAs",
+        "heredityOrGenetics":"Heredity or Genetics",
+        "section_5_title":"More",
+        "residentialArea":"Residential Area",
+        "smokingStatus":"Smoking Status",
+        "alcoholStatus":"Alcohol Status",
+        "workType":"Work Type",
+        "rural":"Rural",
+        "urban":"Urban",
+        "smoker": "Smoker",
+        "exSmoker": "Ex-Smoker",
+        "neverSmoke": "Never Smoked",
+        "true": "True",
+        "false": "False",
+        "privateSector": "Private Sector",
+        "publicSector": "Public Sector",
+        "home": "At Home",
+        "undetermined": "Undetermined",
+        "jobless": "Jobless",
+        "independentActivity": "Independent Activity",
+
+
+
+
+
+        "back":"Back",
+        "next":"Next"
 
 
 
@@ -59,6 +96,9 @@
 
     },
     "fr":{
+        "language":"fr",
+
+
         "form_2_title":"Informations de santé",
         "section_1_title":"Santé de base",
         "weight":"Poids",
@@ -91,9 +131,13 @@
   "age": "Âge",
   "gender": "Sexe",
   "phoneNumber": "Numéro de téléphone",
-  "maritalSattus": "Statut marital",
+  "maritalStatus": "Statut marital",
+  "married": "Marié(e)",
+  "single": "Célibataire",
   "email": "Email",
   "cin": "CIN (Carte d'Identité Nationale)",
+  "female": "Femme",
+  "male": "Homme",
   "firstNameToolTip": "Prénom, par exemple : John",
   "lastNameToolTip": "Nom de famille, par exemple : Doe",
   "ageToolTip": "Âge, par exemple : 25",
@@ -101,10 +145,42 @@
   "phoneNumberToolTip": "",
   "maritalStatusToolTip": "Statut marital",
   "emailToolTip": "Email, par exemple : john.doe@contact.me",
-  "cinToolTip": "Identifiant unique du citoyen marocain, par exemple : HH12546"
+  "cinToolTip": "Identifiant unique du citoyen marocain, par exemple : HH12546",
+
+
+  "form_3_title": "Informations Supplémentaires",
+  "section_4_title": "Hérédité ou Génétique",
+  "historyTIA": "Historique des AIT (Accidents Ischémiques Transitoires)",
+  "heredityOrGenetics": "Hérédité ou Génétique",
+  "section_5_title": "Plus",
+  "residentialArea": "Zone Résidentielle",
+  "smokingStatus": "Statut Tabagique",
+  "alcoholStatus": "Statut Alcoolique",
+  "workType": "Type de Travail",
+  "rural": "Rural",
+  "urban": "Urbain",
+  "smoker":"Fumeur",
+  "exSmoker":"Ex-Fumeur",
+  "neverSmoke":"Jamais fumé",
+  "true":"Vrai",
+  "false":"False",
+  "privateSector":"Secteur privé",
+  "publicSector":"Secteur public",
+  "home":"Au foyer",
+  "undertermined":"indéterminé",
+  "jobless":"Sans travail",
+  "independantActivity":"Activité indépendante",
+
+
+  "back": "Retour",
+  "next": "Suivant"
 
     },
     "ar": {
+
+
+
+"language":"ar",
 "form_2_title": "معلومات الصحة",
 "section_1_title": "الصحة الأساسية",
 "weight": "الوزن",
@@ -137,9 +213,13 @@
   "age": "العمر",
   "gender": "الجنس",
   "phoneNumber": "رقم الهاتف",
-  "maritalSattus": "الحالة الاجتماعية",
+  "maritalStatus": "الحالة الاجتماعية",
+  "married": "متزوج(ة)",
+  "single": "أعزب(ة)",
   "email": "البريد الإلكتروني",
   "cin": "رقم الهوية الوطنية",
+  "female": "أنثى",
+  "male": "ذكر",
   "firstNameToolTip": "الاسم الأول، مثال: جون",
   "lastNameToolTip": "اسم العائلة، مثال: دو",
   "ageToolTip": "العمر، مثال: 25",
@@ -147,9 +227,41 @@
   "phoneNumberToolTip": "",
   "maritalStatusToolTip": "الحالة الاجتماعية",
   "emailToolTip": "البريد الإلكتروني، مثال: john.doe@contact.me",
-  "cinToolTip": "الرقم الوطني للهوية المغربي، مثال: HH12546"
+  "cinToolTip": "الرقم الوطني للهوية المغربي، مثال: HH12546",
 
 
+
+
+
+
+
+  "form_3_title": "معلومات إضافية",
+  "section_4_title": "وراثة أو جينات",
+  "historyTIA": "تاريخ الأوعية الدموية الدماغية المؤقتة",
+  "heredityOrGenetics": "وراثة أو جينات",
+  "section_5_title": "المزيد",
+  "residentialArea": "منطقة سكنية",
+  "smokingStatus": "حالة التدخين",
+  "alcoholStatus": "حالة تناول الكحول",
+  "workType": "نوع العمل",
+  "rural": "ريفي",
+  "urban": "حضري",
+  "smoker": "مدخن",
+  "exSmoker": "مدخن سابق",
+  "neverSmoke": "لم يدخن أبداً",
+  "true": "صحيح",
+  "false": "غير صحيح",
+  "privateSector": "القطاع الخاص",
+  "publicSector": "القطاع العام",
+  "home": "في المنزل",
+  "undetermined": "غير محدد",
+  "jobless": "بلا عمل",
+  "independentActivity": "نشاط مستقل",
+
+
+
+  "back": "العودة",
+  "next": "التالي"
 
 
 }

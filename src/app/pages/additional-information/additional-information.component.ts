@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormDataService } from '../../form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
-import { RadioButtonChoiceComponent } from '../radio-button-choice/radio-button-choice.component';
-import { ChoiceInputFieldComponent } from '../choice-input-field/choice-input-field.component';
+import { RadioButtonChoiceComponent } from '../../../assets/components/radio-button-choice/radio-button-choice.component';
+import { ChoiceInputFieldComponent } from '../../../assets/components/choice-input-field/choice-input-field.component';
 import { LanguageService } from '../../language.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -27,9 +27,13 @@ export class AdditionalInformationComponent {
     workType: ['', [Validators.required]],
    });
   
-   options: string[] = ["ar", "fr", "en"];
+  options1: string[] = ["ar", "fr", "en"];
 
-  selectedLanguage: string = "en";
+    getContent(key: string): string {
+    return this.languageService.getContent(key);
+  }
+
+  selectedLanguage: string = 'en';
   
   
   constructor(private languageService: LanguageService, private formDataService: FormDataService, private formBuilder: FormBuilder) { }
@@ -40,16 +44,34 @@ export class AdditionalInformationComponent {
 
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
-    console.log(language);
+    this.selectedLanguage = this.getContent('language');
+    this.residenceTypeOptions = [this.getContent('rural'), this.getContent('urban')];
+    this.smokingStatusOptions = [this.getContent('smoker'),this.getContent('neverSmoke'),this.getContent('exSmoker')];
+    this.alcoholStatusOptions = [this.getContent('true'),this.getContent('false')];
+    this.workTypeOptions = [this.getContent('privateSector'),this.getContent('publicSector'),this.getContent('home'),this.getContent('undetermined'),this.getContent('jobless'),this.getContent('independantActivity')];
   }
 
-  getContent(key: string): string {
-    return this.languageService.getContent(key);
-  }
+
+
+  residenceTypeOptions: string[] = [];
+  smokingStatusOptions: string[] = [];
+  alcoholStatusOptions: string[] = [];
+  workTypeOptions: string[] = [];
+
+ 
+
 
   ngOnInit() {
-        this.toggleLanguage(this.selectedLanguage);
-
+     this.languageService.getCurrentLanguageSubject().subscribe(language => {
+      this.selectedLanguage = language;
+      // Update other properties or perform language-related logic here
+    });
+    this.toggleLanguage(this.selectedLanguage);
+    this.residenceTypeOptions = [this.getContent('rural'), this.getContent('urban')];
+    this.smokingStatusOptions = [this.getContent('smoker'),this.getContent('neverSmoke'),this.getContent('exSmoker')];
+    this.alcoholStatusOptions = [this.getContent('true'),this.getContent('false')];
+    this.workTypeOptions = [this.getContent('privateSector'),this.getContent('publicSector'),this.getContent('home'),this.getContent('undetermined'),this.getContent('jobless'),this.getContent('independantActivity')];
+    
   }
 
 
