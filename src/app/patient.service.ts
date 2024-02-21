@@ -10,10 +10,13 @@ export class PatientService {
 
   constructor( private http : HttpClient) { }
 
-  private baseUrl = 'http://localhost:8080/medicalimageprocessing/v1/surveys';
-
+  private baseUrl = 'http://localhost:8080/patients';
+  private baseurl = 'http://localhost:8080/medicalimageprocessing/v1/surveys';
   getAllPatients(): Observable<any> {
     return this.http.get(`${this.baseUrl}/all`);
+  }
+  getAllByCin(cin: string): Observable<any> {
+    return this.http.get(`${this.baseurl}/allByCin/${cin}`);
   }
 
   getPatientById(id: number): Observable<any> {
@@ -40,8 +43,12 @@ export class PatientService {
   }
 
 
-  getSurveyData(personId: number): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/find/${personId}`);
+  getSurveyData(cin :string): Observable<any> {
+    return this.http.get<any>(`${this.baseurl}/findByCin/${cin}`);
+  }
+  
+  getPatientByCIN(cin: String): Observable<any> {
+    return this.http.get(`${this.baseurl}/findByCin/${cin}`);
   }
   
 }

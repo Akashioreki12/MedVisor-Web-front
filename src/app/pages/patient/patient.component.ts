@@ -19,9 +19,10 @@ export class PatientComponent implements OnInit {
   people: Patient[] = [];
   searchQuery: string = ""; 
   searchResults: Patient[] = []; 
-  selectedPerson: Patient | null = null;
+  selectedPerson: Patient| null = null;
   searchDate: string = "";
   selectedSurvey:any;
+  surveys : any[]=[];
    // Assuming you have a list of surveys
     currentPage: number = 1;
     pageSize: number = 10; 
@@ -73,7 +74,7 @@ export class PatientComponent implements OnInit {
       //   If the clicked element is not a function icon, select the person and navigate
         this.selectedPerson = person;
         console.log(person);
-        this.loadSurvey(person.id);
+        this.loadSurvey(person.cin);
        // this.router.navigateByUrl("/form2");
     }
 }
@@ -135,10 +136,11 @@ selecteditPerson(personid:number): void {
 
 
 
-loadSurvey(patientId: number): void {
-  this.patientService.getSurveyData(patientId).subscribe(
+loadSurvey(cin : string): void {
+  this.patientService.getAllByCin(cin).subscribe(
     data => {
       this.selectedSurvey = data;
+      this.surveys=data;
     },
     error => {
       console.log('Error fetching survey:', error);
@@ -170,5 +172,8 @@ nextPage(): void {
       this.currentPage++;
   }
 }
+
+
+
  
 }
