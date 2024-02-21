@@ -1,10 +1,12 @@
 import { Component, Input, Output, EventEmitter, NgModule } from '@angular/core';
-import { CommonModule} from '@angular/common';
-
+import { CommonModule } from '@angular/common';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'app-choice-input-field',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,MatInputModule,MatSelectModule,MatFormFieldModule],
   templateUrl: './choice-input-field.component.html',
   styleUrl: './choice-input-field.component.css'
 })

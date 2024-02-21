@@ -6,7 +6,7 @@
         </div>
         <div class="right">
             <img class="active" src="..\..\assets\Svgs\profile.svg" (click)="navigate()" alt="vector"/>
-            <img class="active" src="..\..\assets\Svgs\home.svg" routerLink ="/page-result" alt="home"/>
+            <img class="active" src="..\..\assets\Svgs\home.svg" routerLink ="/page-signup" alt="home"/>
         </div>
     </div>
 </div>
@@ -21,8 +21,9 @@
                     <div class="search-bar">
                     <img class="active-search" src="..\..\assets\Svgs\search.svg" alt="search" />
                     <input class="form-control me-4" [(ngModel)]="searchQuery" name="searchQuery" type="search" placeholder="Search patient" aria-label="Search"  />
-                
+                    <input class="form-control me-4" [(ngModel)]="searchDate" name="searchDate" type="date" placeholder="Search by date" aria-label="Search by date" />
                     <button class="btn btn-outline-success" type="search" (click)="searchPatients()"> Search</button>
+                    
                     <button class="btn btn-outline-success" type="submit" routerLink ="/form">Add patient</button>
                 </div>
                 </form>
@@ -33,25 +34,180 @@
 <table id="personalInfoTable">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>First Name</th>
+            <th>Nom</th>
+            <th>Prénom</th>
             <th>CIN</th>
-            <th>Birthday</th>
-            <th>Number</th>
-            <th>Act</th>
+            <th>Age</th>
+            <th>Numéro mobile</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody id="tableBody">
-        <tr *ngFor="let person of people">
+        <tr *ngFor="let person of currentSurveys" (click)="selectPerson(person, $event)" [class.selected]="person === selectedPerson">
             <td>{{ person.lastName }}</td>
             <td>{{ person.firstName }}</td>
             <td>{{ person.cin }}</td>
-            <td>{{ person.dateOfBirth }}</td>
+            <td>{{ person.age }}</td>
             <td>{{ person.phoneNumber }}</td>
             <td>
-                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPatient(person.id)"  alt="edit" />
+                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPerson(person.id)"  alt="edit" />
+
                 <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
+               <!-- <button class="btn btn-outline-success" type="submit" (click)="displayClinicalInfo(person)"> details </button>-->
             </td>
         </tr>
+
+    
+                    
+                    
+       
+        
+                
+                
     </tbody>
 </table>
+
+
+
+<div class="pagination-controls">
+    <button class="pagination-button" (click)="previousPage()">Previous</button>
+    <span>{{ currentPage }} / {{ totalPages }}</span>
+    <button class="pagination-button" (click)="nextPage()">Next</button>
+</div>
+
+
+ <!-- Survey Data Container -->
+ <div class="survey-container" *ngIf="selectedSurvey">
+    <!-- First Name -->
+    <div class="survey-item">
+        <div class="survey-header">Prénom</div>
+        <div class="survey-content">{{ selectedSurvey.firstName }}</div>
+    </div>
+    <!-- Last Name -->
+    <div class="survey-item">
+        <div class="survey-header">Nom</div>
+        <div class="survey-content">{{ selectedSurvey.lastName }}</div>
+    </div>
+    <!-- Age -->
+    <div class="survey-item">
+        <div class="survey-header">Âge</div>
+        <div class="survey-content">{{ selectedSurvey.age }}</div>
+    </div>
+    <!-- Gender -->
+    <div class="survey-item">
+        <div class="survey-header">Sexe</div>
+        <div class="survey-content">{{ selectedSurvey.gender }}</div>
+    </div>
+    <!-- Country Code -->
+    <div class="survey-item">
+        <div class="survey-header">Code Pays</div>
+        <div class="survey-content">{{ selectedSurvey.countryCode }}</div>
+    </div>
+    <!-- Phone Number -->
+    <div class="survey-item">
+        <div class="survey-header">Numéro de Téléphone</div>
+        <div class="survey-content">{{ selectedSurvey.phoneNumber }}</div>
+    </div>
+    <!-- Marital Status -->
+    <div class="survey-item">
+        <div class="survey-header">Statut Matrimonial</div>
+        <div class="survey-content">{{ selectedSurvey.maritalStatus }}</div>
+    </div>
+    <!-- Email -->
+    <div class="survey-item">
+        <div class="survey-header">Email</div>
+        <div class="survey-content">{{ selectedSurvey.email }}</div>
+    </div>
+    <!-- CIN -->
+    <div class="survey-item">
+        <div class="survey-header">CIN</div>
+        <div class="survey-content">{{ selectedSurvey.cin }}</div>
+    </div>
+    <!-- Weight -->
+    <div class="survey-item">
+        <div class="survey-header">Poids</div>
+        <div class="survey-content">{{ selectedSurvey.weight }}</div>
+    </div>
+    <!-- Height -->
+    <div class="survey-item">
+        <div class="survey-header">Taille</div>
+        <div class="survey-content">{{ selectedSurvey.height }}</div>
+    </div>
+    <!-- BMI -->
+    <div class="survey-item">
+        <div class="survey-header">Indice de Masse Corporelle (IMC)</div>
+        <div class="survey-content">{{ selectedSurvey.bmi }}</div>
+    </div>
+    <!-- Total Cholesterol -->
+    <div class="survey-item">
+        <div class="survey-header">Cholestérol Total</div>
+        <div class="survey-content">{{ selectedSurvey.totalCholesterol }}</div>
+    </div>
+    <!-- LDL Cholesterol -->
+    <div class="survey-item">
+        <div class="survey-header">Cholestérol LDL</div>
+        <div class="survey-content">{{ selectedSurvey.ldlCholesterol }}</div>
+    </div>
+    <!-- HDL Cholesterol -->
+    <div class="survey-item">
+        <div class="survey-header">Cholestérol HDL</div>
+        <div class="survey-content">{{ selectedSurvey.hdlCholesterol }}</div>
+    </div>
+    <!-- Glucose Level -->
+    <div class="survey-item">
+        <div class="survey-header">Niveau de Glucose</div>
+        <div class="survey-content">{{ selectedSurvey.glucoseLevel }}</div>
+    </div>
+    <!-- Heart Disease -->
+    <div class="survey-item">
+        <div class="survey-header">Maladie Cardiaque</div>
+        <div class="survey-content">{{ selectedSurvey.heartDisease }}</div>
+    </div>
+    <!-- Diabetes -->
+    <div class="survey-item">
+        <div class="survey-header">Diabète</div>
+        <div class="survey-content">{{ selectedSurvey.diabetes }}</div>
+    </div>
+    <!-- Hypertension -->
+    <div class="survey-item">
+        <div class="survey-header">Hypertension</div>
+        <div class="survey-content">{{ selectedSurvey.hypertension }}</div>
+    </div>
+    <!-- History of TIAs -->
+    <div class="survey-item">
+        <div class="survey-header">Antécédents d'Accidents Ischémiques Transitoires (AIT)</div>
+        <div class="survey-content">{{ selectedSurvey.historyOfTIAs }}</div>
+    </div>
+    <!-- Heredity or Genetics -->
+    <div class="survey-item">
+        <div class="survey-header">Hérédité ou Génétique</div>
+        <div class="survey-content">{{ selectedSurvey.heredityOrGenetics }}</div>
+    </div>
+    <!-- Residential Area -->
+    <div class="survey-item">
+        <div class="survey-header">Zone Résidentielle</div>
+        <div class="survey-content">{{ selectedSurvey.residentialArea }}</div>
+    </div>
+    <!-- Smoking Status -->
+    <div class="survey-item">
+        <div class="survey-header">Statut Tabagique</div>
+        <div class="survey-content">{{ selectedSurvey.smokingStatus }}</div>
+    </div>
+    <!-- Alcohol Status -->
+    <div class="survey-item">
+        <div class="survey-header">Statut Alcoolique</div>
+        <div class="survey-content">{{ selectedSurvey.alcoholStatus }}</div>
+    </div>
+    <!-- Work Type -->
+    <div class="survey-item">
+        <div class="survey-header">Type de Travail</div>
+        <div class="survey-content">{{ selectedSurvey.workType }}</div>
+    </div>
+</div>
+
+
+
+
+
+
+  

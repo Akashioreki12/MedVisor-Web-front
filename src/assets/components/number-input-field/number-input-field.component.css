@@ -17,6 +17,7 @@ input {
     border-radius: 10px;
     background-color: #E8EAEF;
     padding-left: 10px;
+    padding-right: 10px
 }
 
 input:focus {
@@ -25,4 +26,23 @@ input:focus {
 
 .red-highlight {
     color: #D63928;
+}
+
+.invalid-field {
+    outline: 2px solid red;
+}
+
+li {
+    color: red;
+}
+
+.inputHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.custom-icon-color {
+    color: #1578DA;
+    /* Replace with your desired color code */
 }

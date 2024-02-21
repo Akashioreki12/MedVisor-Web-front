@@ -27,7 +27,6 @@ input {
     border-radius: 10px;
     background-color: #E8EAEF;
     padding-left: 15px;
-    margin-right: 50px;
     width: 100%;
 }
 
@@ -39,4 +38,18 @@ input:focus {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-right: 50px;
+}
+
+.country-code:focus {
+        outline: 2px solid #1578DA;
+
+}
+
+.invalid-field {
+    outline: 2px solid red;
+}
+
+li {
+    color: red;
 }

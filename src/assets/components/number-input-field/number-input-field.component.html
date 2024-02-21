@@ -1,0 +1,14 @@
+<div class="textInput">
+    <div class="inputHeader">
+    <label for="weight">{{label}} <span class="red-highlight">*</span></label>
+        <mat-icon class="custom-icon-color" [matTooltip]="toolTip">help</mat-icon>
+    </div>
+    <div *ngIf="errorList.length > 0" class="error-messages">
+        <ul>
+            <li *ngFor="let error of errorList">{{ error }}</li>
+        </ul>
+    </div>
+    <div class="input-spinner">
+        <input [ngClass]="ngClassInput" (click)="onInputClick()" type="number" id="weight" formControlName="weight" required (input)="onInputChange($event)" [value]="value">
+    </div>
+</div>

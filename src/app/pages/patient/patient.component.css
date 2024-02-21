@@ -70,7 +70,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  margin-right: 330px;
+  margin-right: 20px;
 }
 
 /* Form control styles */
@@ -103,6 +103,8 @@ table {
   width: 95%;
   margin-top: 20px;
   margin-left: 30px;
+  border-collapse:collapse ;
+  overflow: hidden; 
 }
 
 /* Table cell styles */
@@ -157,6 +159,78 @@ table {
 .actp:hover {
   background-color: rgba(21, 120, 218, 0.5);
 }
+.selectButton {
+  border-radius: 7.008px;
+  background: #1578DA;
+  width: 150px;
+  height: 35px;
+  color: #FFF;
+  font-size: 15.787px;
+  font-style: normal;
+  font-weight: 600;
+
+  margin-top: 20px;
+  text-align: center;
+
+  /* Center the button content horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select {
+  /* Center the container horizontally and vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh; /* Ensure the container takes the full height of the viewport */
+}
+
+
+.survey-container {
+  font-family: sans-serif; /* Use a professional-looking font */
+  margin: 20px auto; /* Add margin for better formatting */
+  width: 80%; /* Set a reasonable width */
+  border: 1px solid #ddd; /* Subtle border for separation */
+  border-radius: 5px; /* Rounded corners for softness */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Add padding for readability */
+}
+
+.survey-item {
+  display: flex; /* Set flexbox for responsive layout */
+  margin-bottom: 15px; /* Add spacing between items */
+}
+
+.survey-header {
+  flex: 1; /* Allocate equal width to headers */
+  font-weight: bold; /* Emphasize headers */
+  padding-right: 10px; /* Add space between header and content */
+  color: #333; /* Adjust color for improved contrast */
+}
+
+.survey-content {
+  flex: 2; /* Allocate more space for content */
+  color: #666; /* Slightly less prominent color for content */
+}
+
+/* Highlight specific data (optional): */
+.survey-content.important {
+  color: #f00; /* Red for important data */
+  font-weight: bold;
+}
+
+/* Optional responsive adjustments: */
+@media (max-width: 768px) {
+  .survey-container {
+    width: 100%; /* Make full width on smaller screens */
+  }
+  .survey-header, .survey-content {
+    flex-direction: column; /* Stack headers and content on small screens */
+  }
+}
+
 
 /* Media query for responsiveness */
 @media (max-width: 768px) {
@@ -172,4 +246,31 @@ table {
   .left h2 {
     margin-right: 0;
   }
+}
+
+
+tr {
+  cursor: pointer;
+}
+
+.pagination-controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pagination-button {
+  background-color: #1578DA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination-button:hover {
+  background-color: #125eab;
 }

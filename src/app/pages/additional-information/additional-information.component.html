@@ -1,17 +1,18 @@
 <form class="form-section-2-container" (ngSubmit)="onNext()" [formGroup]="checkoutForm">
-    <p class="form-section-title">Additional Information</p>
+    <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="form-section-title">{{getContent('form_3_title')}}</p>
 
-    <div class="health-container">
+    <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container">
 
 
-        <p class="health-container-title">Hereditary or Genetics</p>
+        <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container-title">{{getContent('section_4_title')}}</p>
 
         <div class="form-row">
 
 
 
-        <app-radio-button-choice label="History of TIAs" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
-        <app-radio-button-choice label="Heredity or Genetics" option1="Yes" option2="No" defaultValue="No"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
+
+        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('historyTIA')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" defaultValue="{{getContent('no')}}"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
+        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('heredityOrGenetics')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" defaultValue="{{getContent('no')}}"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
 
 
 
@@ -19,24 +20,19 @@
         </div>
     </div>
 
-    <div class="health-container">
+    <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container">
 
 
-        <p class="health-container-title">More</p>
+        <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container-title">{{getContent('section_5_title')}}</p>
 
         <div class="form-row-special">
 
 
 
-            <app-choice-input-field label="Residential Area" (valueChange)="handleResidentialArea($event)" [options]="['Rural', 'Urban']" defaultValue="Rural"></app-choice-input-field>
-            <app-choice-input-field label="Smoking Status" (valueChange)="handleSmokingStatus($event)" [options]="['Fumeur', 'Ex-Fumeur','Jamais fumé']" defaultValue="Fumeur"></app-choice-input-field>
-            <app-choice-input-field label="Alcohol Status" (valueChange)="handleAlcoholStatus($event)" [options]="['True', 'False']" defaultValue="True"></app-choice-input-field>
-            <app-choice-input-field label="Work type" (valueChange)="handleWorkType($event)" [options]="['Secteur privé', 'Secteur public','Au foyer','indéterminé','Sans travail','Activité indépendante']" defaultValue="Secteur privé"></app-choice-input-field>
-
-        
-        
-        
-        
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('residentialArea')}}" (valueChange)="handleResidentialArea($event)" [options]="residenceTypeOptions" defaultValue="{{getContent('urban')}}"></app-choice-input-field>
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('smokingStatus')}}" (valueChange)="handleSmokingStatus($event)" [options]="smokingStatusOptions" defaultValue="{{getContent('smoke')}}"></app-choice-input-field>
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('alcoholStatus')}}" (valueChange)="handleAlcoholStatus($event)" [options]="alcoholStatusOptions" defaultValue="{{getContent('true')}}"></app-choice-input-field>
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('workType')}}" (valueChange)="handleWorkType($event)" [options]="workTypeOptions" defaultValue="{{getContent('privateSector')}}"></app-choice-input-field>
         </div>
     </div>
 </form>
