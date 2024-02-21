@@ -10,7 +10,7 @@ export class PatientService {
 
   constructor( private http : HttpClient) { }
 
-  private baseUrl = 'http://localhost:8080/survey';
+  private baseUrl = 'http://localhost:8080/medicalimageprocessing/v1/surveys';
 
   getAllPatients(): Observable<any> {
     return this.http.get(`${this.baseUrl}/all`);

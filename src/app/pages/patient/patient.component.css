@@ -104,6 +104,7 @@ table {
   margin-top: 20px;
   margin-left: 30px;
   border-collapse:collapse ;
+  overflow: hidden; 
 }
 
 /* Table cell styles */
@@ -187,37 +188,47 @@ table {
 }
 
 
-
-/* Survey Data Container */
 .survey-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr); /* Three columns with equal width */
-  gap: 20px; /* Gap between columns */
-  
-  height: 20px ;
-  margin-left: 20px;
-  align-items: center;
-  margin-top: 20px;
+  font-family: sans-serif; /* Use a professional-looking font */
+  margin: 20px auto; /* Add margin for better formatting */
+  width: 80%; /* Set a reasonable width */
+  border: 1px solid #ddd; /* Subtle border for separation */
+  border-radius: 5px; /* Rounded corners for softness */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Add padding for readability */
 }
 
-/* Individual Survey Data Item */
 .survey-item {
-  background-color: #f0f0f0; /* Background color for each item */
-  padding: 15px; /* Padding around each item */
-  border-radius: 10px; /* Rounded corners */
+  display: flex; /* Set flexbox for responsive layout */
+  margin-bottom: 15px; /* Add spacing between items */
 }
 
-/* Header for Survey Data */
 .survey-header {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  flex: 1; /* Allocate equal width to headers */
+  font-weight: bold; /* Emphasize headers */
+  padding-right: 10px; /* Add space between header and content */
+  color: #333; /* Adjust color for improved contrast */
 }
 
-/* Content for Survey Data */
 .survey-content {
-  font-size: 12px;
-  line-height: 1.6;
+  flex: 2; /* Allocate more space for content */
+  color: #666; /* Slightly less prominent color for content */
+}
+
+/* Highlight specific data (optional): */
+.survey-content.important {
+  color: #f00; /* Red for important data */
+  font-weight: bold;
+}
+
+/* Optional responsive adjustments: */
+@media (max-width: 768px) {
+  .survey-container {
+    width: 100%; /* Make full width on smaller screens */
+  }
+  .survey-header, .survey-content {
+    flex-direction: column; /* Stack headers and content on small screens */
+  }
 }
 
 
