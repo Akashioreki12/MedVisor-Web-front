@@ -57,6 +57,7 @@ export class PatientComponent implements OnInit {
 
 
   editPerson(id : number): void{
+    console.log(this.selectedPerson);
     this.router.navigateByUrl("/ai");
   }
 
@@ -66,14 +67,28 @@ export class PatientComponent implements OnInit {
   selectPerson(person: Patient, event: MouseEvent): void {
     // Check if the target element is one of the function icons
     const target = event.target as HTMLElement;
-    const isFunctionIcon = target.classList.contains('actp') || target.classList.contains('actm') || target.tagName === 'BUTTON';
+    const isFunctionIcon = target.classList.contains('actp') || target.classList.contains('actm') ;
 
     if (!isFunctionIcon) {
       //   If the clicked element is not a function icon, select the person and navigate
         this.selectedPerson = person;
+        console.log(person);
         this.loadSurvey(person.id);
        // this.router.navigateByUrl("/form2");
     }
+}
+selecteditPerson(personid:number): void {
+  this.patientService.getPatientById(personid).subscribe(
+    (data: any) => {
+        this.selectedPerson = data; 
+        console.log(data);
+    },
+    error => {
+        console.log('Error fetching patient:', error);
+    }
+);
+  this.router.navigateByUrl("/ai");
+ 
 }
 
 

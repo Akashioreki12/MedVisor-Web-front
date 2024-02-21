@@ -24,7 +24,7 @@
                     <input class="form-control me-4" [(ngModel)]="searchDate" name="searchDate" type="date" placeholder="Search by date" aria-label="Search by date" />
                     <button class="btn btn-outline-success" type="search" (click)="searchPatients()"> Search</button>
                     
-                    <button class="btn btn-outline-success" type="submit" routerLink ="/form">Add patient</button>
+                    <button class="btn btn-outline-success" type="submit" routerLink ="/ai">Add patient</button>
                 </div>
                 </form>
             </div>
@@ -50,7 +50,7 @@
             <td>{{ person.age }}</td>
             <td>{{ person.phoneNumber }}</td>
             <td>
-                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="editPerson(person.id)"  alt="edit" />
+                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(person.id)"  alt="edit" />
 
                 <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
                <!-- <button class="btn btn-outline-success" type="submit" (click)="displayClinicalInfo(person)"> details </button>-->
