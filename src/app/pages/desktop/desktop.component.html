@@ -1,11 +1,10 @@
 
-<body>
-    <!-- Le rectangle -->
+
     <div>
     <div class="left">
       <div ><img class="firstleft" src="assets/images/medvisor.png" ></div>
       <div class="secondleft">
-        <div ><img class="first" src="assets/images/home.png" ></div>
+        <div ><a href="another-page.html"><img class="first" src="assets/images/home.png" ></a></div>
         <div ><img class="first" src="assets/images/person.png" ></div>
         <div ><img class="first" src="assets/images/time.png" ></div>
       </div>
@@ -14,7 +13,7 @@
     <div class="right">
       <div class="firstline">
         <div class="searchline">
-          <div  class="rien"><input type="text" class="search-bar" placeholder="Search for symtomps, dieases, history"></div>
+          <div  class="rien"><input type="text" class="search-bar" placeholder="Recherche de symptômes, maladies, historique"></div>
           <div class="rien"><img class="searchsign" src="assets/images/search.png" ></div>
         </div>
         <div class="besidesearch">
@@ -29,20 +28,30 @@
           </div>
           <div ><img class="doc" src="assets/images/Doctors.png" ></div>
         </div>
-        <div><a routerLink="/target-page"><img class="phrase" src="assets/images/discover.png" ></a></div>
+        <div class="phrase" > <h3>Découvrez ce que nous pouvons faire: </h3></div>
         <div class="maladies">
-          <div class="mal">
-            
+          <div class="mal1">
+            <div class="titretxt">Prediction</div>
+            <div><img class="prediction" src="assets/images/predic.png" ></div>
+            <div><button (click)="openDialog()" class="myButton">Faire le test</button></div>
           </div>
-          <div class="mal"></div>
-          <div class="mal"></div>
+          <div class="mal2">
+            <div class="titretxt">Diagnostique</div>
+            <div><img class="diagnostique" src="assets/images/diagno.png" ></div>
+            <div><button (click)="openDialog()" class="myButton">Faire le test</button></div>
+            <div><button (click)="openDialog()" class="myButton">Scanner</button></div>
+            <div><button (click)="openDialog()" class="myButton">Aspects</button></div>
+          </div>
+          <div class="mal3">
+            <div class="titretxt">Pronostique</div>
+            <div><img class="pronostique" src="assets/images/prono.png" ></div>
+            <div><button (click)="openDialog()" class="myButton">Faire le test</button></div>
+            <div><button (click)="openDialog()" class="myButton">Scanner</button></div>
+            <div><button (click)="openDialog()" class="myButton">Aspects</button></div>
+          </div>
         </div>
-        <div class="scan">
-          <div class="cercle"><img class="logo" src="assets/images/plus.png" ></div>
-          <div class="rec"><div class="text">Start Scanning...</div></div>
-          
-        </div>
+        
     </div>
   </div>
-  </body>
+ 
   
