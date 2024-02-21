@@ -1,0 +1,268 @@
+{
+    "en":{
+        "language":"en",
+
+
+        "form_2_title":"Health Informations",
+        "section_1_title":"Basic health",
+        "weight":"Weight",
+        "height":"Height",
+        "bmi":"BMI",
+        "section_2_title":"Cholesterol & Glucose Levels",
+        "total":"Total Level (g/L)",
+        "ldl":"LDL Level (g/L)",
+        "hdl":"HDL Level (g/L)",
+        "glucose":"Glucose Level (g/L)",
+        "section_3_title":"Additional Health Information",
+        "heartDisease":"Heart disease",
+        "diabetes":"Diabetes",
+        "hypertension":"Hypertension",
+        "weightToolTip":"Weight in (kg) ex: 80kg",
+        "heightToolTip":"Height in (m) ex: 1.75m",
+        "bmiToolTip":"BMI (Body Mass Index) is a measure of body fat based on weight and height (kg/m²).",
+        "totalToolTip":"Total blood cholesterol level in g/L ex : 0.002g/L",
+        "ldlToolTip":"Level of low-density lipoproteins in blood in g/L ex : 0.001 g/L",
+        "hdlToolTip":"Level of high-density lipoproteins in the blood in g/L ex : 0.50 mg/dL",
+        "glucoseToolTip":"Average blood glucose level of the patient in g/L ex: 0.120 mg/dL",
+        "yes":"Yes",
+        "no":"No",
+
+
+
+        "form_1_title":"Basic Informations",
+        "firstName":"First Name",
+        "lastName":"Last Name",
+        "age":"Age",
+        "gender":"Gender",
+        "phoneNumber":"Phone Number",
+        "maritalStatus":"Marital Status",
+        "married":"Married",
+        "single":"Single",
+        "email":"Email",
+        "cin":"CIN",
+        "female":"Female",
+        "male":"Male",
+        "firstNameToolTip":"Fist name ex: John",
+        "lastNameToolTip":"Last name ex: Doe",
+        "ageToolTip":"Age ex: 25",
+        "genderToolTip":"Gender ex: Male",
+        "phoneNumberToolTip":"",
+        "maritalStatusToolTip":"",
+        "emailToolTip":"Email ex: john.doe@contact.me",
+        "cinToolTip":"Unique Moroccan Citizen identifier ex: HH12546",
+
+
+
+
+        "form_3_title":"Additional Informations",
+        "section_4_title":"Hereditary or Genetics",
+        "historyTIA":"History of TIAs",
+        "heredityOrGenetics":"Heredity or Genetics",
+        "section_5_title":"More",
+        "residentialArea":"Residential Area",
+        "smokingStatus":"Smoking Status",
+        "alcoholStatus":"Alcohol Status",
+        "workType":"Work Type",
+        "rural":"Rural",
+        "urban":"Urban",
+        "smoker": "Smoker",
+        "exSmoker": "Ex-Smoker",
+        "neverSmoke": "Never Smoked",
+        "true": "True",
+        "false": "False",
+        "privateSector": "Private Sector",
+        "publicSector": "Public Sector",
+        "home": "At Home",
+        "undetermined": "Undetermined",
+        "jobless": "Jobless",
+        "independentActivity": "Independent Activity",
+
+
+
+
+
+        "back":"Back",
+        "next":"Next"
+
+
+
+
+
+
+
+
+
+
+
+    },
+    "fr":{
+        "language":"fr",
+
+
+        "form_2_title":"Informations de santé",
+        "section_1_title":"Santé de base",
+        "weight":"Poids",
+        "height":"Taille",
+        "bmi":"IMC",
+        "section_2_title":"Niveaux de cholestérol et de glucose",
+        "total":"Niveau total (g/L)",
+        "ldl":"Niveau LDL (g/L)",
+        "hdl":"Niveau HDL (g/L)",
+        "glucose":"Niveau de glucose (g/L)",
+        "section_3_title":"Informations de santé supplémentaires",
+        "heartDisease":"Maladie cardiaque",
+        "diabetes":"Diabète",
+        "hypertension":"Hypertension",
+        "weightToolTip": "Poids en (kg) ex : 80kg",
+        "heightToolTip": "Taille en (m) ex : 1,75m",
+        "bmiToolTip": "L'IMC (Indice de masse corporelle) est une mesure de la graisse corporelle basée sur le poids et la taille (kg/m²).",
+        "totalToolTip": "Niveau total de cholestérol dans le sang en g/L ex : 0.002g/L",
+        "ldlToolTip": "Niveau de lipoprotéines de basse densité dans le sang en g/L ex : 0.001 g/L",
+        "hdlToolTip": "Niveau de lipoprotéines de haute densité dans le sang en g/L ex : 0.50 mg/dL",
+        "glucoseToolTip": "Niveau moyen de glucose dans le sang du patient en g/L ex : 0.120 mg/dL",
+        "yes":"Oui",
+        "no":"Non",
+
+
+
+         "form_1_title": "Informations de base",
+  "firstName": "Prénom",
+  "lastName": "Nom de famille",
+  "age": "Âge",
+  "gender": "Sexe",
+  "phoneNumber": "Numéro de téléphone",
+  "maritalStatus": "Statut marital",
+  "married": "Marié(e)",
+  "single": "Célibataire",
+  "email": "Email",
+  "cin": "CIN (Carte d'Identité Nationale)",
+  "female": "Femme",
+  "male": "Homme",
+  "firstNameToolTip": "Prénom, par exemple : John",
+  "lastNameToolTip": "Nom de famille, par exemple : Doe",
+  "ageToolTip": "Âge, par exemple : 25",
+  "genderToolTip": "Genre, par exemple : Homme",
+  "phoneNumberToolTip": "",
+  "maritalStatusToolTip": "Statut marital",
+  "emailToolTip": "Email, par exemple : john.doe@contact.me",
+  "cinToolTip": "Identifiant unique du citoyen marocain, par exemple : HH12546",
+
+
+  "form_3_title": "Informations Supplémentaires",
+  "section_4_title": "Hérédité ou Génétique",
+  "historyTIA": "Historique des AIT (Accidents Ischémiques Transitoires)",
+  "heredityOrGenetics": "Hérédité ou Génétique",
+  "section_5_title": "Plus",
+  "residentialArea": "Zone Résidentielle",
+  "smokingStatus": "Statut Tabagique",
+  "alcoholStatus": "Statut Alcoolique",
+  "workType": "Type de Travail",
+  "rural": "Rural",
+  "urban": "Urbain",
+  "smoker":"Fumeur",
+  "exSmoker":"Ex-Fumeur",
+  "neverSmoke":"Jamais fumé",
+  "true":"Vrai",
+  "false":"False",
+  "privateSector":"Secteur privé",
+  "publicSector":"Secteur public",
+  "home":"Au foyer",
+  "undertermined":"indéterminé",
+  "jobless":"Sans travail",
+  "independantActivity":"Activité indépendante",
+
+
+  "back": "Retour",
+  "next": "Suivant"
+
+    },
+    "ar": {
+
+
+
+"language":"ar",
+"form_2_title": "معلومات الصحة",
+"section_1_title": "الصحة الأساسية",
+"weight": "الوزن",
+"height": "الطول",
+"bmi": "مؤشر كتلة الجسم",
+"section_2_title": "مستويات الكوليسترول والجلوكوز",
+"total": "المستوى الكلي (ج/ل)",
+"ldl": "مستوى LDL (ج/ل)",
+"hdl": "مستوى HDL (ج/ل)",
+"glucose": "مستوى الجلوكوز (ج/ل)",
+"section_3_title": "معلومات صحية إضافية",
+"heartDisease": "أمراض القلب",
+"diabetes": "السكري",
+"hypertension": "ارتفاع ضغط الدم",
+"weightToolTip": "الوزن في (كغ) مثال: 80 كغ",
+"heightToolTip": "الطول في (م) مثال: 1.75 م",
+"bmiToolTip": "مؤشر كتلة الجسم (BMI) هو مقياس للدهون في الجسم بناءً على الوزن والطول (كغ/م²).",
+"totalToolTip": "مستوى الكوليسترول الكلي في الدم بوحدة جرام/لتر مثال: 0.002 ج/ل",
+"ldlToolTip": "مستوى الليبوبروتينات ذات الكثافة المنخفضة في الدم بوحدة جرام/لتر مثال: 0.001 ج/ل",
+"hdlToolTip": "مستوى الليبوبروتينات ذات الكثافة العالية في الدم بوحدة جرام/لتر مثال: 0.50 ملجم/ديسيلتر",
+"glucoseToolTip": "مستوى الجلوكوز في الدم للمريض بوحدة جرام/لتر مثال: 0.120 ملجم/ديسيلتر",
+"yes": "نعم",
+"no": "لا",
+
+
+
+"form_1_title": "معلومات أساسية",
+  "firstName": "الاسم الأول",
+  "lastName": "اسم العائلة",
+  "age": "العمر",
+  "gender": "الجنس",
+  "phoneNumber": "رقم الهاتف",
+  "maritalStatus": "الحالة الاجتماعية",
+  "married": "متزوج(ة)",
+  "single": "أعزب(ة)",
+  "email": "البريد الإلكتروني",
+  "cin": "رقم الهوية الوطنية",
+  "female": "أنثى",
+  "male": "ذكر",
+  "firstNameToolTip": "الاسم الأول، مثال: جون",
+  "lastNameToolTip": "اسم العائلة، مثال: دو",
+  "ageToolTip": "العمر، مثال: 25",
+  "genderToolTip": "الجنس، مثال: ذكر",
+  "phoneNumberToolTip": "",
+  "maritalStatusToolTip": "الحالة الاجتماعية",
+  "emailToolTip": "البريد الإلكتروني، مثال: john.doe@contact.me",
+  "cinToolTip": "الرقم الوطني للهوية المغربي، مثال: HH12546",
+
+
+
+
+
+
+
+  "form_3_title": "معلومات إضافية",
+  "section_4_title": "وراثة أو جينات",
+  "historyTIA": "تاريخ الأوعية الدموية الدماغية المؤقتة",
+  "heredityOrGenetics": "وراثة أو جينات",
+  "section_5_title": "المزيد",
+  "residentialArea": "منطقة سكنية",
+  "smokingStatus": "حالة التدخين",
+  "alcoholStatus": "حالة تناول الكحول",
+  "workType": "نوع العمل",
+  "rural": "ريفي",
+  "urban": "حضري",
+  "smoker": "مدخن",
+  "exSmoker": "مدخن سابق",
+  "neverSmoke": "لم يدخن أبداً",
+  "true": "صحيح",
+  "false": "غير صحيح",
+  "privateSector": "القطاع الخاص",
+  "publicSector": "القطاع العام",
+  "home": "في المنزل",
+  "undetermined": "غير محدد",
+  "jobless": "بلا عمل",
+  "independentActivity": "نشاط مستقل",
+
+
+
+  "back": "العودة",
+  "next": "التالي"
+
+
+}
+}

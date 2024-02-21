@@ -18,6 +18,10 @@ label {
 
 }
 
+.country-code:focus {
+        outline: 2px solid #1578DA;
+}
+
 .red-highlight {
     color: #D63928;
 }

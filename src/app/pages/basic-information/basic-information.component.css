@@ -14,3 +14,8 @@
     color: #000;
     margin-top: 20px;
 }
+
+.invalid-input {
+    border: 1px solid red;
+    /* You can customize the style for invalid fields */
+}
