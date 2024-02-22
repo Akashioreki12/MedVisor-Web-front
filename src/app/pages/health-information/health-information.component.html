@@ -4,12 +4,18 @@
     <div class="health-container">
         <p [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="health-container-title">{{getContent('section_1_title') }}</p>
         <div class="form-row">
+<<<<<<< HEAD
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('weightToolTip') }}" (inputClicked)="onWeightInputClicked()" [errorList]="weightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('weight')?.invalid && !weightInputClicked}" label="{{getContent('weight') }}" (valueChange)="handleWeight($event)" [value]="weightValeur"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('heightToolTip') }}" (inputClicked)="onHeightInputClicked()" [errorList]="heightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('height')?.invalid && !heightInputClicked}" label="{{getContent('height') }}" (valueChange)="handleHeight($event)"  [value]="heightValeur"></app-number-input-field>
+            <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('bmiToolTip') }}" (inputClicked)="onBmiInputClicked()" [errorList]="bmiErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('bmi')?.invalid && !bmiInputClicked}" label="{{getContent('bmi') }}" (valueChange)="handleBMI($event)" [value]="bmiValeur"></app-number-input-field>
+=======
 
 
             <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('weightToolTip') }}" (inputClicked)="onWeightInputClicked()" [errorList]="weightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('weight')?.invalid && !weightInputClicked}" label="{{getContent('weight') }}" (valueChange)="handleWeight($event)" [value]="weightValeur"></app-number-input-field>
             <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('heightToolTip') }}" (inputClicked)="onHeightInputClicked()" [errorList]="heightErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('height')?.invalid && !heightInputClicked}" label="{{getContent('height') }}" (valueChange)="handleHeight($event)"  [value]="heightValeur"></app-number-input-field>
             <app-number-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" toolTip="{{getContent('bmiToolTip') }}" (inputClicked)="onBmiInputClicked()" [errorList]="bmiErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('bmi')?.invalid && !bmiInputClicked}" label="{{getContent('bmi') }}" (valueChange)="handleBMI($event)" [value]="bmiValeur"></app-number-input-field>
 
+>>>>>>> efc7a8212e06858829ab77ba96072939e31da9e0
         </div>
     </div>
 

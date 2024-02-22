@@ -82,14 +82,37 @@
 
 
         "back":"Back",
-        "next":"Next"
+        "next":"Next",
 
 
 
 
+        "signupTitle": "Create Your Account",
+        "namePlaceholder": "Name",
+        "firstNamePlaceholder": "First Name",
+        "numberPlaceholder": "Number",
+        "emailPlaceholder": "Email Address / Username",
+        "passwordPlaceholder": "Password",
+        "createAccountButton": "Create Account",
+        "haveAccountMessage": "Already have an account? ",
+        "inTitle": "Sign in",
 
 
+        "probability_text": "The probability of having a stroke",
+    "assessment_text": "Based on your provided information, our assessment indicates that you are at:",
+    "high_risk_text": "Listen to your doctor carefully. Every decision matters for your recovery. Take care of yourself in every detail.",
+    "refaire_button_text": "Refaire!",
+    "enregistrer_button_text": "Enregistrer",
 
+
+    "connect_account": "Connect to your account",
+"username_email": "Username or Email",
+"password": "Password",
+"sign_in": "Sign in",
+"no_account": "Don't have an account?",
+"create_account": "Create an account"
+
+        
 
 
 
@@ -173,7 +196,40 @@
 
 
   "back": "Retour",
-  "next": "Suivant"
+  "next": "Suivant",
+
+
+    "signupTitle": "Créer Votre Compte",
+    "namePlaceholder": "Nom",
+    "firstNamePlaceholder": "Prénom",
+    "numberPlaceholder": "Numéro",
+    "emailPlaceholder": "Adresse email / nom d'utilisateur",
+    "passwordPlaceholder": "Mot de passe",
+    "createAccountButton": "Créer un compte",
+    "haveAccountMessage": "Vous avez déjà un compte? ",
+    "inTitle": "Se connecter",
+
+
+
+    
+
+"probability_text": "La probabilité d'avoir une attaque cérébrale",
+        "assessment_text": "Selon les informations que vous avez fournies, notre évaluation indique que vous êtes à:",
+        "high_risk_text": "Écoutez votre médecin attentivement. Chaque décision compte pour votre rétablissement. Prenez soin de vous dans les moindres détails.",
+        "refaire_button_text": "Refaire!",
+        "enregistrer_button_text": "Enregistrer",
+
+
+        "connect_account": "Connectez-vous à votre compte",
+"username_email": "Nom d'utilisateur ou Email",
+"password": "Mot de passe",
+"sign_in": "Se connecter",
+"no_account": "Vous n'avez pas de compte ?",
+"create_account": "Créer un compte"
+
+
+        
+
 
     },
     "ar": {
@@ -261,8 +317,34 @@
 
 
   "back": "العودة",
-  "next": "التالي"
+  "next": "التالي",
 
+
+
+  
+    "signupTitle": "إنشاء حسابك",
+    "namePlaceholder": "الاسم",
+    "firstNamePlaceholder": "الاسم الأول",
+    "numberPlaceholder": "الرقم",
+    "emailPlaceholder": "عنوان البريد الإلكتروني / اسم المستخدم",
+    "passwordPlaceholder": "كلمة المرور",
+    "createAccountButton": "إنشاء حساب",
+    "haveAccountMessage": "هل لديك حساب بالفعل؟  ",
+    "inTitle": "تسجيل الدخول",
+
+
+    "probability_text": "احتمالية الإصابة بجلطة دماغية",
+    "assessment_text": "استنادًا إلى المعلومات التي قدمتها، يشير تقييمنا إلى أنك في:",
+    "high_risk_text": "استمع إلى طبيبك بعناية. كل قرار يهم لانتعاشك. اعتني بنفسك في كل تفصيل ",
+    "refaire_button_text": "أعاده",
+    "enregistrer_button_text": "حفظ",
+
+    "connect_account": "تسجيل الدخول إلى حسابك",
+"username_email": "اسم المستخدم أو البريد الإلكتروني",
+"password": "كلمة المرور",
+"sign_in": "تسجيل الدخول",
+"no_account": "لا تملك حساباً؟",
+"create_account": "إنشاء حساب"
 
 }
 }

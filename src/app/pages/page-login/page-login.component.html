@@ -1,8 +1,13 @@
+<ul class="languages-list">
+    <li (click)="activateEnglish()"><span class="language">EN</span>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+    <li (click)="activateFrench()"><span class="language">FR</span>&nbsp;&nbsp;|&nbsp;&nbsp;</li>
+    <li (click)="activateArabic()"><span class="language">AR</span></li>
+</ul>
 <div class="flex flex-col sm:flex-row bg-[#EBF0FF]">
     <div class="flex-1 bg-white sm:h-screen flex items-center justify-center rounded-r-[6%]">
         <div class="mx-[20%] my-[25%]">
         <img src="assets/images/logo.png" alt="logo" class="w-[55%] sm:w-2/3 lg:w-[50%] ">
-        <div class="my-7  text-teal-900 text-[27px] font-semibold">creer votre compte</div>
+        <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="my-7  text-teal-900 text-[27px] font-semibold">{{getContent('signupTitle') }}</div>
     
     <form class="flex flex-col gap-4 justify-center items-center">
         <div class="relative inline-flex items-center">
@@ -16,8 +21,8 @@
                 </g>
             </svg>
         </span>
-        <input placeholder="Nom" [(ngModel)]="utilisateursDto.name" [ngModelOptions]="{standalone: true}"
-                        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
+        <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('namePlaceholder') }}" [(ngModel)]="utilisateursDto.name" [ngModelOptions]="{standalone: true}"
+        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
     <div class="relative inline-flex items-center">
@@ -31,7 +36,7 @@
                 </g>
             </svg>
         </span>
-        <input placeholder="Prénom" [(ngModel)]="utilisateursDto.prenom" [ngModelOptions]="{standalone: true}"
+        <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('firstNamePlaceholder') }}" [(ngModel)]="utilisateursDto.prenom" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -44,7 +49,7 @@
         </svg>
 
         </span>
-        <input placeholder="Numero" [(ngModel)]="utilisateursDto.numero" [ngModelOptions]="{standalone: true}"
+        <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('numberPlaceholder') }}" [(ngModel)]="utilisateursDto.numero" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -59,7 +64,7 @@
         </svg>
  
         </span>
-        <input placeholder="Adresse email / username" [(ngModel)]="utilisateursDto.username" [ngModelOptions]="{standalone: true}"
+        <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('emailPlaceholder') }}" [(ngModel)]="utilisateursDto.username" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -75,7 +80,7 @@
             </svg>
 
         </span>
-        <input placeholder="Mot de passe" [(ngModel)]="utilisateursDto.password" [ngModelOptions]="{standalone: true}"
+        <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('passwordPlaceholder') }}" [(ngModel)]="utilisateursDto.password" [ngModelOptions]="{standalone: true}"
                         class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
     </div>
 
@@ -83,11 +88,11 @@
         
            
         
-                <button class="mt-3 text-white font-medium text-base w-full sm:w-[380px] h-10 py-2 rounded-lg bg-[#1578DA]"
-             type="submit" (click)="sinscrire()">Creer un compte</button>
-<div class="mt-3 text-center text-black text-opacity-50 font-medium">
+                <button [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="mt-3 text-white font-medium text-base w-full sm:w-[380px] h-10 py-2 rounded-lg bg-[#1578DA]"
+             type="submit" (click)="sinscrire()">{{getContent('createAccountButton') }}</button>
+<div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="mt-3 text-center text-black text-opacity-50 font-medium">
 
-    Vous avez déjà un compte? <a  class="text-[#1578DA] font-medium cursor-pointer" (click)="navigateToSignPage()">Se connecter</a>
+    {{getContent('haveAccountMessage') }} <a  class="text-[#1578DA] font-medium cursor-pointer" (click)="navigateToSignPage()">{{getContent('inTitle') }}</a>
 </div>
 
         </form>
@@ -97,6 +102,9 @@
         </div>
     </div>
     <div class="flex-1 bg-[#EBF0FF] sm:h-screen flex items-center justify-center">
-        <app-svg-login class="w-[50%] sm:w-2/3 lg:w-[65%]"></app-svg-login>
+        <!-- <app-svg-login class="w-[50%] sm:w-2/3 lg:w-[65%]"></app-svg-login> -->
+        <div class="w-[50%] sm:w-2/3 lg:w-[55%]">
+            <img src="assets/images/5454.png">
+        </div>
     </div>
 </div>

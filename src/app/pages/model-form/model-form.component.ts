@@ -12,6 +12,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LanguageService } from '../../services/translation/language.service';
+
+
 @Component({
   selector: 'app-model-form',
   standalone: true,
@@ -29,6 +31,7 @@ export class ModelFormComponent {
   @ViewChild('basicInformationComponent') basicInformationComponent!: BasicInformationComponent;
   @ViewChild('healthInformationComponent') healthInformationComponent!: HealthInformationComponent;
   @ViewChild('additionalInformationComponent') additionalInformationComponent!: AdditionalInformationComponent;
+  
   formData: any = {};
   
   selectedPerson: any = {
