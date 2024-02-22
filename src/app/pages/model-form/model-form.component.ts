@@ -6,12 +6,12 @@ import { AdditionalInformationComponent } from '../additional-information/additi
 import { HealthInformationComponent } from '../health-information/health-information.component';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CommonModule } from '@angular/common';
-import { FormDataService} from '../../form-data.service';
+import { FormDataService} from '../../services/form/form-data.service';
 import { ActivatedRoute } from '@angular/router';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { LanguageService } from '../../language.service';
+import { LanguageService } from '../../services/translation/language.service';
 @Component({
   selector: 'app-model-form',
   standalone: true,
@@ -36,7 +36,11 @@ export class ModelFormComponent {
       lastName: '',
       age: '',
       phoneNumber: '',
-      cin: ''
+    cin: '',
+    email: '',
+    gender: '',
+    maritalStatus :'',
+      
   };
   
   options1: string[] = ["ar", "fr", "en"];

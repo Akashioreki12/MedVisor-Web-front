@@ -7,16 +7,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FormDataService {
 
-  private springUrl = 'http://localhost:8080/medicalimageprocessing/v1//surveys/create';
+  private springUrl = 'http://localhost:8080/medicalimageprocessing/v1/surveys/create';
   constructor(private http: HttpClient) {}
   submitForm(form: any): Observable<any> {
     const url = `${this.springUrl}`;
     return this.http.post(url,form)
   }
-
-
-
-
-
-  
 }

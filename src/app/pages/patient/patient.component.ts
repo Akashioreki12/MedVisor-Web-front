@@ -72,23 +72,24 @@ export class PatientComponent implements OnInit {
     if (!isFunctionIcon) {
       //   If the clicked element is not a function icon, select the person and navigate
         this.selectedPerson = person;
-        console.log(person);
         this.loadSurvey(person.id);
        // this.router.navigateByUrl("/form2");
     }
 }
 selecteditPerson(personid:number): void {
   this.patientService.getPatientById(personid).subscribe(
-    (data: any) => {
-        this.selectedPerson = data; 
-        console.log(data);
+    (data: any) => { 
+             this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(data) } });
+
     },
     error => {
         console.log('Error fetching patient:', error);
     }
-);
-  this.router.navigateByUrl("/ai");
- 
+  );
+  
+
+
+
 }
 
 

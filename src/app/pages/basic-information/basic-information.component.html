@@ -11,9 +11,6 @@
 
 
     </div>
-
-
-
     <div class="form-row">
         <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  toolTip="{{getContent('ageToolTip')}}" (inputClicked)="onAgeInputClicked()" [errorList]="ageErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('firstName')?.invalid && !ageInputClicked}" (valueChange)="handleAge($event)" label="{{getContent('age')}}" [placeHolder]="age"></app-text-input-field>
         <app-radio-button-choice  [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'" label="{{getContent('gender')}}" option1="{{getContent('male')}}" option2="{{getContent('female')}}" defaultValue="{{getContent('female')}}" (valueChange)="handleGender($event)"></app-radio-button-choice>
@@ -23,11 +20,11 @@
 
         <app-phone-number-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  label="{{getContent('phoneNumber')}}" (inputClicked)="onPhoneNumberInputClicked()" [errorList]="phoneNumberErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('phoneNumber')?.invalid && !phoneNumberInputClicked}" (valueChange)="handleNumber($event)" (selectChange)="handleCountryCode($event)" [placeHolder]="phoneNumber"></app-phone-number-field>
         <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  label="{{getContent('maritalStatus')}}" (valueChange)="handleMaritalStatus($event)"
-                [options]="maritalStatusOptions" defaultValue="{{getContent('married')}}"></app-choice-input-field>
+                [options]="maritalStatusOptions" defaultValue="maritalStatus !== '' ? maritalStatus : getContent('single')"></app-choice-input-field>
 
     </div>
     <div  class="form-row">
-        <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  toolTip="{{getContent('emailToolTip')}}" (inputClicked)="onEmailInputClicked()" [errorList]="emailErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('email')?.invalid && !emailInputClicked}" (valueChange)="handleEmail($event)" label="{{getContent('email')}}" [placeHolder]="''"></app-text-input-field>    
+        <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  toolTip="{{getContent('emailToolTip')}}" (inputClicked)="onEmailInputClicked()" [errorList]="emailErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('email')?.invalid && !emailInputClicked}" (valueChange)="handleEmail($event)" label="{{getContent('email')}}" [placeHolder]="email"></app-text-input-field>    
         <app-text-input-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  toolTip="{{getContent('cinToolTip')}}" (inputClicked)="onCINInputClicked()" [errorList]="cinErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('cin')?.invalid && !cinInputClicked}" (valueChange)="handleCIN($event)" label="{{getContent('cin')}}" [placeHolder]="cin"></app-text-input-field>
     </div>
 </form>

@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormDataService } from '../../form-data.service';
+import { FormDataService } from '../../services/form/form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 import { RadioButtonChoiceComponent } from '../../../assets/components/radio-button-choice/radio-button-choice.component';
 import { ChoiceInputFieldComponent } from '../../../assets/components/choice-input-field/choice-input-field.component';
-import { LanguageService } from '../../language.service';
+import { LanguageService } from '../../services/translation/language.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';

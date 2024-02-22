@@ -14,6 +14,6 @@
             <option value="+91">🇮🇳 +91</option>
         </select>
         <input [ngClass]="ngClassInput" class="phoneRegister" type="text" id="phoneNumber" formControlName="phoneNumber" required
-            [placeholder]="placeHolder" (click)="onInputClick()" (input)="onInputChange($event)">
+            [value]="placeHolder" (click)="onInputClick()" (input)="onInputChange($event)">
     </div>
 </div>

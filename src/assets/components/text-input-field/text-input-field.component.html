@@ -8,6 +8,6 @@
             <li *ngFor="let error of errorList">{{ error }}</li>
         </ul>
     </div>
-    <input [ngClass]="ngClassInput" type="text" id="firstName" formControlName="firstName" [placeholder]="placeHolder"
+    <input [ngClass]="ngClassInput" type="text" id="firstName" formControlName="firstName" [value]="placeHolder"
          (click)="onInputClick()" (input)="onInputChange($event)">
 </div>

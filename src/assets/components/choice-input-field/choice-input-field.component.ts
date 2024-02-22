@@ -13,9 +13,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 export class ChoiceInputFieldComponent {
 
   @Input() label: string = "label";
-    @Input() options: string[] = ["Rural", "Urban"];
-
-    @Input() defaultValue: string = "";
+  @Input() options: string[] = ["Rural", "Urban"];
+  @Input() defaultValue: string = "";
+  
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   
    ngOnInit() {

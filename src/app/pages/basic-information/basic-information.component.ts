@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormDataService } from '../../form-data.service';
+import { FormDataService } from '../../services/form/form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
 import { TextInputFieldComponent } from '../../../assets/components/text-input-field/text-input-field.component';
 import { RadioButtonChoiceComponent } from '../../../assets/components/radio-button-choice/radio-button-choice.component';
 import { PhoneNumberFieldComponent } from '../../../assets/components/phone-number-field/phone-number-field.component';
 import { ChoiceInputFieldComponent } from '../../../assets/components/choice-input-field/choice-input-field.component';
-import { LanguageService } from '../../language.service';
+import { LanguageService } from '../../services/translation/language.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -44,6 +44,9 @@ export class BasicInformationComponent {
   @Input() cin: string = "";
   @Input() age: string = "";
   @Input() phoneNumber: string = "";
+  @Input() email: string = "";
+  @Input() maritalStatus: string = "";
+  @Input() gender: string = "";
 
 
   formSubmitted = false;
@@ -108,10 +111,12 @@ onLanguageToggle(language: string): void {
     gender: '', 
     countryCode: '',
     phoneNumber: this.phoneNumber,
-    maritalStatus: '', 
-    email: '',
+    maritalStatus: this.maritalStatus, 
+    email: this.email,
     cin: this.cin,
     })
+
+    console.log(this.maritalStatus);
   }
   onNext() {
     this.clearErrors();
