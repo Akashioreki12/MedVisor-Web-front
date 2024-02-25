@@ -22,7 +22,6 @@ options: string[] = ["ar", "fr", "en"];
 
 authenticationRequest: AuthenticationRequest ={};
 errorMessage = '';
-
 constructor(
   private userService: UserService,
   private router: Router,

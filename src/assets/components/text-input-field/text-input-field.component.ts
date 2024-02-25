@@ -25,7 +25,4 @@ export class TextInputFieldComponent {
   onInputClick() {
     this.inputClicked.emit();
   }
-
-
-  
 }

@@ -79,6 +79,7 @@ export class PatientComponent implements OnInit {
        // this.router.navigateByUrl("/form2");
     }
 }
+/** 
 selecteditPerson(personid:string): void {
   
   this.patientService.getPatientByCIN(personid).subscribe(
@@ -90,8 +91,13 @@ selecteditPerson(personid:string): void {
     error => {
         console.log('Error fetching patient:', error);
     }
-  );
+  );*/
+  selecteditPerson(personid: any): void {
   
+    console.log(personid);
+    console.log("m clicked ");
+    this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(personid) } });
+
 
 
 
