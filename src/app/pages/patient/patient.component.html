@@ -50,10 +50,10 @@
             <td>{{ person.dateOfBirth }}</td>
             <td>{{ person.phoneNumber }}</td>
             <td>
-                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(person.id)"  alt="edit" />
+                <!--<img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(person.id)"  alt="edit" /> -->
 
                 <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
-               <!-- <button class="btn btn-outline-success" type="submit" (click)="displayClinicalInfo(person)"> details </button>-->
+               <button class="btn btn-outline-success" type="submit" (click)="displayClinicalInfo(person)"> details </button>
             </td>
         </tr>
 
@@ -86,6 +86,7 @@
         <div class="survey-content">
             {{ selectedSurvey.creationDate.split('T')[0] }}
         </div>
+        <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(selectedSurvey.cin)"  alt="edit" />
     </div>
     <div class="survey-item">
         <div class="survey-header">Prénom</div>
@@ -126,6 +127,11 @@
     <div class="survey-item">
         <div class="survey-header">CIN</div>
         <div class="survey-content">{{ selectedSurvey.cin }}</div>
+    </div>
+
+    <div class="survey-item">
+        <div class="survey-header" style="color: red;">Résultat</div>
+        <div class="survey-content">{{ selectedSurvey.result }}</div>
     </div>
     <!-- Weight -->
     <div class="survey-item">

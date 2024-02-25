@@ -4,7 +4,7 @@ import { HomeComponent } from "../../../assets/Svgs/home/home.component";
 import { ProgressBarComponent } from "../../../assets/components/progress-bar/progress-bar.component";
 import { ActivatedRoute } from '@angular/router';
 import { RouterModule,Router } from '@angular/router';
-import { LanguageService } from '../../language.service';
+import { LanguageService } from '../../services/translation/language.service';;
 
 @Component({
     selector: 'app-page-result',
