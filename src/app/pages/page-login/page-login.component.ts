@@ -5,7 +5,7 @@ import { UserService } from '../../services/user/user.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { LanguageService } from '../../services/translation/services/translation/language.service';;
+import { LanguageService } from '../../services/translation/language.service';
 
 
 
