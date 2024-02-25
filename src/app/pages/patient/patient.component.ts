@@ -80,6 +80,7 @@ export class PatientComponent implements OnInit {
     }
 }
 selecteditPerson(personid:string): void {
+  
   this.patientService.getPatientByCIN(personid).subscribe(
     (data: any) => { 
       console.log(this.selectedPerson);
