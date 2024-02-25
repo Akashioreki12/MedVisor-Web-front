@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { UserService } from '../../services/user/user.service';
 import { HttpClientModule } from '@angular/common/http';
-import { LanguageService } from '../../language.service';
+import { LanguageService } from '../../services/translation/language.service';
 
 
 
@@ -22,7 +22,6 @@ options: string[] = ["ar", "fr", "en"];
 
 authenticationRequest: AuthenticationRequest ={};
 errorMessage = '';
-
 constructor(
   private userService: UserService,
   private router: Router,

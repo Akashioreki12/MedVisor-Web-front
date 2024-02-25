@@ -141,5 +141,4 @@ getContent(key: string): string {
       }
     );
   }
-
 }
