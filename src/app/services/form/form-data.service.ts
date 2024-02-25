@@ -13,10 +13,4 @@ export class FormDataService {
     const url = `${this.springUrl}`;
     return this.http.post(url,form)
   }
-
-
-
-
-
-  
 }

@@ -21,8 +21,10 @@ import { PatientComponent } from './pages/patient/patient.component';
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
-    imports: [CommonModule, RouterOutlet, PageLoginComponent, PageSignupComponent, 
-      PageResultComponent , BasicInformationComponent, FormsModule]
+    providers: [UserService,AuthenticationService,UtilisateurApiService,ApplicationGuardService,Medicalimageprocessingv1usersService,],
+    imports: [CommonModule,CommonModule, RouterOutlet, PageLoginComponent, PageSignupComponent, 
+      PageResultComponent , BasicInformationComponent, FormsModule, RouterOutlet, PageLoginComponent, PageSignupComponent, PageResultComponent , HttpClientModule,FormsModule,BasicInformationComponent]
+   
 })
 export class AppComponent {
   title = 'Medvisor';

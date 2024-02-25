@@ -1,0 +1,10 @@
+.languages-list {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5px;
+    justify-content: end;
+    margin-right: 50px;
+    position: absolute;
+    right: 0;
+    font-size: small;
+}

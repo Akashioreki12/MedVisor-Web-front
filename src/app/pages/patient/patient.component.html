@@ -77,10 +77,16 @@
 
 
  <!-- Survey Data Container -->
- <div class="survey-container"  *ngIf="selectedSurvey" >
-    <div *ngFor="let selectedSurvey of surveys">
+ <div  *ngIf="selectedSurvey" >
+    <div class="survey-container"  *ngFor="let selectedSurvey of surveys">
         
     <!-- First Name -->
+    <div class="survey-item">
+        <div class="survey-header">Date des analyses</div>
+        <div class="survey-content">
+            {{ selectedSurvey.creationDate.split('T')[0] }}
+        </div>
+    </div>
     <div class="survey-item">
         <div class="survey-header">Prénom</div>
         <div class="survey-content">{{ selectedSurvey.firstName }}</div>
@@ -100,11 +106,7 @@
         <div class="survey-header">Sexe</div>
         <div class="survey-content">{{ selectedSurvey.gender }}</div>
     </div>
-    <!-- Country Code -->
-    <div class="survey-item">
-        <div class="survey-header">Code Pays</div>
-        <div class="survey-content">{{ selectedSurvey.countryCode }}</div>
-    </div>
+   
     <!-- Phone Number -->
     <div class="survey-item">
         <div class="survey-header">Numéro de Téléphone</div>
@@ -175,12 +177,15 @@
         <div class="survey-header">Hypertension</div>
         <div class="survey-content">{{ selectedSurvey.hypertension }}</div>
     </div>
+    
     <!-- History of TIAs -->
+    <!--
     <div class="survey-item">
         <div class="survey-header">Antécédents d'Accidents Ischémiques Transitoires (AIT)</div>
         <div class="survey-content">{{ selectedSurvey.historyOfTIAs }}</div>
     </div>
-    <!-- Heredity or Genetics -->
+-->
+    
     <div class="survey-item">
         <div class="survey-header">Hérédité ou Génétique</div>
         <div class="survey-content">{{ selectedSurvey.heredityOrGenetics }}</div>

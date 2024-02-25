@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
-import { FormDataService } from '../../form-data.service';
+import { FormDataService } from '../../services/form/form-data.service';
 import { FormBuilder, ReactiveFormsModule,FormsModule, FormGroup, Validators} from '@angular/forms';
 import { RadioButtonChoiceComponent } from '../../../assets/components/radio-button-choice/radio-button-choice.component';
 import { NumberInputFieldComponent } from '../../../assets/components/number-input-field/number-input-field.component';
-import { LanguageService } from '../../language.service';
+import { LanguageService } from '../../services/translation/language.service';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CommonModule } from '@angular/common';
+import { Input } from '@angular/core';
 
 
 @Component({
@@ -21,6 +22,21 @@ import { CommonModule } from '@angular/common';
 export class HealthInformationComponent {
 
   options: string[] = ["ar", "fr", "en"];
+
+  @Input() weight: number = 0;
+  @Input() height: number = 0;
+  @Input() bmi: number = 0;
+  @Input() totalLevel: number = 0;
+  @Input() ldlLevel: number = 0;
+  @Input() hdlLevel: number = 0;
+  @Input() glucoLevel: number = 0;
+  @Input() heartDisease: string = "";
+  @Input() diabetes: string = "";
+  @Input() hypertension: string = "";
+
+
+
+  
 
   selectedLanguage: string = this.getContent('language');
   
