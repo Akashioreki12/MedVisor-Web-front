@@ -47,13 +47,13 @@
             <td>{{ person.lastName }}</td>
             <td>{{ person.firstName }}</td>
             <td>{{ person.cin }}</td>
-            <td>{{ person.age }}</td>
+            <td>{{ person.dateOfBirth }}</td>
             <td>{{ person.phoneNumber }}</td>
             <td>
-                <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(person.id)"  alt="edit" />
+                <!--<img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(person.id)"  alt="edit" /> -->
 
                 <img class="actm" src="..\..\assets\Svgs\delete.svg" (click)="deletePatient(person.id)" alt="delete" />
-               <!-- <button class="btn btn-outline-success" type="submit" (click)="displayClinicalInfo(person)"> details </button>-->
+               <button class="btn btn-outline-success" type="submit" (click)="displayClinicalInfo(person)"> details </button>
             </td>
         </tr>
 
@@ -77,8 +77,17 @@
 
 
  <!-- Survey Data Container -->
- <div class="survey-container" *ngIf="selectedSurvey">
+ <div  *ngIf="selectedSurvey" >
+    <div class="survey-container"  *ngFor="let selectedSurvey of surveys">
+        
     <!-- First Name -->
+    <div class="survey-item">
+        <div class="survey-header">Date des analyses</div>
+        <div class="survey-content">
+            {{ selectedSurvey.creationDate.split('T')[0] }}
+        </div>
+        <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(selectedSurvey.cin)"  alt="edit" />
+    </div>
     <div class="survey-item">
         <div class="survey-header">Prénom</div>
         <div class="survey-content">{{ selectedSurvey.firstName }}</div>
@@ -98,11 +107,7 @@
         <div class="survey-header">Sexe</div>
         <div class="survey-content">{{ selectedSurvey.gender }}</div>
     </div>
-    <!-- Country Code -->
-    <div class="survey-item">
-        <div class="survey-header">Code Pays</div>
-        <div class="survey-content">{{ selectedSurvey.countryCode }}</div>
-    </div>
+   
     <!-- Phone Number -->
     <div class="survey-item">
         <div class="survey-header">Numéro de Téléphone</div>
@@ -122,6 +127,11 @@
     <div class="survey-item">
         <div class="survey-header">CIN</div>
         <div class="survey-content">{{ selectedSurvey.cin }}</div>
+    </div>
+
+    <div class="survey-item">
+        <div class="survey-header" style="color: red;">Résultat</div>
+        <div class="survey-content">{{ selectedSurvey.result }}</div>
     </div>
     <!-- Weight -->
     <div class="survey-item">
@@ -173,12 +183,15 @@
         <div class="survey-header">Hypertension</div>
         <div class="survey-content">{{ selectedSurvey.hypertension }}</div>
     </div>
+    
     <!-- History of TIAs -->
+    <!--
     <div class="survey-item">
         <div class="survey-header">Antécédents d'Accidents Ischémiques Transitoires (AIT)</div>
         <div class="survey-content">{{ selectedSurvey.historyOfTIAs }}</div>
     </div>
-    <!-- Heredity or Genetics -->
+-->
+    
     <div class="survey-item">
         <div class="survey-header">Hérédité ou Génétique</div>
         <div class="survey-content">{{ selectedSurvey.heredityOrGenetics }}</div>
@@ -204,7 +217,7 @@
         <div class="survey-content">{{ selectedSurvey.workType }}</div>
     </div>
 </div>
-
+</div>
 
 
 
