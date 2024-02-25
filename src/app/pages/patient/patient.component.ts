@@ -79,11 +79,24 @@ export class PatientComponent implements OnInit {
        // this.router.navigateByUrl("/form2");
     }
 }
+/** 
+selecteditPerson(personid:string): void {
+  
+  this.patientService.getPatientByCIN(personid).subscribe(
+    (data: any) => { 
+      console.log(this.selectedPerson);
+             this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(data) } });
+
+    },
+    error => {
+        console.log('Error fetching patient:', error);
+    }
+  );*/
   selecteditPerson(personid: any): void {
     console.log("clicked !");
   
     console.log(personid);
-  
+    console.log("m clicked ");
     this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(personid) } });
 
 
