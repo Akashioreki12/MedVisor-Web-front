@@ -80,6 +80,7 @@ export class PatientComponent implements OnInit {
     }
 }
   selecteditPerson(personid: any): void {
+    console.log("clicked !");
   
     console.log(personid);
   
