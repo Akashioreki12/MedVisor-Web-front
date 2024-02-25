@@ -10,6 +10,8 @@
         <div [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" class="my-7  text-teal-900 text-[27px] font-semibold">{{getContent('signupTitle') }}</div>
     
     <form class="flex flex-col gap-4 justify-center items-center">
+        <div *ngIf="formSubmitted && !utilisateursDto.name" class="text-red-500 text-sm">{{getContent('requiredMsgNom') }}</div>
+
         <div class="relative inline-flex items-center">
         <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
             <svg class="h-5 w-5 text-gray-500" fill="none" viewBox="0 0 24 24"
@@ -21,9 +23,13 @@
                 </g>
             </svg>
         </span>
-        <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('namePlaceholder') }}" [(ngModel)]="utilisateursDto.name" [ngModelOptions]="{standalone: true}"
-        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
+        <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('namePlaceholder') }}"
+            [(ngModel)]="utilisateursDto.name" [ngModelOptions]="{standalone: true}" required
+            class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25"
+            [ngClass]="{'border-red-500': formSubmitted && !utilisateursDto.name}">
     </div>
+
+            <div *ngIf="formSubmitted && !utilisateursDto.prenom" class="text-red-500 text-sm">{{getContent('requiredMsgPrenom') }}</div>
 
     <div class="relative inline-flex items-center">
         <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
@@ -37,8 +43,12 @@
             </svg>
         </span>
         <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('firstNamePlaceholder') }}" [(ngModel)]="utilisateursDto.prenom" [ngModelOptions]="{standalone: true}"
-                        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
-    </div>
+required
+            class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25"
+            [ngClass]="{'border-red-500': formSubmitted && !utilisateursDto.name}">    </div>
+
+<div *ngIf="formSubmitted && !utilisateursDto.numero" class="text-red-500 text-sm">
+    {{getContent('requiredMsgNum') }}</div>
 
     <div class="relative inline-flex items-center">
         <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
@@ -50,9 +60,12 @@
 
         </span>
         <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('numberPlaceholder') }}" [(ngModel)]="utilisateursDto.numero" [ngModelOptions]="{standalone: true}"
-                        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
-    </div>
+required
+            class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25"
+            [ngClass]="{'border-red-500': formSubmitted && !utilisateursDto.name}">    </div>
 
+                <div *ngIf="formSubmitted && !utilisateursDto.username" class="text-red-500 text-sm">
+                    {{getContent('requiredMsgEmail') }}</div>
     <div class="relative inline-flex items-center">
         <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
         <svg width="21" height="21" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,9 +78,12 @@
  
         </span>
         <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('emailPlaceholder') }}" [(ngModel)]="utilisateursDto.username" [ngModelOptions]="{standalone: true}"
-                        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
-    </div>
+required
+            class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25"
+            [ngClass]="{'border-red-500': formSubmitted && !utilisateursDto.name}">    </div>
 
+    <div *ngIf="formSubmitted && !utilisateursDto.password" class="text-red-500 text-sm">
+        {{getContent('requiredMsgPassword') }}</div>
     <div class="relative inline-flex items-center">
         <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
       
@@ -81,8 +97,9 @@
 
         </span>
         <input [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" placeholder="{{getContent('passwordPlaceholder') }}" [(ngModel)]="utilisateursDto.password" [ngModelOptions]="{standalone: true}"
-                        class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25">
-    </div>
+required
+            class="w-full sm:w-[350px] h-10 pl-10 pr-3.5 py-2 rounded-lg border-2 border-teal-900 border-opacity-25"
+            [ngClass]="{'border-red-500': formSubmitted && !utilisateursDto.name}">    </div>
 
         
         

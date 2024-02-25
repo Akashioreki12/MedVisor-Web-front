@@ -54,4 +54,16 @@ export class PageResultComponent{
         this.router.navigate(['/ai']);
         
     }
+
+    goHome(): void {
+
+        this.router.navigate(['/']);
+        
+    }
+
+    goPatient(): void {
+
+        this.router.navigate(['/patient']);
+        
+    }
 }

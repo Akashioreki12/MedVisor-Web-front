@@ -110,7 +110,14 @@
 "password": "Password",
 "sign_in": "Sign in",
 "no_account": "Don't have an account?",
-"create_account": "Create an account"
+"create_account": "Create an account",
+
+
+"requiredMsgPrenom": "First name is required",
+"requiredMsgNom": "Last name is required",
+"requiredMsgNum": "Phone number is required",
+"requiredMsgEmail": "Email/username is required",
+"requiredMsgPassword": "Password is required"
 
         
 
@@ -225,7 +232,17 @@
 "password": "Mot de passe",
 "sign_in": "Se connecter",
 "no_account": "Vous n'avez pas de compte ?",
-"create_account": "Créer un compte"
+"create_account": "Créer un compte",
+
+
+
+    "requiredMsgPrenom": "Le prénom est requis",
+    "requiredMsgNom": "Le nom est requis",
+    "requiredMsgNum": "Le numéro de téléphone est requis",
+    "requiredMsgEmail": "L'email/nom d'utilisateur est requis",
+    "requiredMsgPassword": "Le mot de passe est requis"
+
+
 
 
         
@@ -344,7 +361,16 @@
 "password": "كلمة المرور",
 "sign_in": "تسجيل الدخول",
 "no_account": "لا تملك حساباً؟",
-"create_account": "إنشاء حساب"
+"create_account": "إنشاء حساب",
+
+
+    "requiredMsgPrenom": "الاسم الأول مطلوب",
+    "requiredMsgNom": "الاسم الأخير مطلوب",
+    "requiredMsgNum": "رقم الهاتف مطلوب",
+    "requiredMsgEmail": "البريد الإلكتروني / اسم المستخدم مطلوب",
+    "requiredMsgPassword": "كلمة المرور مطلوبة"
+
+
 
 }
 }

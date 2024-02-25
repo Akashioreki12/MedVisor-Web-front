@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LanguageService } from '../../services/translation/language.service';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -15,15 +16,15 @@ import { LanguageService } from '../../services/translation/language.service';
     standalone: true,
     templateUrl: './page-login.component.html',
     styleUrl: './page-login.component.css',
-    imports: [SvgLoginComponent ,FormsModule,HttpClientModule]
+    imports: [SvgLoginComponent ,FormsModule,HttpClientModule ,CommonModule ]
 })
 export class PageLoginComponent {
-  
-    
   utilisateursDto: UserDto = {};
-  errorMsg: Array<string>=[];
+  errorMsg: Array<string> = [];
   options: string[] = ["ar", "fr", "en"];
   selectedLanguage: string = this.getContent('language');
+  formSubmitted: boolean = false;
+    
 
   constructor(
     private utilisateurService: UserService,
@@ -31,6 +32,12 @@ export class PageLoginComponent {
     private languageService: LanguageService
 
   ) {}
+
+  isFormValid(): boolean {
+    return !!this.utilisateursDto.name && !!this.utilisateursDto.prenom &&
+      !!this.utilisateursDto.numero && !!this.utilisateursDto.username &&
+      !!this.utilisateursDto.password;
+  }
 
   getCurrentLanguage(): string {
     return this.languageService.getCurrentLanguage();
@@ -54,11 +61,14 @@ this.languageService.getCurrentLanguageSubject().subscribe(language => {
 
   
   sinscrire() {
-    this.utilisateurService.sInscrire(this.utilisateursDto).subscribe(utilisateursDto => { 
-      window.location.href = '/page-signup';
-    }, error => { 
-      this.errorMsg=error.error.errors;
-    });
+    this.formSubmitted = true;
+    if (this.isFormValid()) {
+      this.utilisateurService.sInscrire(this.utilisateursDto).subscribe(utilisateursDto => {
+        window.location.href = '/page-signup';
+      }, error => {
+        this.errorMsg = error.error.errors;
+      });
+    }
   }
 
   navigateToSignPage(): void {
