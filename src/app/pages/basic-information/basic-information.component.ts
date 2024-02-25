@@ -33,7 +33,7 @@ export class BasicInformationComponent {
   selectedLanguage: string = "en";
 
 
-  maritalStatusOptions:string [] = [];
+  maritalStatusOptions:string [] = ["Married","Single"];
 
 
 
@@ -46,7 +46,7 @@ export class BasicInformationComponent {
   @Input() phoneNumber: string = "";
   @Input() email: string = "";
   @Input() maritalStatus: string = "";
-  @Input() gender: string = "";
+  @Input() gender: string = "Male";
 
 
   formSubmitted = false;
@@ -83,7 +83,7 @@ export class BasicInformationComponent {
 
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
-    this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
+    this.maritalStatusOptions = ["Married", "Single"];
   }
 
   getContent(key: string): string {
@@ -92,23 +92,26 @@ export class BasicInformationComponent {
 onLanguageToggle(language: string): void {
   // Implement logic for language toggle in BasicInformationComponent
   this.selectedLanguage = language;
-      this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
+      this.maritalStatusOptions = ["Married", "Single"];
 
 }
 
   ngOnInit(): void {
+    if (this.gender == "") {
+      this.gender = "Male";
+    }
     this.languageService.getCurrentLanguageSubject().subscribe(language => {
       this.selectedLanguage = language;
       // Update other properties or perform language-related logic here
     });
     this.toggleLanguage(this.selectedLanguage);
-    this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
+    this.maritalStatusOptions = ["Married", "Single"];
 
     this.checkoutForm.patchValue({
       firstName: this.firstName,
     lastName: this.lastName,
     age: this.age,
-    gender: '', 
+    gender: this.gender, 
     countryCode: '',
     phoneNumber: this.phoneNumber,
     maritalStatus: this.maritalStatus, 

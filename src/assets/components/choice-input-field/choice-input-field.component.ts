@@ -22,10 +22,8 @@ export class ChoiceInputFieldComponent {
     // Set the default value when the component is initialized
     this.valueChange.emit(this.defaultValue);
   }
-
   onInputChange(event: any) {
     const value = event.target.value;
     this.valueChange.emit(value);
 }
-
 }

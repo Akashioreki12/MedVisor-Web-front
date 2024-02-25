@@ -14,15 +14,15 @@
       [cin]="selectedPerson.cin" [email]="selectedPerson.email" [maritalStatus]="selectedPerson.maritalStatus" [gender]="selectedPerson.gender"></app-basic-information>
         </mat-step>
         <mat-step label="2">
-            <app-health-information #healthInformationComponent></app-health-information>
+            <app-health-information #healthInformationComponent  [weight]="selectedPerson.weight" [height]="selectedPerson.height" [bmi]="selectedPerson.bmi" [totalLevel]="selectedPerson.totalCholesterol" [ldlLevel]="selectedPerson.ldlCholesterol" [hdlLevel]="selectedPerson.hdlCholesterol" [glucoLevel]="selectedPerson.glucoseLevel" [heartDisease]="selectedPerson.heartDisease" [hypertension]="selectedPerson.hypertension" [diabetes]="selectedPerson.diabetes"></app-health-information>
         </mat-step>
         <mat-step  label="3">
-            <app-additional-information #additionalInformationComponent></app-additional-information>
+            <app-additional-information #additionalInformationComponent  [historyOfTIAs]="selectedPerson.historyOfTIAst" [heredityOrGenetics]="selectedPerson.heredityOrGenetics" [smokingStatus]="selectedPerson.smokingStatus" [alcoholStatus]="selectedPerson.alcoholStatus" [residentialArea]="selectedPerson.residentialArea" [workType]="selectedPerson.workType"></app-additional-information>
         </mat-step>
 </mat-horizontal-stepper>
 
 
 <div class="buttons-container">
-    <button class="btn1" (click)="stepper.previous()">{{getContent('back')}}</button>
+    <button class="btn1" (click)="onBack()">{{getContent('back')}}</button>
     <button class="btn2" (click)="onNext()">{{getContent('next')}}</button>
 </div>

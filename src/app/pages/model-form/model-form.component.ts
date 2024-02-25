@@ -35,15 +35,39 @@ export class ModelFormComponent {
   formData: any = {};
   
   selectedPerson: any = {
-      firstName: '',
-      lastName: '',
-      age: '',
-      phoneNumber: '',
-    cin: '',
-    email: '',
+
+    /* form1*/
+    firstName: '',
+    lastName: '',
+    age: '',
     gender: '',
-    maritalStatus :'',
-      
+    phoneNumber: '',
+    maritalStatus: '',
+    email: '',
+    cin: '',
+
+     /* form2*/
+
+    weight: '',
+    height: '',
+    bmi: '',
+    totalCholesterol: '',
+    ldlCholesterol: '',
+    hdlCholesterol: '',
+    glucoseLevel: '',
+    heartDisease: '',
+    diabetes : '',
+    hypertension: '',
+
+
+     /* form3*/
+
+    historyOfTIAst: '',
+    heredityOrGenetics: '',
+    residentialArea: '',
+    smokingStatus: '',
+    alcoholStatus: '',
+    workType : ''
   };
   
   options1: string[] = ["ar", "fr", "en"];
@@ -108,7 +132,6 @@ getContent(key: string): string {
       case 2:
         isValid = this.basicInformationComponent.checkoutForm.valid;
         this.formData.additionalInformation = this.additionalInformationComponent.onNext();
-        console.log("fuck");
         console.log(this.formData.additionalInformation);
         break;
     }
@@ -127,6 +150,18 @@ getContent(key: string): string {
     }
   }
  }
+  
+  onBack(): void {
+    
+    const activeStepIndex = this.stepper.selectedIndex;
+    if (activeStepIndex === 0) {
+      this.router.navigate(['/patient']);
+    }
+    else {
+      this.stepper.previous();
+    }
+
+  }
   
   submitFormData(): void {
     this.formDataService.submitForm(this.formData).subscribe(

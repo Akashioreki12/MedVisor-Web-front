@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormDataService } from '../../services/form/form-data.service';
 import { FormBuilder, ReactiveFormsModule, FormGroup, Validators} from '@angular/forms';
@@ -18,6 +18,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './additional-information.component.css'
 })
 export class AdditionalInformationComponent {
+
+
+
+  @Input() historyOfTIAs: string = "";
+  @Input() heredityOrGenetics: string = "";
+  @Input() residentialArea: string = "";
+  @Input() smokingStatus: string = "";
+  @Input() alcoholStatus: string = "";
+  @Input() workType: string = "";
+
+
+
+
    checkoutForm: FormGroup = this.formBuilder.group({
     historyOfTIAs: ['', [Validators.required]],
     heredityOrGenetics: ['', [Validators.required]],

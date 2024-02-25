@@ -50,13 +50,13 @@ export class HealthInformationComponent {
   hdlCholesterolInputClicked: boolean = false;
   glucoseLevelInputClicked: boolean = false;
 
-  bmiValeur: number = 0.00;
-  weightValeur: number = 0.00;
-  heightValeur: number = 0.00;
-  totalCholesterol: number = 0.00;
-  ldlCholesterol: number = 0.00;
-  hdlCholesterol: number = 0.00;
-  glucoseLevel: number = 0.00;
+  bmiValeur: number = this.bmi;
+  weightValeur: number = this.weight;
+  heightValeur: number = this.height;
+  totalCholesterol: number = this.totalLevel;
+  ldlCholesterol: number = this.ldlLevel;
+  hdlCholesterol: number = this.hdlLevel;
+  glucoseLevel: number = this.glucoLevel;
 
 
   weightErrors: string[] = [];
@@ -100,6 +100,15 @@ export class HealthInformationComponent {
   }
 
   ngOnInit() {
+    this.weightValeur = this.weight;
+    this.heightValeur = this.height;
+    this.bmiValeur = this.bmi;
+    this.totalCholesterol = this.totalLevel;
+    this.ldlCholesterol = this.ldlLevel;
+    this.hdlCholesterol= this.hdlLevel;
+    this.glucoseLevel = this.glucoLevel;
+
+
      this.languageService.getCurrentLanguageSubject().subscribe(language => {
       this.selectedLanguage = language;
       // Update other properties or perform language-related logic here
