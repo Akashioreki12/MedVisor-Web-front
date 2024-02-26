@@ -6,16 +6,20 @@ import { HealthInformationComponent } from './pages/health-information/health-in
 import { AdditionalInformationComponent } from './pages/additional-information/additional-information.component';
 import { ModelFormComponent } from './pages/model-form/model-form.component';
 import { PatientComponent } from './pages/patient/patient.component';
+import { BasicInformationComponent } from './pages/basic-information/basic-information.component';
+import { DesktopComponent } from './pages/desktop/desktop.component';
 
 export const routes: Routes = [
     
     { path: 'page-login', component: PageLoginComponent },
     { path: 'page-signup', component: PageSignupComponent },
     { path: 'page-result', component: PageResultComponent },
+    { path: 'desktop', component: DesktopComponent },
+    { path: 'form', component: BasicInformationComponent },
+    { path: 'form2', component: HealthInformationComponent },
+    { path: 'form3', component: AdditionalInformationComponent },
     { path: 'ai', component: ModelFormComponent },
-    { path: 'form2', component: HealthInformationComponent},
     { path: 'patient', component: PatientComponent },
-    {path:'form3', component:AdditionalInformationComponent},
     { path: '**', redirectTo: 'page-login' },
 
 

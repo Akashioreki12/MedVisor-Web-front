@@ -1,0 +1,58 @@
+<div>
+  <div class="left">
+    <div><img class="firstleft" src="assets/images/medvisor.png"></div>
+    <div class="secondleft">
+      <div><a href="another-page.html"><img class="first" src="assets/images/home.png"></a></div>
+      <div><img class="first" src="assets/images/person.png"></div>
+      <div><img class="first" src="assets/images/time.png"></div>
+    </div>
+    <div><img class="thirdleft" src="assets/images/Vector.png"></div>
+  </div>
+  <div class="right ml-4">
+    <div class="firstline mb-2">
+      <div class="searchline ">
+        <div class="rien "><input type="text" class="search-bar px-4 "
+            placeholder="Recherche de symptômes, maladies, historique"></div>
+        <div class="rien"><img class="searchsign" src="assets/images/search.png"></div>
+      </div>
+      <div class="besidesearch">
+        <div><img class="second" src="assets/images/Bell Icon.png"></div>
+        <div><img class="third" src="assets/images/settings.png"></div>
+      </div>
+    </div>
+    <div class="rectangle1">
+      <div class="gauche">
+        <div class="msg ml-3">
+          <p>{{ currentDate | date: 'medium' }}
+        </div>
+        <div class="ml-3 msg text-2xl font-semibold">Découvrez ce que nous pouvons faire: </div>
+      </div>
+      <div><img class="doc" src="assets/images/Doctors.png"></div>
+    </div>
+    <!-- <div class="phrase text-lg">
+      <h3>Découvrez ce que nous pouvons faire: </h3>
+    </div> -->
+    <div class="maladies">
+      <div class="mal1">
+        <div class="titretxt ">Prediction</div>
+        <div><img class="prediction" src="assets/images/predic.png"></div>
+        <div><button (click)="openDialog()" class="myButton">Faire le test</button></div>
+      </div>
+      <div class="mal2">
+        <div class="titretxt">Diagnostique</div>
+        <div><img class="diagnostique" src="assets/images/diagno.png"></div>
+        <div><button (click)="openDialog()" class="myButton">Faire le test</button></div>
+        <div><button (click)="openDialog()" class="myButton">Scanner</button></div>
+        <div><button (click)="openDialog()" class="myButton">Aspects</button></div>
+      </div>
+      <div class="mal3">
+        <div class="titretxt">Pronostique</div>
+        <div><img class="pronostique" src="assets/images/prono.png"></div>
+        <div><button (click)="openDialog()" class="myButton">Faire le test</button></div>
+        <div><button (click)="openDialog()" class="myButton">Scanner</button></div>
+        <div><button (click)="openDialog()" class="myButton">Aspects</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>

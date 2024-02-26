@@ -1,0 +1,79 @@
+/* message-dialog.component.css 
+.dialog-content {
+    width: 200px;
+    height: 0px;
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: space-around;
+    margin:  16px  10px;
+  }
+  
+  .existing-patient-button {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .new-patient-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  */
+  .dialog-content {
+    background-color: #f5f5f5; /* Use a neutral background */
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .dialog-message {
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+   
+  }
+  .existing-patient-button {
+    background-color: #2196F3;
+    color: white;
+  }
+  .new-patient-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  .dialog-actions button {
+    
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .dialog-actions button:hover {
+    background-color: #656565;
+  }
+  
+  /* Media queries for responsiveness */
+  
+  @media (max-width: 768px) {
+    .dialog-actions {
+      flex-direction: column; /* Stack buttons on narrow screens */
+    }
+    .dialog-actions button {
+      margin-bottom: 10px; /* Add space between stacked buttons */
+    }
+  }
+  
