@@ -98,10 +98,7 @@ selecteditPerson(personid:string): void {
     }
   );*/
   selecteditPerson(personid: any): void {
-  
-    console.log(personid);
-    console.log("m clicked ");
-    this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(personid) } });
+      this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(personid) } });
 
 
     

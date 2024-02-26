@@ -15,6 +15,8 @@ export class ChoiceInputFieldComponent {
   @Input() label: string = "label";
   @Input() options: string[] = ["Rural", "Urban"];
   @Input() defaultValue: string = "";
+  @Input() optionsList: { value: string, name: string }[] = [];
+
   
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   
@@ -22,10 +24,8 @@ export class ChoiceInputFieldComponent {
     // Set the default value when the component is initialized
     this.valueChange.emit(this.defaultValue);
   }
-
   onInputChange(event: any) {
     const value = event.target.value;
     this.valueChange.emit(value);
 }
-
 }

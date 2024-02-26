@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ProfileComponent } from "../../../assets/Svgs/profile/profile.component";
 import { HomeComponent } from "../../../assets/Svgs/home/home.component";
 import { ProgressBarComponent } from "../../../assets/components/progress-bar/progress-bar.component";
 import { ActivatedRoute } from '@angular/router';
-import { RouterModule,Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { LanguageService } from '../../services/translation/language.service';;
 
 @Component({
@@ -38,12 +38,10 @@ export class PageResultComponent{
     ngOnInit(): void {
         this.languageService.getCurrentLanguageSubject().subscribe(language => {
       this.selectedLanguage = language;
-      // Update other properties or perform language-related logic here
     });
     this.toggleLanguage(this.selectedLanguage);
-    // Retrieve the 'result' query parameter from the route
     this.route.queryParams.subscribe((params) => {
-        this.resultPrediction = +params['result']; // Convert to number if needed
+        this.resultPrediction = +params['result'];
         
         console.log(this.resultPrediction);
     });
@@ -51,7 +49,19 @@ export class PageResultComponent{
     
     refaire(): void {
 
-        this.router.navigate(['/ai']);
+        this.router.navigate(['/patient']);
+        
+    }
+
+    goHome(): void {
+
+        this.router.navigate(['/']);
+        
+    }
+
+    goPatient(): void {
+
+        this.router.navigate(['/patient']);
         
     }
 }

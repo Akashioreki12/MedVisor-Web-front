@@ -33,7 +33,12 @@ export class BasicInformationComponent {
   selectedLanguage: string = "en";
 
 
-  maritalStatusOptions:string [] = [];
+  maritalStatusOptions: string[] = ["Yes", "No"];
+  
+  optionsList = [
+  { value: 'Yes', name: 'Married' },
+  { value: 'No', name: 'Single' },
+];
 
 
 
@@ -44,9 +49,10 @@ export class BasicInformationComponent {
   @Input() cin: string = "";
   @Input() age: string = "";
   @Input() phoneNumber: string = "";
+  @Input() countryCode: string = "";
   @Input() email: string = "";
-  @Input() maritalStatus: string = "";
-  @Input() gender: string = "";
+  @Input() maritalStatus: string = "Yes";
+  @Input() gender: string = "Male";
 
 
   formSubmitted = false;
@@ -83,33 +89,39 @@ export class BasicInformationComponent {
 
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
-    this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
+    this.maritalStatusOptions = ["Yes", "No"];
+ 
   }
 
   getContent(key: string): string {
     return this.languageService.getContent(key);
   }
 onLanguageToggle(language: string): void {
-  // Implement logic for language toggle in BasicInformationComponent
   this.selectedLanguage = language;
-      this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
+  this.maritalStatusOptions = ["Yes", "No"];
+
 
 }
 
   ngOnInit(): void {
+    this.handleMaritalStatus(this.maritalStatus);
+    console.log()
+    if (this.gender == "") {
+      this.gender = "Male";
+    }
     this.languageService.getCurrentLanguageSubject().subscribe(language => {
       this.selectedLanguage = language;
-      // Update other properties or perform language-related logic here
     });
     this.toggleLanguage(this.selectedLanguage);
-    this.maritalStatusOptions = [this.getContent('married'), this.getContent('single')];
+    this.maritalStatusOptions = ["Yes", "No"];
+ 
 
     this.checkoutForm.patchValue({
       firstName: this.firstName,
     lastName: this.lastName,
     age: this.age,
-    gender: '', 
-    countryCode: '',
+    gender: this.gender, 
+    countryCode: this.countryCode,
     phoneNumber: this.phoneNumber,
     maritalStatus: this.maritalStatus, 
     email: this.email,

@@ -11,8 +11,8 @@
 
 
 
-        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('historyTIA')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" defaultValue="{{getContent('no')}}"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
-        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('heredityOrGenetics')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" defaultValue="{{getContent('no')}}"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
+        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('historyTIA')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="True" value2="False" [defaultValue]="historyOfTIAs"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
+        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('heredityOrGenetics')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="True" value2="False" [defaultValue]="heredityOrGenetics"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
 
 
 
@@ -29,10 +29,12 @@
 
 
 
-            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('residentialArea')}}" (valueChange)="handleResidentialArea($event)" [options]="residenceTypeOptions" defaultValue="{{getContent('urban')}}"></app-choice-input-field>
-            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('smokingStatus')}}" (valueChange)="handleSmokingStatus($event)" [options]="smokingStatusOptions" defaultValue="{{getContent('smoke')}}"></app-choice-input-field>
-            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('alcoholStatus')}}" (valueChange)="handleAlcoholStatus($event)" [options]="alcoholStatusOptions" defaultValue="{{getContent('true')}}"></app-choice-input-field>
-            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('workType')}}" (valueChange)="handleWorkType($event)" [options]="workTypeOptions" defaultValue="{{getContent('privateSector')}}"></app-choice-input-field>
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('residentialArea')}}" (valueChange)="handleResidentialArea($event)" [optionsList]="optionsList1" [defaultValue]="residentialArea"></app-choice-input-field>
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('smokingStatus')}}" (valueChange)="handleSmokingStatus($event)" [optionsList]="optionsList2" [defaultValue]="smokingStatus"></app-choice-input-field>
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('alcoholStatus')}}" (valueChange)="handleAlcoholStatus($event)" [optionsList]="optionsList3" [defaultValue]="alcoholStatus"></app-choice-input-field>
+            <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('workType')}}" (valueChange)="handleWorkType($event)" [optionsList]="optionsList4" [defaultValue]="workType"></app-choice-input-field>
+
+
         </div>
     </div>
 </form>

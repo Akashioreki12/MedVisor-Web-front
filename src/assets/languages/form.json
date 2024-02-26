@@ -119,7 +119,16 @@
  "previous" : "Previous",
  "next" : "Next",
  "dateAnalyse" : "Analysis date" ,
- "result" : "Result of analysis "
+ "result" : "Result of analysis ",
+
+
+"requiredMsgPrenom": "First name is required",
+"requiredMsgNom": "Last name is required",
+"requiredMsgNum": "Phone number is required",
+"requiredMsgEmail": "Email/username is required",
+"requiredMsgPassword": "Password is required"
+
+        
 
 
 
@@ -197,9 +206,9 @@
   "privateSector":"Secteur privé",
   "publicSector":"Secteur public",
   "home":"Au foyer",
-  "undertermined":"indéterminé",
+  "undertermined":"indetermine",
   "jobless":"Sans travail",
-  "independantActivity":"Activité indépendante",
+  "independantActivity":"Activite independante",
 
 
   "back": "Retour",
@@ -234,6 +243,19 @@
 "sign_in": "Se connecter",
 "no_account": "Vous n'avez pas de compte ?",
 "create_account": "Créer un compte",
+
+
+
+    "requiredMsgPrenom": "Le prénom est requis",
+    "requiredMsgNom": "Le nom est requis",
+    "requiredMsgNum": "Le numéro de téléphone est requis",
+    "requiredMsgEmail": "L'email/nom d'utilisateur est requis",
+    "requiredMsgPassword": "Le mot de passe est requis",
+
+
+
+
+        
 
 "patients":"Patients",
 "search" : "Rechercher",
@@ -367,7 +389,14 @@
 "action" : "فعل",
 "preious":"السابق",
 "next":"التالي",
-"dateAnalyse" : "تاريخ التحاليل"
+"dateAnalyse" : "تاريخ التحاليل",
+    "requiredMsgPrenom": "الاسم الأول مطلوب",
+    "requiredMsgNom": "الاسم الأخير مطلوب",
+    "requiredMsgNum": "رقم الهاتف مطلوب",
+    "requiredMsgEmail": "البريد الإلكتروني / اسم المستخدم مطلوب",
+    "requiredMsgPassword": "كلمة المرور مطلوبة"
+
+
 
 }
 }

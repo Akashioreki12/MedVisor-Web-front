@@ -12,8 +12,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LanguageService } from '../../services/translation/language.service';
-
-
+import { ErrorModalComponent } from '../../error-modal/error-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-model-form',
   standalone: true,
@@ -33,30 +33,72 @@ export class ModelFormComponent {
   @ViewChild('additionalInformationComponent') additionalInformationComponent!: AdditionalInformationComponent;
   
   formData: any = {};
+
+  direction: 'ltr' | 'rtl' = 'ltr';
+  
+
   
   selectedPerson: any = {
-      firstName: '',
-      lastName: '',
-      age: '',
-      phoneNumber: '',
-    cin: '',
-    email: '',
+
+    /* form1*/
+    firstName: '',
+    lastName: '',
+    age: '',
     gender: '',
-    maritalStatus :'',
-      
+    phoneNumber: '',
+    countryCode:'+212',
+    maritalStatus: 'Yes',
+    email: '',
+    cin: '',
+
+     /* form2*/
+
+    weight: '',
+    height: '',
+    bmi: '',
+    totalCholesterol: '',
+    ldlCholesterol: '',
+    hdlCholesterol: '',
+    glucoseLevel: '',
+    heartDisease: 'Yes',
+    diabetes : 'True',
+    hypertension: 'Yes',
+
+
+     /* form3*/
+
+    historyOfTIAst: 'True',
+    heredityOrGenetics: 'True',
+    residentialArea: 'Rural',
+    smokingStatus: 'Fumeur',
+    alcoholStatus: 'True',
+    workType : 'Secteur privé'
   };
   
   options1: string[] = ["ar", "fr", "en"];
 
   selectedLanguage: string = "en";
 
-  constructor(private languageService:LanguageService,private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
+  constructor(private dialog:MatDialog,private languageService:LanguageService,private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
   
+
+
 
 getContent(key: string): string {
     return this.languageService.getContent(key);
   }
   
+openErrorModal() {
+    const dialogRef = this.dialog.open(ErrorModalComponent, {
+      data: {
+        errorMessage: 'Something went wrong!'
+      }
+    });
+
+    dialogRef.componentInstance.closeModalEvent.subscribe(() => {
+      dialogRef.close(); // Close the modal when the event is emitted
+    });
+  }
 
 
   ngOnInit(): void {
@@ -65,10 +107,7 @@ getContent(key: string): string {
 
     if (selectedPersonString !== undefined) {
       this.selectedPerson = JSON.parse(selectedPersonString);
-      console.log(this.selectedPerson);
     } else {
-      // Handle the case when 'selectedPerson' parameter is not present
-      console.log('No selectedPerson parameter found.');
     }
   });
   }
@@ -82,12 +121,15 @@ getContent(key: string): string {
   activateArabic(): void {
     this.toggleLanguage('ar');
     console.log(this.getContent('back'));
+    this.direction = 'rtl';
   }
   activateFrench(): void {
     this.toggleLanguage('fr');
+    this.direction = 'ltr';
   }
   activateEnglish(): void {
     this.toggleLanguage('en');
+    this.direction = 'ltr';
   }
 
 
@@ -102,13 +144,12 @@ getContent(key: string): string {
         this.formData.basicInformation = this.basicInformationComponent.onNext();
         break;
       case 1:
-        isValid = this.basicInformationComponent.checkoutForm.valid;
+        isValid = this.healthInformationComponent.checkoutForm.valid;
         this.formData.healthInformation = this.healthInformationComponent.onNext();
         break;
       case 2:
-        isValid = this.basicInformationComponent.checkoutForm.valid;
+        isValid = this.additionalInformationComponent.checkoutForm.valid;
         this.formData.additionalInformation = this.additionalInformationComponent.onNext();
-        console.log("fuck");
         console.log(this.formData.additionalInformation);
         break;
     }
@@ -124,9 +165,22 @@ getContent(key: string): string {
       this.submitFormData();
     } else {
       this.stepper.next();
+      console.log(this.formData);
     }
   }
  }
+  
+  onBack(): void {
+    
+    const activeStepIndex = this.stepper.selectedIndex;
+    if (activeStepIndex === 0) {
+      this.router.navigate(['/patient']);
+    }
+    else {
+      this.stepper.previous();
+    }
+
+  }
   
   submitFormData(): void {
     this.formDataService.submitForm(this.formData).subscribe(
@@ -137,6 +191,7 @@ getContent(key: string): string {
         this.router.navigate(['/page-result'], { queryParams: { result: resultPrediction } });
       },
       (error) => {
+        this.openErrorModal();
         console.error('Error submitting form:', error);
       }
     );
