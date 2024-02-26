@@ -23,7 +23,7 @@
 
 
             <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('heartDisease')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="Yes" value2="No" [defaultValue]="heartDisease" (valueChange)="handleHeartDisease($event)"></app-radio-button-choice>
-            <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('diabetes')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="Yes" value2="No" [defaultValue]="diabetes" (valueChange)="handleDiabetes($event)"></app-radio-button-choice>
+            <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('diabetes')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="True" value2="False" [defaultValue]="diabetes" (valueChange)="handleDiabetes($event)"></app-radio-button-choice>
             <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('hypertension')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="Yes" value2="No" [defaultValue]="hypertension" (valueChange)="handleHypertension($event)"></app-radio-button-choice>
 
 

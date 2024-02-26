@@ -11,8 +11,8 @@
 
 
 
-        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('historyTIA')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="Yes" value2="No" [defaultValue]="historyOfTIAs"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
-        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('heredityOrGenetics')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="Yes" value2="No" [defaultValue]="heredityOrGenetics"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
+        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('historyTIA')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="True" value2="False" [defaultValue]="historyOfTIAs"  (valueChange)="handleHistoryOfTIAs($event)"></app-radio-button-choice>
+        <app-radio-button-choice [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'" label="{{getContent('heredityOrGenetics')}}" option1="{{getContent('yes')}}" option2="{{getContent('no')}}" value1="True" value2="False" [defaultValue]="heredityOrGenetics"  (valueChange)="handleHeredityOrGenetics($event)"></app-radio-button-choice>
 
 
 

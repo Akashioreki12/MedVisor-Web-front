@@ -107,11 +107,19 @@ export class HealthInformationComponent {
     this.ldlCholesterol = this.ldlLevel;
     this.hdlCholesterol= this.hdlLevel;
     this.glucoseLevel = this.glucoLevel;
+    this.handleWeight(this.weight);
+    this.handleHeight(this.height);
+    this.handleTotalCholesterol(this.totalLevel);
+    this.handleLDLCholesterol(this.ldlCholesterol);
+    this.handleHDLCholesterol(this.hdlCholesterol);
+    this.handleGlucoseLevel(this.glucoLevel);
+    this.handleHeartDisease(this.heartDisease);
+    this.handleDiabetes(this.diabetes);
+    this.handleHypertension(this.hypertension);
 
 
      this.languageService.getCurrentLanguageSubject().subscribe(language => {
       this.selectedLanguage = language;
-      // Update other properties or perform language-related logic here
     });
     this.toggleLanguage(this.selectedLanguage);
   }

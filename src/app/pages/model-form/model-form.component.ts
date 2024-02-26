@@ -42,7 +42,8 @@ export class ModelFormComponent {
     age: '',
     gender: '',
     phoneNumber: '',
-    maritalStatus: '',
+    countryCode:'+212',
+    maritalStatus: 'Yes',
     email: '',
     cin: '',
 
@@ -55,19 +56,19 @@ export class ModelFormComponent {
     ldlCholesterol: '',
     hdlCholesterol: '',
     glucoseLevel: '',
-    heartDisease: '',
-    diabetes : '',
-    hypertension: '',
+    heartDisease: 'Yes',
+    diabetes : 'True',
+    hypertension: 'Yes',
 
 
      /* form3*/
 
-    historyOfTIAst: '',
-    heredityOrGenetics: '',
-    residentialArea: '',
-    smokingStatus: '',
-    alcoholStatus: '',
-    workType : ''
+    historyOfTIAst: 'True',
+    heredityOrGenetics: 'True',
+    residentialArea: 'Rural',
+    smokingStatus: 'Fumeur',
+    alcoholStatus: 'True',
+    workType : 'Secteur privé'
   };
   
   options1: string[] = ["ar", "fr", "en"];
@@ -89,10 +90,7 @@ getContent(key: string): string {
 
     if (selectedPersonString !== undefined) {
       this.selectedPerson = JSON.parse(selectedPersonString);
-      console.log(this.selectedPerson);
     } else {
-      // Handle the case when 'selectedPerson' parameter is not present
-      console.log('No selectedPerson parameter found.');
     }
   });
   }
@@ -126,11 +124,11 @@ getContent(key: string): string {
         this.formData.basicInformation = this.basicInformationComponent.onNext();
         break;
       case 1:
-        isValid = this.basicInformationComponent.checkoutForm.valid;
+        isValid = this.healthInformationComponent.checkoutForm.valid;
         this.formData.healthInformation = this.healthInformationComponent.onNext();
         break;
       case 2:
-        isValid = this.basicInformationComponent.checkoutForm.valid;
+        isValid = this.additionalInformationComponent.checkoutForm.valid;
         this.formData.additionalInformation = this.additionalInformationComponent.onNext();
         console.log(this.formData.additionalInformation);
         break;
@@ -147,6 +145,7 @@ getContent(key: string): string {
       this.submitFormData();
     } else {
       this.stepper.next();
+      console.log(this.formData);
     }
   }
  }

@@ -23,10 +23,10 @@ export class AdditionalInformationComponent {
 
   @Input() historyOfTIAs: string = "";
   @Input() heredityOrGenetics: string = "";
-  @Input() residentialArea: string = "";
-  @Input() smokingStatus: string = "";
-  @Input() alcoholStatus: string = "";
-  @Input() workType: string = "";
+  @Input() residentialArea: string = "Rural";
+  @Input() smokingStatus: string = "Smoker";
+  @Input() alcoholStatus: string = "True";
+  @Input() workType: string = "Private Sector";
 
 
 
@@ -58,32 +58,39 @@ export class AdditionalInformationComponent {
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
     this.selectedLanguage = this.getContent('language');
-    this.residenceTypeOptions = [this.getContent('rural'), this.getContent('urban')];
-    this.smokingStatusOptions = [this.getContent('smoker'),this.getContent('neverSmoke'),this.getContent('exSmoker')];
-    this.alcoholStatusOptions = [this.getContent('true'),this.getContent('false')];
-    this.workTypeOptions = [this.getContent('privateSector'),this.getContent('publicSector'),this.getContent('home'),this.getContent('undetermined'),this.getContent('jobless'),this.getContent('independantActivity')];
+    this.residenceTypeOptions = ["Rural","Urban"];
+    this.smokingStatusOptions = ["Fumeur","Ex-Fumeur","Jamais fumé"];
+    this.alcoholStatusOptions = ["True","False"];
+    this.workTypeOptions = ["Secteur privé","Secteur public","Indeterminé","Sans travail","Au foyer","Activité indépendante"];
   }
 
 
 
-  residenceTypeOptions: string[] = [];
-  smokingStatusOptions: string[] = [];
-  alcoholStatusOptions: string[] = [];
-  workTypeOptions: string[] = [];
+  residenceTypeOptions: string[] = ["Rural","Urban"];
+  smokingStatusOptions: string[] = ["Fumeur","Ex-Fumeur","Jamais fumé"];
+  alcoholStatusOptions: string[] = ["True","False"];
+  workTypeOptions: string[] = ["Secteur privé","Secteur public","Indeterminé","Sans travail","Au foyer","Activité indépendante"];
 
  
 
 
   ngOnInit() {
+    this.handleAlcoholStatus(this.alcoholStatus);
+    this.handleResidentialArea(this.residentialArea);
+    this.handleSmokingStatus(this.smokingStatus);
+    this.handleWorkType(this.workType);
+    this.handleHistoryOfTIAs(this.historyOfTIAs);
+    this.handleHeredityOrGenetics(this.heredityOrGenetics);
+    console.log(this.checkoutForm.value);
      this.languageService.getCurrentLanguageSubject().subscribe(language => {
       this.selectedLanguage = language;
-      // Update other properties or perform language-related logic here
     });
     this.toggleLanguage(this.selectedLanguage);
-    this.residenceTypeOptions = [this.getContent('rural'), this.getContent('urban')];
-    this.smokingStatusOptions = [this.getContent('smoker'),this.getContent('neverSmoke'),this.getContent('exSmoker')];
-    this.alcoholStatusOptions = [this.getContent('true'),this.getContent('false')];
-    this.workTypeOptions = [this.getContent('privateSector'),this.getContent('publicSector'),this.getContent('home'),this.getContent('undetermined'),this.getContent('jobless'),this.getContent('independantActivity')];
+    this.residenceTypeOptions = ["Rural","Urban"];
+    this.smokingStatusOptions = ["Fumeur","Ex-Fumeur","Jamais fumé"];
+    this.alcoholStatusOptions = ["True","False"];
+    this.workTypeOptions =["Secteur privé","Secteur public","Indeterminé","Sans travail","Au foyer","Activité indépendante"];
+
     
   }
 
