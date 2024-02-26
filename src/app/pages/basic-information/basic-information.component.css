@@ -1,6 +1,6 @@
 .form-section-1-container {
     padding-left: 7%;
-        padding-right: 7%;
+    padding-right: 7%;
 }
 .form-row {
     display: grid;
@@ -17,12 +17,4 @@
 
 .invalid-input {
     border: 1px solid red;
-    /* You can customize the style for invalid fields */
-}
-
-.phoneNumberField {
-
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-
 }
