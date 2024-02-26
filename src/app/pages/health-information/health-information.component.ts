@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, KeyValueDiffers } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormDataService } from '../../services/form/form-data.service';
 import { FormBuilder, ReactiveFormsModule,FormsModule, FormGroup, Validators} from '@angular/forms';
@@ -72,13 +72,13 @@ export class HealthInformationComponent {
 
 
   checkoutForm: FormGroup = this.formBuilder.group({
-    weight: ['', [Validators.required,Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
-    height: ['', [Validators.required,Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
+    weight: ['', [Validators.required,Validators.pattern(/^\d+(\.\d{1,2})?$/),Validators.min(40),Validators.max(200)]],
+    height: ['', [Validators.required,Validators.pattern(/^\d+(\.\d{1,2})?$/),Validators.min(1.4),Validators.max(2.2)]],
     bmi: ['', [Validators.required,Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
-    totalCholesterol: ['', [Validators.required]],
-    ldlCholesterol: ['', [Validators.required]],
-    hdlCholesterol: ['', [Validators.required]],
-    glucoseLevel: ['', [Validators.required]],
+    totalCholesterol: ['', [Validators.required,Validators.min(2),Validators.max(6)]],
+    ldlCholesterol: ['', [Validators.required,Validators.min(0.5),Validators.max(4)]],
+    hdlCholesterol: ['', [Validators.required,Validators.min(0.5),Validators.max(3)]],
+    glucoseLevel: ['', [Validators.required,Validators.min(70),Validators.max(140)]],
     heartDisease: ['', [Validators.required]],
     diabetes: ['', [Validators.required]],
     hypertension: ['', [Validators.required]],
@@ -145,7 +145,13 @@ export class HealthInformationComponent {
         } 
            if (this.checkoutForm.get('weight')?.hasError('pattern')) {
      this.heightErrors.push('Weight must be a valid decimal number');
-   }
+           }
+          if (this.checkoutForm.get('weight')?.hasError('min')) {
+    this.weightErrors.push('Weight must be greater than 40 kg');
+          }
+              if (this.checkoutForm.get('weight')?.hasError('max')) {
+    this.weightErrors.push('Weight must be less than 200 kg');
+  }
       else {
       console.error('Invalid weight');
 }
@@ -160,7 +166,14 @@ export class HealthInformationComponent {
      } 
       if (this.checkoutForm.get('height')?.hasError('pattern')) {
     this.heightErrors.push('Height must be a valid decimal number');
-     } else {
+      }
+          if (this.checkoutForm.get('height')?.hasError('min')) {
+    this.heightErrors.push('Height must be greater than 1.4m');
+          }
+              if (this.checkoutForm.get('height')?.hasError('max')) {
+    this.heightErrors.push('Height must be less than 2.2 m');
+  }
+      else {
       console.error('Invalid height');
 }
       }
@@ -189,7 +202,14 @@ export class HealthInformationComponent {
      } 
       if (this.checkoutForm.get('totalCholesterol')?.hasError('pattern')) {
     this.totalCholesterolErrors.push('TotalCholesterol must be a valid decimal number');
-     } else {
+      }
+      if (this.checkoutForm.get('totalCholesterol')?.hasError('min')) {
+    this.totalCholesterolErrors.push('TotalCholesterol must be greater than 2');
+          }
+              if (this.checkoutForm.get('totalCholesterol')?.hasError('max')) {
+    this.totalCholesterolErrors.push('TotalCholesterol must be less than 6');
+  }
+      else {
       console.error('Invalid totalCholesterol');
 }
        }
@@ -202,7 +222,17 @@ export class HealthInformationComponent {
      } 
       if (this.checkoutForm.get('ldlCholesterol')?.hasError('pattern')) {
     this.ldlCholesterolErrors.push('LdlCholesterol must be a valid decimal number');
-     } else {
+      }
+          
+          if (this.checkoutForm.get('ldlCholesterol')?.hasError('min')) {
+    this.ldlCholesterolErrors.push('LdlCholesterol must be greater than 0.5');
+          }
+              if (this.checkoutForm.get('ldlCholesterol')?.hasError('max')) {
+    this.ldlCholesterolErrors.push('LdlCholesterol must be less than 4');
+  }
+      
+      
+      else {
       console.error('Invalid ldlCholesterol');
 }
        }
@@ -215,7 +245,16 @@ export class HealthInformationComponent {
      } 
       if (this.checkoutForm.get('hdlCholesterol')?.hasError('pattern')) {
     this.hdlCholesterolErrors.push('HdlCholesterol must be a valid decimal number');
-     } else {
+      }
+        if (this.checkoutForm.get('hdlCholesterol')?.hasError('min')) {
+    this.hdlCholesterolErrors.push('HdlCholesterol must be greater than 0.5');
+          }
+              if (this.checkoutForm.get('hdlCholesterol')?.hasError('max')) {
+    this.hdlCholesterolErrors.push('HdlCholesterol must be less than 3');
+  }
+     
+      
+      else {
       console.error('Invalid hdlCholesterol');
 }
        }
@@ -228,17 +267,17 @@ export class HealthInformationComponent {
      } 
       if (this.checkoutForm.get('glucoseLevel')?.hasError('pattern')) {
     this.glucoseLevelErrors.push('GlucoseLevel must be a valid decimal number');
-     } else {
+      }
+        if (this.checkoutForm.get('glucoseLevel')?.hasError('min')) {
+    this.glucoseLevelErrors.push('GlucoseLevel must be greater than 70');
+          }
+              if (this.checkoutForm.get('glucoseLevel')?.hasError('max')) {
+    this.glucoseLevelErrors.push('GlucoseLevelmust be less than 140');
+  }
+      else {
       console.error('Invalid glucoseLevel');
 }
        }
-      
-      
-
-
-
-
-
     }
   }
 
