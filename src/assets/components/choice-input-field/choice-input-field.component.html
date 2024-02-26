@@ -2,9 +2,8 @@
     <label for="residentialArea">{{ label }}<span class="red-highlight">*</span></label>
         <select class="country-code" id="residentialArea" formControlName="residentialArea"
             (change)="onInputChange($event)">
-            <option *ngFor="let option of options" [value]="option" [selected]="option === defaultValue">{{ option }}</option>
+            <option *ngFor="let option of optionsList" [value]="option.value" [selected]="option.value === defaultValue">{{option.name}}</option>
         </select>
-   
 </div>
 
 

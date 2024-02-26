@@ -15,6 +15,8 @@ export class ChoiceInputFieldComponent {
   @Input() label: string = "label";
   @Input() options: string[] = ["Rural", "Urban"];
   @Input() defaultValue: string = "";
+  @Input() optionsList: { value: string, name: string }[] = [];
+
   
   @Output() valueChange: EventEmitter<any> = new EventEmitter();
   

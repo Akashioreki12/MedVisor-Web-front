@@ -33,7 +33,12 @@ export class BasicInformationComponent {
   selectedLanguage: string = "en";
 
 
-  maritalStatusOptions:string [] = ["Yes","No"];
+  maritalStatusOptions: string[] = ["Yes", "No"];
+  
+  optionsList = [
+  { value: 'Yes', name: 'Married' },
+  { value: 'No', name: 'Single' },
+];
 
 
 

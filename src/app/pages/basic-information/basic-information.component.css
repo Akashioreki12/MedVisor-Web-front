@@ -19,3 +19,10 @@
     border: 1px solid red;
     /* You can customize the style for invalid fields */
 }
+
+.phoneNumberField {
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+}

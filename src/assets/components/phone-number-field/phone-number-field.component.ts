@@ -12,7 +12,8 @@ export class PhoneNumberFieldComponent {
   @Output() selectChange: EventEmitter<any> = new EventEmitter();
   
   @Input() placeHolder: string = "";
-  @Input() label: string="";
+  @Input() label: string = "";
+  @Input() currentLanguage: string = "";
 
   @Input() ngClassInput: any;
   @Input() errorList: string[] = [];

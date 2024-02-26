@@ -72,6 +72,40 @@ export class AdditionalInformationComponent {
   workTypeOptions: string[] = ["Secteur privé","Secteur public","Indeterminé","Sans travail","Au foyer","Activité indépendante"];
 
  
+   optionsList1 = [
+  { value: 'Rural', name: 'Rural' },
+  { value: 'Urban', name: 'Urban' },
+   ];
+   optionsList2 = [
+  { value: 'Fumeur', name: 'Smoker' },
+     { value: 'Ex-Fumeur', name: 'Ex smoker' },
+  {value:'Jamais fumé',name:'Never Smoke'},
+   ];
+  
+   optionsList3 = [
+  { value: 'True', name: 'True' },
+     { value: 'False', name: 'False' },
+   ];
+  
+   optionsList4 = [
+  { value: 'Secteur privé', name: 'Private Sector' },
+     { value: 'Secteur public', name: 'Public Sector' },
+          { value: 'Indeterminé', name: 'Indetermined' },
+               { value: 'Sans travail', name: 'Jobless' },
+     { value: 'Au foyer', name: 'At home' },
+      { value: 'Activité indépendante', name: 'Independant Activity' },
+
+
+   ];
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
   ngOnInit() {
