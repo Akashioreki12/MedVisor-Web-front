@@ -36,8 +36,8 @@ export class BasicInformationComponent {
   maritalStatusOptions: string[] = ["Yes", "No"];
   
   optionsList = [
-  { value: 'Yes', name: this.getContent('married') },
-  { value: 'No', name: this.getContent('single') },
+  { value: 'Yes', name: 'Married' },
+  { value: 'No', name: 'Single' },
 ];
 
 
@@ -90,10 +90,7 @@ export class BasicInformationComponent {
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
     this.maritalStatusOptions = ["Yes", "No"];
-    this.optionsList = [
-  { value: 'Yes', name: this.getContent('married') },
-  { value: 'No', name: this.getContent('single') },
-];
+ 
   }
 
   getContent(key: string): string {
@@ -102,10 +99,7 @@ export class BasicInformationComponent {
 onLanguageToggle(language: string): void {
   this.selectedLanguage = language;
   this.maritalStatusOptions = ["Yes", "No"];
-  this.optionsList = [
-  { value: 'Yes', name: this.getContent('married') },
-  { value: 'No', name: this.getContent('single') },
-];
+
 
 }
 
@@ -120,10 +114,7 @@ onLanguageToggle(language: string): void {
     });
     this.toggleLanguage(this.selectedLanguage);
     this.maritalStatusOptions = ["Yes", "No"];
-    this.optionsList = [
-  { value: 'Yes', name: this.getContent('married') },
-  { value: 'No', name: this.getContent('single') },
-];
+ 
 
     this.checkoutForm.patchValue({
       firstName: this.firstName,
