@@ -12,8 +12,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LanguageService } from '../../services/translation/language.service';
-
-
+import { ErrorModalComponent } from '../../error-modal/error-modal.component';
+import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-model-form',
   standalone: true,
@@ -75,13 +75,26 @@ export class ModelFormComponent {
 
   selectedLanguage: string = "en";
 
-  constructor(private languageService:LanguageService,private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
+  constructor(private dialog:MatDialog,private languageService:LanguageService,private router: Router, private formDataService: FormDataService, private route: ActivatedRoute) { }
   
+
+
 
 getContent(key: string): string {
     return this.languageService.getContent(key);
   }
   
+openErrorModal() {
+    const dialogRef = this.dialog.open(ErrorModalComponent, {
+      data: {
+        errorMessage: 'Something went wrong!'
+      }
+    });
+
+    dialogRef.componentInstance.closeModalEvent.subscribe(() => {
+      dialogRef.close(); // Close the modal when the event is emitted
+    });
+  }
 
 
   ngOnInit(): void {
@@ -171,6 +184,7 @@ getContent(key: string): string {
         this.router.navigate(['/page-result'], { queryParams: { result: resultPrediction } });
       },
       (error) => {
+        this.openErrorModal();
         console.error('Error submitting form:', error);
       }
     );
