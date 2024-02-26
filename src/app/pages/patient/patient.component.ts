@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Patient } from './patient.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { LanguageService } from '../../services/translation/language.service';
 
 @Component({
   selector: 'app-patient',
@@ -26,7 +27,11 @@ export class PatientComponent implements OnInit {
    // Assuming you have a list of surveys
     currentPage: number = 1;
     pageSize: number = 10; 
-  constructor(private router: Router, private patientService: PatientService, private http: HttpClient) {}
+    options: string[] = ["ar", "fr", "en"];
+  selectedLanguage: string = this.getContent('language');
+direction :'ltr' | 'rtl' ='ltr';
+
+  constructor(private router: Router, private patientService: PatientService, private http: HttpClient, private languageService: LanguageService) {}
 
   ngOnInit(): void {
     this.loadPatients();
@@ -99,8 +104,34 @@ selecteditPerson(personid:string): void {
     this.router.navigate(['/ai'], { queryParams: { selectedPerson: JSON.stringify(personid) } });
 
 
+    
 
 
+}
+
+getContent(key: string): string {
+  return this.languageService.getContent(key);
+}
+getCurrentLanguage(): string {
+  return this.languageService.getCurrentLanguage();
+}
+
+toggleLanguage(language:string): void {
+  this.languageService.toggleLanguage(language);
+}
+
+activateArabic(): void {
+  this.toggleLanguage('ar');
+  this.direction = 'rtl';
+  console.log(this.getContent('back'));
+}
+activateFrench(): void {
+  this.direction ='ltr';
+  this.toggleLanguage('fr');
+}
+activateEnglish(): void {
+  this.direction ='ltr';
+  this.toggleLanguage('en');
 }
 
 
