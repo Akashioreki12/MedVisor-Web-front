@@ -84,110 +84,111 @@
 
 
  <!-- Survey Data Container -->
- <div  *ngIf="selectedSurvey" >
-    <div class="survey-container"  *ngFor="let selectedSurvey of surveys">
+ <div  *ngIf="selectedSurvey" [dir]="direction">
+    <div class="survey-container"  *ngFor="let selectedSurvey of surveys" [dir]="direction">
         
     <!-- First Name -->
-    <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('dateAnalyse') }}</div>
+    <div class="survey-item" [dir]="direction">
+        <div class="survey-header" [dir]="direction">{{getContent('dateAnalyse') }}</div>
         <div class="survey-content">
             {{ selectedSurvey.creationDate.split('T')[0] }}
         </div>
         <img class="actp" src="..\..\assets\Svgs\edit.svg" (click)="selecteditPerson(selectedSurvey)"  alt="edit" />
     </div>
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('firstName') }}</div>
+        <div class="survey-header" style="color: #1578DA;" [dir]="direction">{{getContent('result') }}</div>
+        <div class="survey-content">{{ selectedSurvey.result }} %</div>
+    </div>
+    <div class="survey-item">
+        <div class="survey-header" [dir]="direction">{{getContent('firstName') }}</div>
         <div class="survey-content">{{ selectedSurvey.firstName }}</div>
     </div>
     <!-- Last Name -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('lastName') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('lastName') }}</div>
         <div class="survey-content">{{ selectedSurvey.lastName }}</div>
     </div>
     <!-- Age -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('age') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('age') }}</div>
         <div class="survey-content">{{ selectedSurvey.age }}</div>
     </div>
     <!-- Gender -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('gender') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('gender') }}</div>
         <div class="survey-content">{{ selectedSurvey.gender }}</div>
     </div>
    
     <!-- Phone Number -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('phoneNumber') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('phoneNumber') }}</div>
         <div class="survey-content">{{ selectedSurvey.phoneNumber }}</div>
     </div>
     <!-- Marital Status -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('maritalStatus') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('maritalStatus') }}</div>
         <div class="survey-content">{{ selectedSurvey.maritalStatus }}</div>
     </div>
     <!-- Email -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('email') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('email') }}</div>
         <div class="survey-content">{{ selectedSurvey.email }}</div>
     </div>
     <!-- CIN -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('cin') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('cin') }}</div>
         <div class="survey-content">{{ selectedSurvey.cin }}</div>
     </div>
 
-    <div class="survey-item">
-        <div class="survey-header" style="color: red;" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('result') }}</div>
-        <div class="survey-content">{{ selectedSurvey.result }}</div>
-    </div>
+    
     <!-- Weight -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('weight') }}</div>
-        <div class="survey-content">{{ selectedSurvey.weight }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('weight') }}</div>
+        <div class="survey-content">{{ selectedSurvey.weight }} Kg</div>
     </div>
     <!-- Height -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('height') }}</div>
-        <div class="survey-content">{{ selectedSurvey.height }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('height') }}</div>
+        <div class="survey-content">{{ selectedSurvey.height }} m</div>
     </div>
     <!-- BMI -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('bmi') }}</div>
-        <div class="survey-content">{{ selectedSurvey.bmi }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('bmi') }}</div>
+        <div class="survey-content">{{ selectedSurvey.bmi }} kg/m2</div>
     </div>
     <!-- Total Cholesterol -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('total') }}</div>
-        <div class="survey-content">{{ selectedSurvey.totalCholesterol }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('total') }}</div>
+        <div class="survey-content">{{ selectedSurvey.totalCholesterol }} g/L</div>
     </div>
     <!-- LDL Cholesterol -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('ldl') }}</div>
-        <div class="survey-content">{{ selectedSurvey.ldlCholesterol }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('ldl') }}</div>
+        <div class="survey-content">{{ selectedSurvey.ldlCholesterol }} g/L</div>
     </div>
     <!-- HDL Cholesterol -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('hdl') }}</div>
-        <div class="survey-content">{{ selectedSurvey.hdlCholesterol }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('hdl') }}</div>
+        <div class="survey-content">{{ selectedSurvey.hdlCholesterol }} g/L</div>
     </div>
     <!-- Glucose Level -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">N{{getContent('glucose') }}</div>
-        <div class="survey-content">{{ selectedSurvey.glucoseLevel }}</div>
+        <div class="survey-header" [dir]="direction">N{{getContent('glucose') }}</div>
+        <div class="survey-content">{{ selectedSurvey.glucoseLevel }} mg/dL</div>
     </div>
     <!-- Heart Disease -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('heartDisease') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('heartDisease') }}</div>
         <div class="survey-content">{{ selectedSurvey.heartDisease }}</div>
     </div>
     <!-- Diabetes -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('diabetes') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('diabetes') }}</div>
         <div class="survey-content">{{ selectedSurvey.diabetes }}</div>
     </div>
     <!-- Hypertension -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('hypertension') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('hypertension') }}</div>
         <div class="survey-content">{{ selectedSurvey.hypertension }}</div>
     </div>
     
@@ -200,27 +201,27 @@
 -->
     
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('heredityOrGenetics') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('heredityOrGenetics') }}</div>
         <div class="survey-content">{{ selectedSurvey.heredityOrGenetics }}</div>
     </div>
     <!-- Residential Area -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('residentialArea') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('residentialArea') }}</div>
         <div class="survey-content">{{ selectedSurvey.residentialArea }}</div>
     </div>
     <!-- Smoking Status -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('smokingStatus') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('smokingStatus') }}</div>
         <div class="survey-content">{{ selectedSurvey.smokingStatus }}</div>
     </div>
     <!-- Alcohol Status -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('alcoholStatus') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('alcoholStatus') }}</div>
         <div class="survey-content">{{ selectedSurvey.alcoholStatus }}</div>
     </div>
     <!-- Work Type -->
     <div class="survey-item">
-        <div class="survey-header" [dir]="selectedLanguage === 'ar' ? 'rtl' : 'ltr'">{{getContent('workType') }}</div>
+        <div class="survey-header" [dir]="direction">{{getContent('workType') }}</div>
         <div class="survey-content">{{ selectedSurvey.workType }}</div>
     </div>
 </div>
