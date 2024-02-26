@@ -33,6 +33,10 @@ export class ModelFormComponent {
   @ViewChild('additionalInformationComponent') additionalInformationComponent!: AdditionalInformationComponent;
   
   formData: any = {};
+
+  direction: 'ltr' | 'rtl' = 'ltr';
+  
+
   
   selectedPerson: any = {
 
@@ -117,12 +121,15 @@ openErrorModal() {
   activateArabic(): void {
     this.toggleLanguage('ar');
     console.log(this.getContent('back'));
+    this.direction = 'rtl';
   }
   activateFrench(): void {
     this.toggleLanguage('fr');
+    this.direction = 'ltr';
   }
   activateEnglish(): void {
     this.toggleLanguage('en');
+    this.direction = 'ltr';
   }
 
 

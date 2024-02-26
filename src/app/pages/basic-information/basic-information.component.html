@@ -18,9 +18,9 @@
 
     <div class="form-row">
 
-        <app-phone-number-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  label="{{getContent('phoneNumber')}}" (inputClicked)="onPhoneNumberInputClicked()" [errorList]="phoneNumberErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('phoneNumber')?.invalid && !phoneNumberInputClicked}" (valueChange)="handleNumber($event)" (selectChange)="handleCountryCode($event)" [placeHolder]="phoneNumber"></app-phone-number-field>
+        <app-phone-number-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  label="{{getContent('phoneNumber')}}" (inputClicked)="onPhoneNumberInputClicked()" [errorList]="phoneNumberErrors" [ngClassInput]="{'invalid-field': formSubmitted && checkoutForm.get('phoneNumber')?.invalid && !phoneNumberInputClicked} "  (valueChange)="handleNumber($event)" (selectChange)="handleCountryCode($event)" [placeHolder]="phoneNumber" [currentLanguage]="selectedLanguage"></app-phone-number-field>
         <app-choice-input-field [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  label="{{getContent('maritalStatus')}}" (valueChange)="handleMaritalStatus($event)"
-                [options]="maritalStatusOptions" [defaultValue]="maritalStatus"></app-choice-input-field>
+                [optionsList]="optionsList" [defaultValue]="maritalStatus"></app-choice-input-field>
 
     </div>
     <div  class="form-row">

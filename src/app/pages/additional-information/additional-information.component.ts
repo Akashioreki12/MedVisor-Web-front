@@ -58,6 +58,34 @@ export class AdditionalInformationComponent {
   toggleLanguage(language:string): void {
     this.languageService.toggleLanguage(language);
     this.selectedLanguage = this.getContent('language');
+
+    /*
+    this.optionsList1 = [
+  { value: 'Rural', name: this.getContent('rural') },
+  { value: 'Urban', name: this.getContent('urban') },
+    ];
+    this.optionsList2 = [
+  { value: 'Fumeur', name: this.getContent('smoker') },
+     { value: 'Ex-Fumeur', name: this.getContent('exSmoker') },
+  {value:'Jamais fumé',name:this.getContent('neverSmoke')},
+    ];
+    
+    this.optionsList3 = [
+  { value: 'True', name: this.getContent('true') },
+     { value: 'False', name: this.getContent('false') },
+    ];
+    
+    this.optionsList4 = [
+  { value: 'Secteur privé', name: this.getContent('privateSector') },
+     { value: 'Secteur public', name: this.getContent('publicSector')},
+          { value: 'Indeterminé', name: this.getContent('undetermined') },
+               { value: 'Sans travail', name: this.getContent('jobless') },
+     { value: 'Au foyer', name: this.getContent('home') },
+      { value: 'Activité indépendante', name: this.getContent('independantActivity')},
+
+
+   ];*/
+
     this.residenceTypeOptions = ["Rural","Urban"];
     this.smokingStatusOptions = ["Fumeur","Ex-Fumeur","Jamais fumé"];
     this.alcoholStatusOptions = ["True","False"];
@@ -72,6 +100,42 @@ export class AdditionalInformationComponent {
   workTypeOptions: string[] = ["Secteur privé","Secteur public","Indeterminé","Sans travail","Au foyer","Activité indépendante"];
 
  
+   optionsList1 = [
+  { value: 'Rural', name: 'Rural' },
+  { value: 'Urban', name: 'Urban' },
+   ];
+   optionsList2 = [
+  { value: 'Fumeur', name: 'Smoker' },
+     { value: 'Ex-Fumeur', name: 'Ex-Smoker' },
+  {value:'Jamais fumé',name:'Never smoke'},
+   ];
+  
+   optionsList3 = [
+  { value: 'True', name: 'True' },
+     { value: 'False', name: 'False' },
+   ];
+  
+   optionsList4 = [
+  { value: 'Secteur privé', name: 'Private Sector' },
+     { value: 'Secteur public', name: 'Public Sector'},
+          { value: 'Indeterminé', name: 'Undetermined' },
+               { value: 'Sans travail', name: 'Jobless'},
+     { value: 'Au foyer', name: 'At home'},
+      { value: 'Activité indépendante', name: 'Independant Activity'},
+
+
+   ];
+
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
   ngOnInit() {
@@ -86,6 +150,34 @@ export class AdditionalInformationComponent {
       this.selectedLanguage = language;
     });
     this.toggleLanguage(this.selectedLanguage);
+
+    /*
+    this.optionsList1 = [
+  { value: 'Rural', name: this.getContent('rural') },
+  { value: 'Urban', name: this.getContent('urban') },
+    ];
+    this.optionsList2 = [
+  { value: 'Fumeur', name: this.getContent('smoker') },
+     { value: 'Ex-Fumeur', name: this.getContent('exSmoker') },
+  {value:'Jamais fumé',name:this.getContent('neverSmoke')},
+    ];
+    
+    this.optionsList3 = [
+  { value: 'True', name: this.getContent('true') },
+     { value: 'False', name: this.getContent('false') },
+    ];
+    
+    this.optionsList4 = [
+  { value: 'Secteur privé', name: this.getContent('privateSector') },
+     { value: 'Secteur public', name: this.getContent('publicSector')},
+          { value: 'Indeterminé', name: this.getContent('undetermined') },
+               { value: 'Sans travail', name: this.getContent('jobless') },
+     { value: 'Au foyer', name: this.getContent('home') },
+      { value: 'Activité indépendante', name: this.getContent('independantActivity')},
+
+
+   ];
+*/
     this.residenceTypeOptions = ["Rural","Urban"];
     this.smokingStatusOptions = ["Fumeur","Ex-Fumeur","Jamais fumé"];
     this.alcoholStatusOptions = ["True","False"];

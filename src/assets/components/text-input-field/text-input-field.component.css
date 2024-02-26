@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-        margin-right: 50px;
+    margin-right: 50px;
 }
 input {
     height: 58px;
@@ -37,5 +37,4 @@ li {
 
 .custom-icon-color {
     color: #1578DA;
-    /* Replace with your desired color code */
 }

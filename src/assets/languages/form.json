@@ -26,6 +26,7 @@
         "glucoseToolTip":"Average blood glucose level of the patient in g/L ex: 0.120 mg/dL",
         "yes":"Yes",
         "no":"No",
+        "detail" : "details",
 
 
 
@@ -83,7 +84,7 @@
 
         "back":"Back",
         "next":"Next",
-
+        "searchPatient" : "search Patient",
 
 
 
@@ -111,6 +112,14 @@
 "sign_in": "Sign in",
 "no_account": "Don't have an account?",
 "create_account": "Create an account",
+"patients":"Patients",
+ "search" :"Search" ,
+ "add" : "Add Patient",
+ "action" :"Action",
+ "previous" : "Previous",
+ "next" : "Next",
+ "dateAnalyse" : "Analysis date" ,
+ "result" : "Result of analysis ",
 
 
 "requiredMsgPrenom": "First name is required",
@@ -127,7 +136,7 @@
     },
     "fr":{
         "language":"fr",
-
+"action": "Action",
 
         "form_2_title":"Informations de santé",
         "section_1_title":"Santé de base",
@@ -204,6 +213,7 @@
 
   "back": "Retour",
   "next": "Suivant",
+  "searchPatient" : "Recherche Patient",
 
 
     "signupTitle": "Créer Votre Compte",
@@ -240,19 +250,27 @@
     "requiredMsgNom": "Le nom est requis",
     "requiredMsgNum": "Le numéro de téléphone est requis",
     "requiredMsgEmail": "L'email/nom d'utilisateur est requis",
-    "requiredMsgPassword": "Le mot de passe est requis"
+    "requiredMsgPassword": "Le mot de passe est requis",
 
 
 
 
         
 
+"patients":"Patients",
+"search" : "Rechercher",
+"add":"Ajouter Patient",
+"previous" : "Précédant",
+"next" : "Suivant",
+"dateAnalyse" : "Date des analyses",
+"result" : "Résultat d'analyses",
+"detail" : "détails"
 
     },
     "ar": {
 
 
-
+"searchPatient" : "      بحث     " ,
 "language":"ar",
 "form_2_title": "معلومات الصحة",
 "section_1_title": "الصحة الأساسية",
@@ -281,7 +299,7 @@
 
 
 "form_1_title": "معلومات أساسية",
-  "firstName": "الاسم الأول",
+  "firstName": "الاسم الشخصي",
   "lastName": "اسم العائلة",
   "age": "العمر",
   "gender": "الجنس",
@@ -333,9 +351,10 @@
 
 
 
-  "back": "العودة",
+  "previous": "العودة",
   "next": "التالي",
-
+ "result" : "نتيجة التحاليل",
+ "detail" : "المزيد",
 
 
   
@@ -364,6 +383,13 @@
 "create_account": "إنشاء حساب",
 
 
+"patients":"مرضى",
+"search":"بحث",
+"add": "اضافة",
+"action" : "فعل",
+"preious":"السابق",
+"next":"التالي",
+"dateAnalyse" : "تاريخ التحاليل",
     "requiredMsgPrenom": "الاسم الأول مطلوب",
     "requiredMsgNom": "الاسم الأخير مطلوب",
     "requiredMsgNum": "رقم الهاتف مطلوب",

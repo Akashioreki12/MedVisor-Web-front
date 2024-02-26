@@ -5,19 +5,19 @@
 </ul>
 
 
-<mat-horizontal-stepper  #stepper class="my-stepper-component">
-        <mat-step label="1">
-            <app-basic-information  #basicInformationComponent [firstName]="selectedPerson.firstName"
+<mat-horizontal-stepper [dir]="direction" #stepper class="my-stepper-component">
+        <mat-step [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  label="1">
+            <app-basic-information [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  #basicInformationComponent [firstName]="selectedPerson.firstName"
       [lastName]="selectedPerson.lastName"
       [age]="selectedPerson.age"
       [phoneNumber]="selectedPerson.phoneNumber" [countryCode]="selectedPerson.countryCode"
       [cin]="selectedPerson.cin" [email]="selectedPerson.email" [maritalStatus]="selectedPerson.maritalStatus" [gender]="selectedPerson.gender"></app-basic-information>
         </mat-step>
-        <mat-step label="2">
-            <app-health-information #healthInformationComponent  [weight]="selectedPerson.weight" [height]="selectedPerson.height" [bmi]="selectedPerson.bmi" [totalLevel]="selectedPerson.totalCholesterol" [ldlLevel]="selectedPerson.ldlCholesterol" [hdlLevel]="selectedPerson.hdlCholesterol" [glucoLevel]="selectedPerson.glucoseLevel" [heartDisease]="selectedPerson.heartDisease" [hypertension]="selectedPerson.hypertension" [diabetes]="selectedPerson.diabetes"></app-health-information>
+        <mat-step [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"  label="2">
+            <app-health-information [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'" #healthInformationComponent  [weight]="selectedPerson.weight" [height]="selectedPerson.height" [bmi]="selectedPerson.bmi" [totalLevel]="selectedPerson.totalCholesterol" [ldlLevel]="selectedPerson.ldlCholesterol" [hdlLevel]="selectedPerson.hdlCholesterol" [glucoLevel]="selectedPerson.glucoseLevel" [heartDisease]="selectedPerson.heartDisease" [hypertension]="selectedPerson.hypertension" [diabetes]="selectedPerson.diabetes"></app-health-information>
         </mat-step>
-        <mat-step  label="3">
-            <app-additional-information #additionalInformationComponent  [historyOfTIAs]="selectedPerson.historyOfTIAst" [heredityOrGenetics]="selectedPerson.heredityOrGenetics" [smokingStatus]="selectedPerson.smokingStatus" [alcoholStatus]="selectedPerson.alcoholStatus" [residentialArea]="selectedPerson.residentialArea" [workType]="selectedPerson.workType"></app-additional-information>
+        <mat-step [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'"   label="3">
+            <app-additional-information [dir]="selectedLanguage === 'ar' ? 'rtl':'ltr'" #additionalInformationComponent  [historyOfTIAs]="selectedPerson.historyOfTIAst" [heredityOrGenetics]="selectedPerson.heredityOrGenetics" [smokingStatus]="selectedPerson.smokingStatus" [alcoholStatus]="selectedPerson.alcoholStatus" [residentialArea]="selectedPerson.residentialArea" [workType]="selectedPerson.workType"></app-additional-information>
         </mat-step>
 </mat-horizontal-stepper>
 

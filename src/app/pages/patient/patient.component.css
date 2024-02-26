@@ -1,3 +1,17 @@
+.languages-list {
+  display: flex;
+  flex-direction: row;
+  padding-top: -2px;
+  
+  margin-right: 50px;
+  position: absolute;
+  right: 0;
+  font-size: small;
+}
+.lang{
+  margin-bottom: 10px;
+}
+
 /* Default styles for navbar */
 .navbar {
   background-color: #fff; 
@@ -5,6 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 /* Logo styles */
@@ -39,13 +54,15 @@
 .search-bar {
   position: absolute;
   display: flex;
+ 
 }
 
 /* Active search icon styles */
 .active-search {
   position: absolute;
   top: 50%;
-  margin-right: 15px;
+  margin-right: 20px;
+  justify-content: space-between;
   transform: translateY(-50%);
   fill: none;
   color: rgba(101, 100, 100, 0.325);
@@ -53,6 +70,7 @@
   width: 18px;
   height: 18px;
   pointer-events: none; 
+ 
 }
 
 /* Container fluid styles */
@@ -80,6 +98,7 @@
   width: 280px;
   height: 35px;
   padding-left: 30px; 
+  padding-right: 30px;
   border-collapse: collapse 20px;
 }
 
